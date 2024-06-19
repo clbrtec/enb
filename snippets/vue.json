@@ -1,0 +1,23 @@
+{
+	"Component": {
+	 	"prefix": "vue",
+	 	"body": [
+	 		"<template>",
+			"\t<div class='$1'></div>",
+			"</template>",
+			"",
+			"<script>",
+			"export default {",
+			"\tname: '$1'",
+			"}",
+			"</script>",
+			"",
+			"<style scoped>",
+			".$1 {",
+			"}",
+			"</style>",
+			""
+		],
+	 	"description": "Vue Component"
+	}
+}
