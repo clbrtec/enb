@@ -4,26 +4,20 @@
 ```
 https://nodejs.org/en
 ```
+
 ## Abra o cmd(prompt de comando) e acesse a pasta do projeto
 ```
+Descompactar o arquivo do projeto
 Ex.: Caso você tenha descompactado o diretório do projeto na pasta de downloads:
-`cd Downloads\enb`
+cd Downloads\enb
 ```
 
-### Compiles and hot-reloads for development
+### Execute o comando
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Abra o navegador
 ```
-npm run build
+https://localhost:8080
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
