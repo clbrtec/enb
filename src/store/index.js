@@ -1,14 +1,10 @@
 import { createStore } from 'vuex'
+import EnbPainel from './EnbPainel'
+import EnbTop from './EnbTop'
 
 export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
+    EnbPainel,
+    EnbTop
   }
 })
