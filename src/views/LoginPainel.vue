@@ -3,8 +3,8 @@
     <div class="cont">
       <enb-label text="Login" config="font-weight: bold"/>
       <enb-label text="Informe suas credenciais abaixo" config="font-size: 12px"/>
-      <enb-input/>
-      <enb-input/>
+      <enb-input :options="{ label: 'Email' }"/>
+      <enb-input :options="{ label: 'Senha' }"/>
       <enb-button text="Entrar" @click="$router.push('/painel')"/>
     </div>
   </div>

@@ -34,6 +34,7 @@ export default {
 .cont-painel {
   width: 80%;
   height: 100%;
+  box-shadow: 0px 0px 4px 1px #CCCCCC;
 }
 
 .label {

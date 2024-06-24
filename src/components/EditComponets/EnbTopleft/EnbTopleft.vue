@@ -1,12 +1,21 @@
 <template>
-  <div class='EnbTopleft'>
-    <div class="logo">Logo</div>
+  <div class='EnbTopleft' :style="{ backgroundColor: barColor }">
+    <logo-top/>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import LogoTop from './LogoTop.vue'
 export default {
-  name: 'EnbTopleft'
+  name: 'EnbTopleft',
+  components: { LogoTop },
+  computed: {
+    ...mapGetters(['selectedThemeTop']),
+    barColor () {
+      return this.selectedThemeTop.config.barColor
+    }
+  }
 }
 </script>
 

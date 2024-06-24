@@ -14,7 +14,7 @@ export default {
       path: '',
       child: [
         {
-          text: 'Topo',
+          text: 'Navegação',
           path: '/painel/comptop'
         },
         {

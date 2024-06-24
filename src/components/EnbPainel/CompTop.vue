@@ -33,28 +33,16 @@
         <enb-button text="Selecione a imagem" @click="file"/>
       </div>
     </div>
-    <div class="edit-position-logo">
-      <enb-label text="Posição logo" config="font-weight:bold"/>
-      <enb-check
-      :options="{
-        key: '',
-        value: '',
-        text: 'Centro',
-        disabled: false,
-        style: { border: 0, borderBottom: 'thin solid #CCCCCC', marginTop: '5%', marginBottom: '5%' },
-        processing: false 
-      }"
-      />
-      <enb-check
-      :options="{
-        key: '',
-        value: '',
-        text: 'Esqueda',
-        disabled: false,
-        style: { border: 0, borderBottom: 'thin solid #CCCCCC', marginTop: '5%', marginBottom: '5%' },
-        processing: false 
-      }"
-      />
+    <div class="edit-color-top">
+      <enb-label text="Cor da barra" config="font-weight:bold"/>
+      <div class="edit-color">
+        <color-picker
+        format="hex"
+        v-model:pureColor="pureColor"
+        @pure-color-change="(c) => selectTopColor({ name: selectedThemeTop.name, color: c })"
+        pickerType="chrome"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -64,14 +52,19 @@ import { mapActions, mapGetters } from 'vuex'
 import EnbCheck from '@/components/EnbCheck.vue'
 import EnbLabel from '../EnbLabel.vue';
 import EnbButton from '../EnbButton.vue';
+import { ColorPicker } from "vue3-colorpicker"
+import "vue3-colorpicker/style.css"
 export default {
   name: 'CompTop',
-  components: { EnbCheck, EnbLabel, EnbButton },
+  components: { EnbCheck, EnbLabel, EnbButton, ColorPicker },
   computed: {
-    ...mapGetters(['checkThemes'])
+    ...mapGetters(['checkThemes', 'selectedThemeTop']),
+    pureColor () {
+      return this.selectedThemeTop.config.barColor
+    }
   },
   methods: {
-    ...mapActions(['selectTheme']),
+    ...mapActions(['selectTheme', 'selectTopColor']),
     file () {
       let file = document.createElement('input')
       file.type = 'file'
@@ -95,7 +88,8 @@ export default {
   padding: 1%;
   border-radius: 3px;
   margin: 1%;
-  background-color: #FFFFFF
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 4px 1px #CCCCCC;
 }
 
 .edit-logo {
@@ -104,7 +98,8 @@ export default {
   padding: 1%;
   border-radius: 3px;
   margin: 1%;
-  background-color: #FFFFFF
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 4px 1px #CCCCCC;
 }
 
 .edit-image {
@@ -114,12 +109,20 @@ export default {
   height: 80%;
 }
 
-.edit-position-logo {
+.edit-color-top {
   width: 200px;
   height: 200px;
   padding: 1%;
   border-radius: 3px;
   margin: 1%;
-  background-color: #FFFFFF
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 4px 1px #CCCCCC;
+}
+
+.edit-color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
 }
 </style>

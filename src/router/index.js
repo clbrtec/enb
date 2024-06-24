@@ -22,7 +22,7 @@ const routes = [
     children: [
       {
         path: '/painel/comptop',
-        name: 'Topo',
+        name: 'Barra de Navegação',
         component: CompTop
       }
     ]

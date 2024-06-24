@@ -5,6 +5,7 @@ export default {
       component: 'EnbTopbasic',
       selected: true,
       config: {
+        barColor: '#000000'
       }
     },
     {
@@ -12,6 +13,7 @@ export default {
       component: 'EnbTopleft',
       selected: false,
       config: {
+        barColor: '#000000'
       }
     }
   ]

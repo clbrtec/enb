@@ -23,6 +23,7 @@ export default {
 <style scoped>
 .EnbSidebar {
   width: 20%;
+  padding-top: 2%;
   background-color: #FFFFFF
 }
 </style>
