@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginPainel from '../views/LoginPainel.vue'
 import EnbPainel from '../views/EnbPainel.vue'
+import MyStore from '../views/MyStore.vue'
 
 const routes = [
   {
@@ -13,6 +14,11 @@ const routes = [
     name: 'Painel',
     component: EnbPainel,
     children: []
+  },
+  {
+    path: '/mystore',
+    name: 'Minha Loja',
+    component: MyStore
   }
 ]
 
