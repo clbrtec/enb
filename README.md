@@ -14,6 +14,10 @@ cd Downloads\enb
 
 ### Execute o comando
 ```
+npm install
+```
+### Execute o comando
+```
 npm run serve
 ```
 
