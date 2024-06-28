@@ -2,17 +2,25 @@
   <div class='EnbNave01'>
     <div class="cont-top">
       <enb-logo01/>
-      <enb-link01/>
+      <enb-link01
+      v-for="(l, key) in LinksTheme01"
+      :key="key"
+      :data="l"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import EnbLogo01 from './EnbLogo01.vue'
 import EnbLink01 from './EnbLink01.vue'
 export default {
   name: 'EnbNave01',
-  components: { EnbLogo01, EnbLink01 }
+  components: { EnbLogo01, EnbLink01 },
+  computed: {
+    ...mapGetters(['LinksTheme01'])
+  }
 }
 </script>
 
