@@ -1,13 +1,14 @@
 import produtos from "./produtos"
 export default {
+  ShowCheckout: false,
   LinksTheme01: [
     {
       text: 'Produtos',
-      path: ''
+      path: '/mystore'
     },
     {
       text: 'Carrinho',
-      path: ''
+      path: '/checkout'
     },
     {
       text: 'Finalizar Compra',
