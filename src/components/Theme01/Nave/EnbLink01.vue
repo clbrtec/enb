@@ -1,6 +1,6 @@
 <template>
   <div class='EnbLink01'>
-    <div class="cont">{{ data.text }}</div>
+    <div class="cont" @click="$router.push(data.path)">{{ data.text }}</div>
   </div>
 </template>
 
