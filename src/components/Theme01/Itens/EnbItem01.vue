@@ -3,17 +3,24 @@
     <div class="cont-img">
       <enb-itemImg01/>
     </div>
-    <div class="cont-desc"></div>
-    <div class="cont-valor"></div>
-    <div class="cont-btn"></div>
+    <div class="cont-desc">
+      Nome do produto aqui, nome do produto - 100ml
+    </div>
+    <div class="cont-valor">
+      R$ 9,99
+    </div>
+    <div class="cont-btn">
+      <enb-itemBtn01/>
+    </div>
   </div>
 </template>
 
 <script>
 import EnbItemImg01 from './EnbItemImg01'
+import EnbItemBtn01 from './EnbItemBtn01.vue'
 export default {
   name: 'EnbItem01',
-  components: { EnbItemImg01 },
+  components: { EnbItemImg01, EnbItemBtn01 },
   props: {
     data: {
       type: Object,
@@ -43,12 +50,20 @@ export default {
 .cont-desc {
   width: 100%;
   height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .cont-valor {
   width: 100%;
   height: 30px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.cont-btn {width: 100%;
+.cont-btn {
+  width: 100%;
   height: 50px;
 }
 </style>
