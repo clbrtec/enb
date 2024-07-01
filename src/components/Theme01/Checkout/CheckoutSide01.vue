@@ -1,14 +1,20 @@
 <template>
   <div class='CheckoutSide01'>
     <div class="black" @click="out=true"></div>
-    <div :class="{ contOut: out }" class="cont" ref="teste"></div>
+    <div :class="{ contOut: out }" class="cont" ref="cont">
+      <checkout-sideHead01 v-model:out="out"/>
+      <checkout-sideItens01/>
+    </div>
   </div>
 </template>
 
 <script>
+import CheckoutSideHead01 from './CheckoutSideHead01.vue'
+import CheckoutSideItens01 from './CheckoutSideItens01'
 import { mapActions } from 'vuex'
 export default {
   name: 'CheckoutSide01',
+  components: { CheckoutSideHead01, CheckoutSideItens01 },
   data () {
     return {
       out: false,
@@ -16,7 +22,7 @@ export default {
     }
   },
   mounted () {
-    this.$refs.teste.addEventListener("animationend", this.animationEnd,false);
+    this.$refs.cont.addEventListener("animationend", this.animationEnd,false);
   },
   methods: {
     ...mapActions(['ToggleCheckout01']),
@@ -57,7 +63,7 @@ export default {
 
 .contOut {
   width: 0%;
-  animation: ShowOut 0.5s;
+  animation: ShowOut 0.3s;
 }
 
 @keyframes ShowIn {

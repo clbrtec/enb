@@ -1,12 +1,16 @@
 <template>
   <div class='EnbItemBtn'>
-    <button>Comprar</button>
+    <button @click="ToggleCheckout01(true)">Comprar</button>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
-  name: 'EnbItemBtn'
+  name: 'EnbItemBtn',
+  methods: {
+    ...mapActions(['ToggleCheckout01'])
+  }
 }
 </script>
 

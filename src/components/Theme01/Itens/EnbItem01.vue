@@ -1,5 +1,5 @@
 <template>
-  <div class='EnbItem01' @click="ToggleCheckout01(true)">
+  <div class='EnbItem01'>
     <div class="cont-img">
       <enb-itemImg01/>
     </div>
@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 import EnbItemImg01 from './EnbItemImg01'
 import EnbItemBtn01 from './EnbItemBtn01.vue'
 export default {
@@ -27,9 +26,6 @@ export default {
       type: Object,
       default: () => ({})
     }
-  },
-  methods: {
-    ...mapActions(['ToggleCheckout01'])
   }
 }
 </script>
