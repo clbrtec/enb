@@ -1,21 +1,21 @@
 <template>
   <div class='EnbItemView01'>
     <vue-image-zoomer
-    :regular="img"
+    :regular="ItemSelected01.img"
     hover-message="⚲ Zoom"
     img-width="300"
     img-height="300"
     />
     <div class="cont">
       <div class="cont-desc">
-        Nome do produto Nome do produto Nome do produto Nome do produto
+        {{ ItemSelected01.name }}
       </div>
       <div class="cont-desc valor">
-        R$ 9,99
+        R$ {{ ItemSelected01.preco.toFixed(2).replace('.', ',') }}
       </div>
       <div class="qtda-btn">
         <div class="qtda">
-          <enb-setQtda01/> 
+          <enb-setQtda01 v-model:qtda="qtda"/> 
         </div>
         <div class="btn">
           <button>Comprar</button>
@@ -26,16 +26,19 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import { VueImageZoomer } from 'vue-image-zoomer'
 import 'vue-image-zoomer/dist/style.css'
-import img from './img'
 import EnbSetQtda01 from './EnbSetQtda01.vue'
 export default {
   name: 'EnbItemView01',
   components: { VueImageZoomer, EnbSetQtda01 },
+  computed: {
+    ...mapGetters(['ItemSelected01'])
+  },
   data () {
     return {
-      img: img
+      qtda: 1
     }
   }
 }

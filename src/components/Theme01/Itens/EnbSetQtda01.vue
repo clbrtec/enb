@@ -4,9 +4,9 @@
       -
     </div>
     <input type="text"
-    v-model="qtda"
+    :value="data"
     >
-    <div class="btn">
+    <div class="btn" @click="data++">
       +
     </div>
   </div>
@@ -15,9 +15,16 @@
 <script>
 export default {
   name: 'EnbSetQtda01',
+  props: ['qtda'],
+  emits: ['update:qtda'],
   data () {
     return {
-      qtda: 1
+      data: 1
+    }
+  },
+  watch: {
+    data (n) {
+      this.$emit('update:qtda', n)
     }
   }
 }

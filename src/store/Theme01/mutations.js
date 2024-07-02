@@ -33,5 +33,8 @@ export default {
   'DELETE_CHECKOUT01' (state, payload) {
     let NewList = state.CheckoutItens01.filter(i => i.id !== payload.id)
     state.CheckoutItens01 = NewList
+  },
+  'ITEM_SELECTED01' (state, payload) {
+    state.ItemSelected01 = payload
   }
 }

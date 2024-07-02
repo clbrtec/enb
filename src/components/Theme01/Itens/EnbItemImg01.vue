@@ -1,15 +1,21 @@
 <template>
-  <div class='EnbItemImg01' @click="$router.push('/itemview')">
-    <img :src="img">
+  <div class='EnbItemImg01' @click="Select">
+    <img :src="data.img">
     <!-- <input type="file" @change="inFile"/> -->
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'EnbItemImg01',
-  props: ['img'],
+  props: ['data'],
   methods: {
+    ...mapActions(['SetItem01']),
+    Select () {
+      this.SetItem01(this.data)
+      this.$router.push('/itemview')
+    },
     inFile (e) {
       this.getBase64(e.target.files[0])
     },

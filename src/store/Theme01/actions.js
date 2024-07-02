@@ -13,5 +13,8 @@ export default {
   },
   DeleteCheckout01 ({ commit }, payload) {
     commit('DELETE_CHECKOUT01', payload)
+  },
+  SetItem01 ({ commit }, payload) {
+    commit('ITEM_SELECTED01', payload)
   }
 }

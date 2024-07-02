@@ -1,7 +1,7 @@
 <template>
   <div class='EnbItem01'>
     <div class="cont-img">
-      <enb-itemImg01 :img="data.img"/>
+      <enb-itemImg01 :data="data"/>
     </div>
     <div class="cont-desc">
       {{ data.name }} - {{ data.un }}
