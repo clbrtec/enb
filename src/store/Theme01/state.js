@@ -1,5 +1,6 @@
 import produtos from "./produtos"
 export default {
+  CheckoutItens01: [],
   ShowCheckout: false,
   LinksTheme01: [
     {

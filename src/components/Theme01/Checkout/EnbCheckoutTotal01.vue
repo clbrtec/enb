@@ -27,7 +27,7 @@ export default {
 .EnbCheckoutTotal01 {
   width: 30%;
   height: 30%;
-  border: thin solid #EEEEEE;
+  border: thin solid #CCCCCC;
   margin-left: 2%;
 }
 

@@ -1,6 +1,6 @@
 <template>
   <div class='EnbItemBtn'>
-    <button @click="ToggleCheckout01(true)">Comprar</button>
+    <button @click="Push">Comprar</button>
   </div>
 </template>
 
@@ -8,8 +8,13 @@
 import { mapActions } from 'vuex'
 export default {
   name: 'EnbItemBtn',
+  props: ['data'],
   methods: {
-    ...mapActions(['ToggleCheckout01'])
+    ...mapActions(['ToggleCheckout01', 'PushCheckout01']),
+    Push () {
+      this.PushCheckout01(this.data)
+      this.ToggleCheckout01(true)
+    }
   }
 }
 </script>

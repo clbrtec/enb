@@ -1,16 +1,16 @@
 <template>
   <div class='EnbItem01'>
     <div class="cont-img">
-      <enb-itemImg01/>
+      <enb-itemImg01 :img="data.img"/>
     </div>
     <div class="cont-desc">
-      Nome do produto aqui, nome do produto - 100ml
+      {{ data.name }} - {{ data.un }}
     </div>
     <div class="cont-valor">
-      R$ 9,99
+      R$ {{ data.preco }}
     </div>
     <div class="cont-btn">
-      <enb-itemBtn01/>
+      <enb-itemBtn01 :data="data"/>
     </div>
   </div>
 </template>

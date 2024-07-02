@@ -6,14 +6,9 @@
 </template>
 
 <script>
-import img from './img'
 export default {
   name: 'EnbItemImg01',
-  data () {
-    return {
-      img: img
-    }
-  },
+  props: ['img'],
   methods: {
     inFile (e) {
       this.getBase64(e.target.files[0])
@@ -36,7 +31,6 @@ export default {
 .EnbItemImg01 {
   width: 150px;
   height: 150px;
-  background-color: green;
 }
 
 img {
