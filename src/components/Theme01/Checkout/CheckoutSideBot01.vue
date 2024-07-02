@@ -2,7 +2,7 @@
   <div class='CheckoutSideBot01'>
     <div class="total">
       <div class="label">Total</div>
-      <div class="value">R$ {{ total }}</div>
+      <div class="value">R$ {{ CheckoutTotal01 }}</div>
     </div>
     <button>Finalizar a Compra</button>
   </div>
@@ -13,10 +13,7 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'CheckoutSideBot01',
   computed: {
-    ...mapGetters(['CheckoutItens01']),
-    total () {
-      return (this.CheckoutItens01.map(i => i.preco * i.qtda).reduce((t, n) => t + n)).toFixed(2).replace('.',',')
-    }
+    ...mapGetters(['CheckoutItens01', 'CheckoutTotal01'])
   }
 }
 </script>

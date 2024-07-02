@@ -5,11 +5,11 @@
     </div>
     <div class="cont">
       <div class="label">Subtotal</div>
-      <div class="value sub-value">R$ 3,99</div>
+      <div class="value sub-value">R$ {{ CheckoutTotal01 }}</div>
     </div>
     <div class="cont total">
       <div class="label">Total</div>
-      <div class="value">R$ 3,99</div>
+      <div class="value">R$ {{ CheckoutTotal01 }}</div>
     </div>
     <div class="cont">
       <button>Continuar</button>
@@ -18,8 +18,12 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-  name: 'EnbCheckoutTotal01'
+  name: 'EnbCheckoutTotal01',
+  computed: {
+    ...mapGetters(['CheckoutTotal01'])
+  }
 }
 </script>
 

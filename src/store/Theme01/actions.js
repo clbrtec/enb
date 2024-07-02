@@ -10,5 +10,8 @@ export default {
   },
   QtdaCheckoutSub01 ({ commit }, payload) {
     commit('QTDA_CHECKOUTSUB01', payload)
+  },
+  DeleteCheckout01 ({ commit }, payload) {
+    commit('DELETE_CHECKOUT01', payload)
   }
 }

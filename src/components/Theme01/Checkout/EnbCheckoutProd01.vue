@@ -1,25 +1,24 @@
 <template>
   <div class='EnbCheckoutProd01'>
-    <div class="x">
+    <div @click="DeleteCheckout01(data)" class="x">
       x
     </div>
     <div class="img">
-      <img :src="img">
+      <img :src="data.img">
     </div>
     <div class="desc">
-      Nome do produto silva
+      {{ data.name }}
     </div>
   </div>
 </template>
 
 <script>
-import img from '../Itens/img'
+import { mapActions } from 'vuex'
 export default {
   name: 'EnbCheckoutProd01',
-  data () {
-    return {
-      img: img
-    }
+  props: ['data'],
+  methods: {
+    ...mapActions(['DeleteCheckout01'])
   }
 }
 </script>
