@@ -15,8 +15,14 @@
           <cart-icon01 @click="ToggleCheckout01(true)"/>
         </div>
         <div class="cont-icons">
-          <user-icon01 @click="SetModal01({ component: 'EnbLogin01', active: true })"/>
-          <div v-if="false" class="painel">painel</div>
+          <user-icon01
+          @mouseover="ShowProfileLink=true"
+          @mouseleave="ShowProfileLink=false"
+          />
+          <enb-profileLink01 v-if="ShowProfileLink"
+          @mouseenter="ShowProfileLink=true"
+          @mouseleave="ShowProfileLink=false"
+          />
         </div>
       </div>
     </div>
@@ -30,9 +36,15 @@ import EnbLink01 from './EnbLink01.vue'
 import CartIcon01 from '../Icons/CartIcon01.vue'
 import UserIcon01 from '../Icons/UserIcon01.vue'
 import SearchIcon01 from '../Icons/SearchIcon01'
+import EnbProfileLink01 from './EnbProfileLink01.vue'
 export default {
   name: 'EnbNave01',
-  components: { EnbLogo01, EnbLink01, CartIcon01, UserIcon01, SearchIcon01 },
+  components: { EnbLogo01, EnbLink01, CartIcon01, UserIcon01, SearchIcon01, EnbProfileLink01 },
+  data () {
+    return {
+      ShowProfileLink: false
+    }
+  },
   computed: {
     ...mapGetters(['LinksTheme01'])
   },
@@ -67,10 +79,4 @@ export default {
   width: 15%;
 }
 
-.painel {
-  background-color: #FFFFFF;
-  position: absolute;
-  padding: 1%;
-  margin-left: -2.22%;
-}
 </style>

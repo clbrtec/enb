@@ -1,5 +1,9 @@
 import produtos from "./produtos"
 export default {
+  Profile01: {
+    logged: false,
+    admin: false
+  },
   Modal01: {
     component: 'EnbLogin01',
     active: false
