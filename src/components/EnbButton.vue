@@ -1,6 +1,6 @@
 <template>
   <div class='EnbButton'>
-    <button>{{ text }}</button>
+    <button :style="options.style">{{ text }}</button>
   </div>
 </template>
 
@@ -14,7 +14,9 @@ export default {
     },
     options: {
       type: Object,
-      default: () => ({})
+      default: () => ({
+        style: {}
+      })
     }
   }
 }
@@ -33,5 +35,6 @@ button {
   background-color: #648EEA;
   color: #FFFFFF;
   font-size: 16px;
+  cursor: pointer;
 }
 </style>

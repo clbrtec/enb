@@ -56,20 +56,6 @@ export default [
       un: '500gr',
       preco: 12.99,
       img: img
-    },
-    {
-      id: '9',
-      name: 'Nome do produto',
-      un: '500gr',
-      preco: 12.99,
-      img: img
-    },
-    {
-      id: '10',
-      name: 'Nome do produto',
-      un: '500gr',
-      preco: 12.99,
-      img: img
     }
   ],
   [
@@ -124,20 +110,6 @@ export default [
     },
     {
       id: '18',
-      name: 'Nome do produto',
-      un: '500gr',
-      preco: 12.99,
-      img: img
-    },
-    {
-      id: '19',
-      name: 'Nome do produto',
-      un: '500gr',
-      preco: 12.99,
-      img: img
-    },
-    {
-      id: '20',
       name: 'Nome do produto',
       un: '500gr',
       preco: 12.99,

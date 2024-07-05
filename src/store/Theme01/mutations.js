@@ -6,6 +6,9 @@ export default {
     if(state.CheckoutItens01.filter(i => i.id === payload.id).length) {
       state.CheckoutItens01.map(i => {
         if(i.id === payload.id) {
+          if(payload.qtda > 1) {
+            i.qtda = payload.qtda
+          }
           i.qtda++
         }
       })
@@ -36,5 +39,8 @@ export default {
   },
   'ITEM_SELECTED01' (state, payload) {
     state.ItemSelected01 = payload
+  },
+  'SET_MODAL01' (state, payload) {
+    state.Modal01 = payload
   }
 }

@@ -18,7 +18,7 @@
           <enb-setQtda01 v-model:qtda="qtda"/> 
         </div>
         <div class="btn">
-          <button>Comprar</button>
+          <button @click="push">Comprar</button>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import { VueImageZoomer } from 'vue-image-zoomer'
 import 'vue-image-zoomer/dist/style.css'
 import EnbSetQtda01 from './EnbSetQtda01.vue'
@@ -39,6 +39,15 @@ export default {
   data () {
     return {
       qtda: 1
+    }
+  },
+  methods: {
+    ...mapActions(['PushCheckout01', 'ToggleCheckout01']),
+    push () {
+      let item = this.ItemSelected01
+      item.qtda = this.qtda
+      this.PushCheckout01(item)
+      this.ToggleCheckout01(true)
     }
   }
 }

@@ -16,5 +16,8 @@ export default {
   },
   SetItem01 ({ commit }, payload) {
     commit('ITEM_SELECTED01', payload)
+  },
+  SetModal01 ({ commit }, payload) {
+    commit('SET_MODAL01', payload)
   }
 }

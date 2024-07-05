@@ -23,5 +23,6 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 80%;
 }
 </style>

@@ -1,5 +1,9 @@
 import produtos from "./produtos"
 export default {
+  Modal01: {
+    component: 'EnbLogin01',
+    active: false
+  },
   ItemSelected01: {},
   CheckoutItens01: [],
   ShowCheckout: false,

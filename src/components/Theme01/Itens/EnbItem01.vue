@@ -37,7 +37,7 @@ export default {
   /* border: thin solid #CCCCCC; */
   border-radius: 5px;
   box-shadow: 0px 0px 5px 0.5px #CCCCCC;
-  margin: 1%;
+  margin: 2%;
 }
 
 .cont-img {
