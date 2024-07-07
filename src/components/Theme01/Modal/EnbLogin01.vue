@@ -4,17 +4,25 @@
     <enb-label text="Informe suas credenciais abaixo" config="font-size: 12px"/>
     <enb-input :options="{ label: 'Email', styleLabel: { fontSize: '12px' } }"/>
     <enb-input :options="{ label: 'Senha', styleLabel: { fontSize: '12px' } }"/>
-    <enb-button text="Entrar" :options="{ style: { fontSize: '12px' } }"/>
+    <enb-button @click="login" text="Entrar" :options="{ style: { fontSize: '12px' } }"/>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import EnbLabel from '@/components/EnbLabel.vue'
 import EnbInput from '@/components/EnbInput.vue'
 import EnbButton from '@/components/EnbButton.vue'
 export default {
   name: 'EnbLogin01',
-  components: { EnbLabel, EnbInput, EnbButton }
+  components: { EnbLabel, EnbInput, EnbButton },
+  methods: {
+    ...mapActions(['GetLogin01', 'SetModal01']),
+    login () {
+      this.GetLogin01()
+      this.SetModal01({ active: false })
+    }
+  }
 }
 </script>
 

@@ -4,7 +4,8 @@ export default {
       text: 'Conta'
     },
     {
-      text: 'Produtos'
+      text: 'Produtos',
+      path: '/painel/produtos'
     },
     {
       text: 'Pedidos'

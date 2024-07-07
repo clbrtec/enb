@@ -1,23 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import LoginPainel from '../views/LoginPainel.vue'
+// import LoginPainel from '../views/LoginPainel.vue'
 import EnbPainel from '../views/EnbPainel.vue'
 import MyStore from '../views/MyStore.vue'
 import Theme01 from './Theme01'
+import Produtos from '@/components/EnbPainel/Produtos/Produtos.vue'
 
 const routes = [
-  {
-    path: '/',
-    name: 'LoginPainel',
-    component: LoginPainel
-  },
   {  
     path: '/painel',
     name: 'Painel',
     component: EnbPainel,
-    children: []
+    children: [
+      {
+        path: '/painel/produtos',
+        name: 'Produtos',
+        component: Produtos
+      }
+    ]
   },
   {
-    path: '/mystore',
+    path: '/',
     name: 'Minha Loja',
     component: MyStore,
     children: Theme01

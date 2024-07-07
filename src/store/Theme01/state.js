@@ -11,6 +11,7 @@ export default {
   ItemSelected01: {},
   CheckoutItens01: [],
   ShowCheckout: false,
+  ShowSearch01: false,
   LinksTheme01: [
     {
       text: 'Produtos',
@@ -29,5 +30,6 @@ export default {
       path: ''
     }
   ],
-  Produtos01: produtos
+  Produtos01: produtos,
+  ResultSearch01: []
 }

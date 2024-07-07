@@ -9,7 +9,7 @@
       />
       <div class="icons">
         <div class="cont-icons">
-          <search-icon01/>
+          <search-icon01 @click="ToggleSearch01(true)"/>
         </div>
         <div class="cont-icons">
           <cart-icon01 @click="ToggleCheckout01(true)"/>
@@ -49,7 +49,7 @@ export default {
     ...mapGetters(['LinksTheme01'])
   },
   methods: {
-    ...mapActions(['ToggleCheckout01', 'SetModal01'])
+    ...mapActions(['ToggleCheckout01', 'ToggleSearch01', 'SetModal01'])
   }
 }
 </script>

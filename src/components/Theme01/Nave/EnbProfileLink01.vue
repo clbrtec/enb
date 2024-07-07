@@ -1,8 +1,8 @@
 <template>
   <div class='EnbProfileLink01'>
     <profile-link01 text="Login" v-if="!Profile01.logged" @click="SetModal01({ component: 'EnbLogin01', active: true })"/>
-    <profile-link01 text="Painel" v-if="Profile01.logged && Profile01.admin"/>
-    <profile-link01 text="Sair" v-if="Profile01.logged"/>
+    <profile-link01 @click="$router.push('/painel')" text="Painel" v-if="Profile01.logged && Profile01.admin"/>
+    <profile-link01 @click="GetLogout01" text="Sair" v-if="Profile01.logged"/>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
     ...mapGetters(['Profile01'])
   },
   methods: {
-    ...mapActions(['SetModal01'])
+    ...mapActions(['SetModal01', 'GetLogout01'])
   }
 }
 </script>

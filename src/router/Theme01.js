@@ -3,8 +3,8 @@ import EnbItemView01 from '@/components/Theme01/Itens/EnbItemView01'
 import EnbCheckoutView01 from '@/components/Theme01/Checkout/EnbCheckoutView01'
 export default [
   {
-    path: '/mystore',
-    name: 'Produtos',
+    path: '/',
+    name: 'Produtos01',
     component: EnbItens01
   },
   {

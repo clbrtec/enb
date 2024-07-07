@@ -2,6 +2,9 @@ export default {
   'TOGGLE_CHEKCOUT01' (state, payload) {
     state.ShowCheckout = payload
   },
+  'TOGGLE_SEARCH01' (state, payload) {
+    state.ShowSearch01 = payload
+  },
   'PUSH_CHECKOUT01' (state, payload) {
     if(state.CheckoutItens01.filter(i => i.id === payload.id).length) {
       state.CheckoutItens01.map(i => {
@@ -42,5 +45,19 @@ export default {
   },
   'SET_MODAL01' (state, payload) {
     state.Modal01 = payload
+  },
+  'GET_LOGIN01' (state) {
+    state.Profile01 = { logged: true, admin: true }
+  },
+  'GET_LOGOUT01' (state) {
+    state.Profile01 = { logged: false, admin: false }
+  },
+  'SEARCH_PROD01' (state, payload) {
+    if (payload === '') {
+      state.ResultSearch01 = []
+      return
+    }
+    let res = state.Produtos01[0].filter(p => p.name.toUpperCase().indexOf(payload.toUpperCase()) >= 0)
+    state.ResultSearch01 = res
   }
 }

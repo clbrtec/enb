@@ -14,5 +14,6 @@ export default {
 
 <style scoped>
 .SearchIcon01 {
+  cursor: pointer;
 }
 </style>

@@ -7,7 +7,7 @@
       <div class="cont">SubTotal</div>
     </div>
     
-    <slot/>
+    <slot></slot>
   </div>
 </template>
 

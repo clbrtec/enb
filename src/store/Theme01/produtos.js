@@ -24,7 +24,7 @@ export default [
     },
     {
       id: '4',
-      name: 'Nome do produto',
+      name: 'Lasanha',
       un: '500gr',
       preco: 12.99,
       img: img
