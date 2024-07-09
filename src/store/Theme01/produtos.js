@@ -45,7 +45,7 @@ export default [
     },
     {
       id: '7',
-      name: 'Nome do produto',
+      name: 'Laranja',
       un: '500gr',
       preco: 12.99,
       img: img
@@ -75,7 +75,7 @@ export default [
     },
     {
       id: '13',
-      name: 'Nome do produto',
+      name: 'Laranja',
       un: '500gr',
       preco: 12.99,
       img: img

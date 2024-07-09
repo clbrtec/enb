@@ -12,7 +12,7 @@ export default {
     },
     {
       text: 'Loja',
-      path: '/mystore'
+      path: '/'
     }
     // {
     //   text: 'Componentes',

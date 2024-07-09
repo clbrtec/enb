@@ -7,7 +7,7 @@
       {{ data.name }} - {{ data.un }}
     </div>
     <div class="cont-valor">
-      R$ {{ data.preco }}
+      R$ {{ data.preco.toFixed(2).replace('.', ',') }}
     </div>
     <div class="cont-btn">
       <enb-itemBtn01 :data="data"/>

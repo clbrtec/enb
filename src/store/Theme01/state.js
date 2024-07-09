@@ -15,7 +15,7 @@ export default {
   LinksTheme01: [
     {
       text: 'Produtos',
-      path: '/mystore'
+      path: '/'
     },
     {
       text: 'Carrinho',
