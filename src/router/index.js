@@ -19,7 +19,7 @@ const routes = [
       },
       {
         path: '/painel/produtos/register',
-        name: 'Cadastro de Produtos',
+        name: 'Adicionar produto',
         component: RegisterProd
       }
     ]
