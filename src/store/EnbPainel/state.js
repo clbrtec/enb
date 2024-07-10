@@ -9,10 +9,6 @@ export default {
     },
     {
       text: 'Pedidos'
-    },
-    {
-      text: 'Loja',
-      path: '/'
     }
     // {
     //   text: 'Componentes',

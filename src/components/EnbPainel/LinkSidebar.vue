@@ -1,6 +1,6 @@
 <template>
   <div class='LinkSidebar'>
-    <div class="cont-link" @click="run">
+    <div :class="{ contActive: $route.path.indexOf(data.path) >= 0 }" class="cont-link" @click="run">
       &nbsp;&nbsp;
       {{ data.text }}
     </div>
@@ -57,6 +57,11 @@ export default {
 }
 
 .cont-link:hover {
+  background-color: #EEEEEE;
+  border-left: 7px solid #648EEA;
+}
+
+.contActive {
   background-color: #EEEEEE;
   border-left: 7px solid #648EEA;
 }

@@ -6,114 +6,27 @@ export default [
       name: 'Nome do produto',
       un: '500gr',
       preco: 12.99,
-      img: img
+      img: img,
+      status: true,
+      qtda: 'Em estoque',
+      categoria: 'Massas',
+      tipo: 'Simples',
+      visualizacao: 22,
+      data: '10/07/2024'
     },
     {
-      id: '2',
+      id: '1',
       name: 'Nome do produto',
       un: '500gr',
       preco: 12.99,
-      img: img
-    },
-    {
-      id: '3',
-      name: 'Nome do produto',
-      un: '500gr',
-      preco: 12.99,
-      img: img
-    },
-    {
-      id: '4',
-      name: 'Lasanha',
-      un: '500gr',
-      preco: 12.99,
-      img: img
-    },
-    {
-      id: '5',
-      name: 'Nome do produto',
-      un: '500gr',
-      preco: 12.99,
-      img: img
-    },
-    {
-      id: '6',
-      name: 'Nome do produto',
-      un: '500gr',
-      preco: 12.99,
-      img: img
-    },
-    {
-      id: '7',
-      name: 'Laranja',
-      un: '500gr',
-      preco: 12.99,
-      img: img
-    },
-    {
-      id: '8',
-      name: 'Nome do produto',
-      un: '500gr',
-      preco: 12.99,
-      img: img
+      img: img,
+      status: true,
+      qtda: 'Em estoque',
+      categoria: 'Massas',
+      tipo: 'Simples',
+      visualizacao: 22,
+      data: '10/07/2024'
     }
   ],
-  [
-    {
-      id: '11',
-      name: 'Nome do produto',
-      un: '500gr',
-      preco: 12.99,
-      img: img
-    },
-    {
-      id: '12',
-      name: 'Nome do produto',
-      un: '500gr',
-      preco: 12.99,
-      img: img
-    },
-    {
-      id: '13',
-      name: 'Laranja',
-      un: '500gr',
-      preco: 12.99,
-      img: img
-    },
-    {
-      id: '14',
-      name: 'Nome do produto',
-      un: '500gr',
-      preco: 12.99,
-      img: img
-    },
-    {
-      id: '15',
-      name: 'Nome do produto',
-      un: '500gr',
-      preco: 12.99,
-      img: img
-    },
-    {
-      id: '16',
-      name: 'Nome do produto',
-      un: '500gr',
-      preco: 12.99,
-      img: img
-    },
-    {
-      id: '17',
-      name: 'Nome do produto',
-      un: '500gr',
-      preco: 12.99,
-      img: img
-    },
-    {
-      id: '18',
-      name: 'Nome do produto',
-      un: '500gr',
-      preco: 12.99,
-      img: img
-    }
-  ]
+  []
 ]

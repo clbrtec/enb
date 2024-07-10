@@ -4,31 +4,39 @@
       <input type="checkbox" name="" id="">
     </div>
     <div style="width: 8%">
+      <img :src="data.img">
     </div>
-    <div style="width: 35%; text-align: left">Nome</div>
-    <div style="width: 8%">Status</div>
-    <div style="width: 10%">Qtda</div>
-    <div style="width: 8%">Preço</div>
-    <div style="width: 10%">Categoria</div>
+    <div style="width: 35%; text-align: left">{{ data.name }}</div>
+    <div style="width: 8%">{{ data.status }}</div>
+    <div style="width: 10%">{{ data.qtda }}</div>
+    <div style="width: 8%">{{ data.preco }}</div>
+    <div style="width: 10%">{{ data.categoria }}</div>
     <div style="width: 4%">
+      {{ data.tipo }}
     </div>
     <div style="width: 4%">
+      {{ data.visualizacao }}
     </div>
-    <div style="width: 10%">Data</div>
+    <div style="width: 10%">{{ data.data }}</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ListItem'
+  name: 'ListItem',
+  props: ['data']
 }
 </script>
 
 <style scoped>
 .ListItem {
-  height: 15%;
+  height: 10%;
   display: flex;
   align-items: center;
-  background-color: red;
+}
+
+img {
+  width: 30px;
+  height: 30px;
 }
 </style>

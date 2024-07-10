@@ -1,6 +1,6 @@
 <template>
-  <div class='EyesIcon'>
-    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <div :class="{ action: options.action }" class='EyesIcon'>
+    <svg :width="options.width" :height="options.height" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="style=stroke">
         <g id="eye-open">
           <path id="vector (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M12 9.75C10.755 9.75 9.75 10.755 9.75 12C9.75 13.245 10.755 14.25 12 14.25C13.245 14.25 14.25 13.245 14.25 12C14.25 10.755 13.245 9.75 12 9.75ZM8.25 12C8.25 9.92657 9.92657 8.25 12 8.25C14.0734 8.25 15.75 9.92657 15.75 12C15.75 14.0734 14.0734 15.75 12 15.75C9.92657 15.75 8.25 14.0734 8.25 12Z" fill="#000000"/>
@@ -13,11 +13,21 @@
 
 <script>
 export default {
-  name: 'EyesIcon'
+  name: 'EyesIcon',
+  props: {
+    options: {
+      type: Object,
+      default: () => ({ width: '20px', height: '20px', action: false })
+    }
+  }
 }
 </script>
 
 <style scoped>
 .EyesIcon {
+}
+
+.action {
+  cursor: pointer;
 }
 </style>

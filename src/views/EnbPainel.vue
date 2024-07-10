@@ -5,7 +5,7 @@
       <div class="label" >
         <enb-label
         :text="$route.name"
-        config="font-weight:bold;font-size:18px;color:#648EEA;text-align:left;padding:2%"
+        config="font-weight:bold;font-size:18px;color:#648EEA;text-align:left;padding:1.5%"
         />
       </div>
       <div class="cont" >

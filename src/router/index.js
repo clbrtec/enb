@@ -4,6 +4,7 @@ import EnbPainel from '../views/EnbPainel.vue'
 import MyStore from '../views/MyStore.vue'
 import Theme01 from './Theme01'
 import Produtos from '@/components/EnbPainel/Produtos/Produtos.vue'
+import RegisterProd from '@/components/EnbPainel/Produtos/Register/RegisterProd'
 
 const routes = [
   {  
@@ -15,6 +16,11 @@ const routes = [
         path: '/painel/produtos',
         name: 'Produtos',
         component: Produtos
+      },
+      {
+        path: '/painel/produtos/register',
+        name: 'Cadastro de Produtos',
+        component: RegisterProd
       }
     ]
   },
