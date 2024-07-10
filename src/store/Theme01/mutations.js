@@ -57,7 +57,7 @@ export default {
       state.ResultSearch01 = []
       return
     }
-    let res = state.Produtos01[0].filter(p => p.name.toUpperCase().indexOf(payload.toUpperCase()) >= 0)
+    let res = state.Produtos01[0].concat(state.Produtos01[1]).filter(p => p.name.toUpperCase().indexOf(payload.toUpperCase()) >= 0)
     state.ResultSearch01 = res
   }
 }

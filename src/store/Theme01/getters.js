@@ -1,6 +1,7 @@
 export default {
   LinksTheme01: state => state.LinksTheme01,
   Produtos01: state => state.Produtos01,
+  ProdutosTotal01: state => state.Produtos01[0].concat(state.Produtos01[1]),
   ShowCheckout: state => state.ShowCheckout,
   ShowSearch01: state => state.ShowSearch01,
   CheckoutItens01: state => state.CheckoutItens01,
