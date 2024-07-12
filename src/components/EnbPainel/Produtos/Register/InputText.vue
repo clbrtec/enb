@@ -35,7 +35,7 @@ export default {
   margin-bottom: 5px;
 }
 
-input:focus {
+textarea:focus {
   outline: none;
 }
 </style>

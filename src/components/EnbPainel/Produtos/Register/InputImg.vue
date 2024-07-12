@@ -1,12 +1,18 @@
 <template>
   <div class='InputImg'>
-    img
+    <div style="display: flex">
+      <input-img-prod/>
+      <select-categ/>
+    </div>
   </div>
 </template>
 
 <script>
+import InputImgProd from './InputImgProd'
+import SelectCateg from './SelectCateg'
 export default {
-  name: 'InputImg'
+  name: 'InputImg',
+  components: { InputImgProd, SelectCateg }
 }
 </script>
 
