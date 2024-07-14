@@ -1,4 +1,20 @@
 export default {
+  EnbModal: { component: '', active: false },
+  UploadImg: [],
+  SelectedProdEdit: {
+    img: ''
+  },
+  Categorias: [
+    '',
+    'Massas',
+    'Massas',
+    'Massas',
+    'Massas',
+    'Massas',
+    'Massas',
+    'Massas',
+    'Massas'
+  ],
   LinkSidebar: [
     {
       text: 'Conta'
