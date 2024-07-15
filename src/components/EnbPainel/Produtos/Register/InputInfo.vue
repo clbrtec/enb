@@ -26,7 +26,7 @@
     <input-crono v-if="showCrono"/>
     <input-text
     text="Descrição do produto"
-    :label="{ textAlign: 'left', marginLeft: '3px' }"
+    :label="{ textAlign: 'left', marginLeft: '3px', marginTop: '5px' }"
     :input="{ padding: '2%', fontSize: '18px', width: '95%', border: 'thin solid #CCC', borderRadius: '5px' }"
     />
   </div>

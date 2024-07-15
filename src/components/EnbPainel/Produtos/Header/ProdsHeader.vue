@@ -8,7 +8,7 @@
     </div>
     <div style="width: 35%; text-align: left">Nome</div>
     <div style="width: 8%">Status</div>
-    <div style="width: 10%">Qtda</div>
+    <div style="width: 10%">Qtde</div>
     <div style="width: 8%">Preço</div>
     <div style="width: 10%">Categoria</div>
     <div style="width: 4%">

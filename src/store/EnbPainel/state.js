@@ -17,7 +17,7 @@ export default {
       path: '/painel/produtos'
     },
     {
-      text: 'Pedidos'
+      text: 'Clientes'
     }
     // {
     //   text: 'Componentes',

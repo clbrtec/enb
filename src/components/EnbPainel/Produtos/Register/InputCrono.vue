@@ -1,6 +1,8 @@
 <template>
   <div class='InputCrono'>
-    <VueDatePicker v-model="date1"></VueDatePicker>
+    <label>De</label>
+    <VueDatePicker :model-value="date1" @update:internal-model-value="handleDate"></VueDatePicker>
+    <label>Até</label>
     <VueDatePicker v-model="date2"></VueDatePicker>
   </div>
 </template>
@@ -16,6 +18,11 @@ export default {
       date1: null,
       date2: null
     }
+  },
+  methods: {
+    handleDate (modelValue) {
+      alert(modelValue)
+    }
   }
 }
 </script>
@@ -23,5 +30,11 @@ export default {
 <style scoped>
 .InputCrono {
   display: flex;
+  align-items: center;
+}
+
+label {
+  font-size: 12px;
+  padding: 2%;
 }
 </style>
