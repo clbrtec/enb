@@ -4,7 +4,7 @@
       <div class="header">Categorias</div>
       <div class="cont">
         <input-categ
-        v-for="(categ, key) in Categorias"
+        v-for="(categ, key) in Categorias.filter(c  => c !== '')"
         :key="key"
         :data="categ"
         />

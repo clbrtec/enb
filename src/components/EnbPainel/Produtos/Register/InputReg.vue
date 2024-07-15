@@ -3,7 +3,7 @@
     <div class="label" :style="label">
       {{ text }}
     </div>
-    <input type="text" :style="input">
+    <input :type="type" :style="input">
   </div>
 </template>
 
@@ -26,6 +26,10 @@ export default {
     text: {
       type: String,
       default: 'Label'
+    },
+    type: {
+      type: String,
+      default: 'text'
     }
   }
 }

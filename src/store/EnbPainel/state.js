@@ -6,13 +6,6 @@ export default {
   },
   Categorias: [
     '',
-    'Massas',
-    'Massas',
-    'Massas',
-    'Massas',
-    'Massas',
-    'Massas',
-    'Massas',
     'Massas'
   ],
   LinkSidebar: [

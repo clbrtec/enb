@@ -3,7 +3,7 @@
     <img-icon
     v-if="SelectedProdEdit.img === ''"
     @click="SetModal({ component: 'SelectImg', active: true })" 
-    :options="{ width: '100px', height: '150px', color: '#CCCCCC', action: true }"
+    :options="{ width: '180px', height: '160px', color: '#CCCCCC', action: true }"
     />
     <img :src="SelectedProdEdit.img"
     v-if="SelectedProdEdit.img !== ''"

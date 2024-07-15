@@ -1,25 +1,22 @@
 <template>
   <div class='InputCrono'>
-    <input-reg
-    text="Apartir de"
-    :cont="{ textAlign: 'left' }"
-    :label="{ marginLeft: '3px', marginTop: '2px' }"
-    :input="{ fontSize: '26px', padding: '1.5%', width: '90%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
-    />
-    <input-reg
-    text="Até"
-    :cont="{ textAlign: 'left' }"
-    :label="{ marginLeft: '3px', marginTop: '2px' }"
-    :input="{ fontSize: '26px', padding: '1.5%', width: '95%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
-    />
+    <VueDatePicker v-model="date1"></VueDatePicker>
+    <VueDatePicker v-model="date2"></VueDatePicker>
   </div>
 </template>
 
 <script>
-import InputReg from './InputReg'
+import VueDatePicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css'
 export default {
   name: 'InputCrono',
-  components: { InputReg }
+  components: { VueDatePicker },
+  data () {
+    return {
+      date1: null,
+      date2: null
+    }
+  }
 }
 </script>
 

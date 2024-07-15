@@ -5,8 +5,8 @@
       <select-categ/>
     </div>
     <div style="display: flex">
-      <visib-prod/>
       <estoque-prod/>
+      <visib-prod/>
     </div>
   </div>
 </template>
