@@ -2,11 +2,35 @@ export default {
   EnbModal: { component: '', active: false },
   UploadImg: [],
   SelectedProdEdit: {
-    img: ''
+    id: '',
+    code: '',
+    tipo: '',
+    name: '',
+    preco: '',
+    oferta: '',
+    img: [],
+    descricao: '',
+    dateOfertaStart: '',
+    dateOfertaEnd: '',
+    categoria: '',
+    gerEstoque: false,
+    statusEstoque: '',
+    estoque: 0,
+    pendencia: '',
+    visibilidade: '',
+    individual: false
   },
   Categorias: [
-    '',
-    'Massas'
+    {
+      active: false,
+      childrens: [],
+      name: ''
+    },
+    {
+      active: false,
+      childrens: [],
+      name: 'Massas'
+    }
   ],
   LinkSidebar: [
     {

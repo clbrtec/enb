@@ -1,11 +1,17 @@
 <template>
   <div class='RegisterProd'>
     <div class="block">
-      <div class="cont-block left">
-        <div><input type="checkbox">Digital</div>
-        <div style="margin-left: 2%;"><input type="checkbox">Transferível</div>
+      <div class="left">
+        <input-select
+        :value="SelectedProdEdit.tipo"
+        @update:model-value="newValue => ChangeProdEdit({ tipo: newValue })"
+        :data="types"
+        text="Tipo"
+        :label="{ textAlign: 'left', marginTop: '5px', marginLeft: '3px' }"
+        :input="{ width: '100%', padding: '3%', fontSize: '16px', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
+        />
       </div>
-      <div class="cont-block rigth">
+      <div class="rigth">
         <button>Adicionar novo</button>
       </div>
     </div>
@@ -17,34 +23,55 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 import InputInfo from './InputInfo.vue'
 import InputImg from './InputImg.vue'
+import InputSelect from './InputSelect'
 export default {
   name: 'RegisterProd',
-  components: { InputInfo, InputImg }
+  components: { InputInfo, InputImg, InputSelect },
+  data () {
+    return {
+      types: [
+        { name: 'Simples' },
+        { name: 'Variável' }
+      ]
+    }
+  },
+  computed: {
+    ...mapGetters(['SelectedProdEdit'])
+  },
+  methods: {
+    ...mapActions(['ChangeProdEdit'])
+  }
 }
 </script>
 
 <style scoped>
-.RegisterProd {
-}
-
 .block {
   display: flex;
   padding: 2%;
 }
 
-.cont-block {
-  width: 50%;
-}
-
 .rigth {
+  width: 70%;
   display: flex;
   justify-content: end;
+  align-items: center;
 }
 
 .left {
-  display: flex;
-  justify-content: left;
+  width: 30%;
+}
+
+button {
+  border: 0;
+  font-size: 16px;
+  padding: 2%;
+  margin: 1%;
+  border-radius: 5px;
+  background-color: #333333;
+  color: #FFFFFF;
+  cursor: pointer;
 }
 </style>

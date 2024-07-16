@@ -8,8 +8,24 @@ export default {
     }
   },
   'CHANGE_PRODEDIT' (state, payload) {
-    for(let key in state.SelectedProdEdit) {
+    for(let key in payload) {
       state.SelectedProdEdit[key] = payload[key]
     }
+  },
+  'UPDATE_PRODCATEG' (state, payload) {
+    state.Categorias.map(c => c.active = false)
+    state.Categorias.map(c => {
+      if (c.name === payload.name) {
+        c.active = payload.active
+      }
+    })
+  },
+  'PUSH_CATEG' (state, payload) {
+    state.Categorias.push(payload.children)
+    state.Categorias.map(c => {
+      if (c.name === payload.parent) {
+        c.childrens.push(payload.children.name)
+      }
+    })
   }
 }

@@ -7,5 +7,11 @@ export default {
   },
   ChangeProdEdit ({ commit }, payload) {
     commit('CHANGE_PRODEDIT', payload)
+  },
+  UpdateProdCateg ({ commit }, payload) {
+    commit('UPDATE_PRODCATEG', payload)
+  },
+  PushCateg ({ commit }, payload) {
+    commit('PUSH_CATEG', payload)
   }
 }

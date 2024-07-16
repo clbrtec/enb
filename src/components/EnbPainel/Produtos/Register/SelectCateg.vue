@@ -4,7 +4,7 @@
       <div class="header">Categorias</div>
       <div class="cont">
         <input-categ
-        v-for="(categ, key) in Categorias.filter(c  => c !== '')"
+        v-for="(categ, key) in Categorias.filter(c  => c.name !== '')"
         :key="key"
         :data="categ"
         />
@@ -16,18 +16,25 @@
       </div>
       <div v-if="ShowAddCateg">
         <input-reg
+        :value="name"
+        @update:model-value="newValue => name = newValue"
         text="Nome da Categoria"
         :label="{ marginLeft: '5px', textAlign: 'left', marginTop: '5px' }"
         :input="{ width: '95%', border: 'thin solid #CCCCCC', borderRadius: '5px', padding: '2%', fontSize: '16px' }"
         />
         <input-select
+        @update:model-value="newValue => parent = newValue"
         :data="Categorias"
         text="Filha de"
         :label="{ textAlign: 'left', marginTop: '5px', marginLeft: '5px' }"
         :input="{ width: '100%', padding: '2%', fontSize: '16px', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
         />
         <div>
-          <button>Adicionar</button>
+          <button
+          @click="PushCateg({ children: { active: false, childrens: [], name: name }, parent: parent })"
+          >
+            Adicionar
+          </button>
         </div>
       </div>
     </div>
@@ -35,7 +42,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import InputCateg from './InputCateg'
 import InputReg from './InputReg'
 import InputSelect from './InputSelect'
@@ -44,11 +51,16 @@ export default {
   components: { InputCateg, InputReg, InputSelect },
   data () {
     return {
-      ShowAddCateg: false
+      ShowAddCateg: false,
+      parent: '',
+      name: ''
     }
   },
   computed: {
     ...mapGetters(['Categorias'])
+  },
+  methods: {
+    ...mapActions(['PushCateg'])
   }
 }
 </script>

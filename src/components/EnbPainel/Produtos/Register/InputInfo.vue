@@ -1,6 +1,8 @@
 <template>
   <div class='InputInfo'>
     <input-reg
+    :value="SelectedProdEdit.name"
+    @update:model-value="newValue => ChangeProdEdit({ name: newValue })"
     text="Nome do produto"
     :cont="{ textAlign: 'left' }"
     :label="{ marginLeft: '3px' }"
@@ -8,12 +10,16 @@
     />
     <div style="display: flex">
       <input-reg
+      :value="SelectedProdEdit.preco"
+      @update:model-value="newValue => ChangeProdEdit({ preco: newValue })"
       text="Preço (R$)"
       :cont="{ textAlign: 'left' }"
       :label="{ marginLeft: '3px', marginTop: '8px' }"
       :input="{ fontSize: '26px', padding: '1.5%', width: '90%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
       <input-reg
+      :value="SelectedProdEdit.oferta"
+      @update:model-value="newValue => ChangeProdEdit({ oferta: newValue })"
       text="Preço de oferta (R$)"
       :cont="{ textAlign: 'left' }"
       :label="{ marginLeft: '3px', marginTop: '8px' }"
@@ -25,6 +31,8 @@
     </div>
     <input-crono v-if="showCrono"/>
     <input-text
+    :value="SelectedProdEdit.descricao"
+    @update:model-value="newValue => ChangeProdEdit({ descricao: newValue })"
     text="Descrição do produto"
     :label="{ textAlign: 'left', marginLeft: '3px', marginTop: '5px' }"
     :input="{ padding: '2%', fontSize: '18px', width: '95%', border: 'thin solid #CCC', borderRadius: '5px' }"
@@ -33,6 +41,7 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 import InputReg from './InputReg'
 import CronoIcon from '../../Icons/CronoIcon'
 import InputCrono from './InputCrono'
@@ -40,10 +49,19 @@ import InputText from './InputText'
 export default {
   name: 'InputInfo',
   components: { InputReg, CronoIcon, InputCrono, InputText },
+  methods: {
+    ...mapActions(['ChangeProdEdit'])
+  },
   data () {
     return {
-      showCrono: false
+      showCrono: false,
+      form: {
+        name: ''
+      }
     }
+  },
+  computed: {
+    ...mapGetters(['SelectedProdEdit'])
   }
 }
 </script>

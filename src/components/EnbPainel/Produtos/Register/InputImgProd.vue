@@ -1,12 +1,12 @@
 <template>
   <div class='InputImgProd'>
     <img-icon
-    v-if="SelectedProdEdit.img === ''"
+    v-if="!SelectedProdEdit.img.length"
     @click="SetModal({ component: 'SelectImg', active: true })" 
     :options="{ width: '180px', height: '160px', color: '#CCCCCC', action: true }"
     />
-    <img :src="SelectedProdEdit.img"
-    v-if="SelectedProdEdit.img !== ''"
+    <img :src="SelectedProdEdit.img[0]"
+    v-if="SelectedProdEdit.img.length"
     @click="SetModal({ component: 'SelectImg', active: true })" 
     >
   </div>

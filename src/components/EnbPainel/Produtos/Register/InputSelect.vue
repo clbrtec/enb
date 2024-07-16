@@ -1,15 +1,16 @@
 <template>
   <div class='InputSelect' :style="cont">
     <div class="label" :style="label">
-      {{ text }}
+      {{ text }}:
     </div>
-    <select :style="input">
+    <select @change="e => $emit('update:modelValue', e.target.value)" :style="input">
       <option
       v-for="(d, key) in data"
       :key="key"
-      value=""
+      :value="d.name"
+      :selected="value === d.name"
       >
-        {{ d }}
+        {{ d.name }}
       </option>
     </select>
   </div>
@@ -18,6 +19,7 @@
 <script>
 export default {
   name: 'InputSelect',
+  emits: ['update:modelValue'],
   props: {
     data: {
       type: Array,
@@ -38,6 +40,10 @@ export default {
     text: {
       type: String,
       default: 'Label'
+    },
+    value: {
+      type: String,
+      default: ''
     }
   }
 }

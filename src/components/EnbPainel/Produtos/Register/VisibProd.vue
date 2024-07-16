@@ -1,6 +1,8 @@
 <template>
   <div class='VisibProd'>
     <input-select
+    :value="SelectedProdEdit.visibilidade"
+    @update:model-value="newValue => ChangeProdEdit({ visibilidade: newValue })"
     :data="visibilidade"
     text="Visibilidade no Catálogo"
     :label="{ textAlign: 'left', marginTop: '9%', marginLeft: '2%' }"
@@ -10,6 +12,7 @@
 </template>
 
 <script>
+import { mapActions,mapGetters } from 'vuex'
 import InputSelect from './InputSelect'
 export default {
   name: 'VisibProd',
@@ -17,12 +20,18 @@ export default {
   data () {
     return {
       visibilidade: [
-        'Loja e resultado de pesquisa',
-        'Apenas na loja',
-        'Apenas nos resultados de pesquisa',
-        'Oculto'
+        { name: 'Loja e resultado de pesquisa' },
+        { name: 'Apenas na loja' },
+        { name: 'Apenas nos resultados de pesquisa' },
+        { name: 'Oculto' }
       ]
     }
+  },
+  computed: {
+    ...mapGetters(['SelectedProdEdit'])
+  },
+  methods: {
+    ...mapActions(['ChangeProdEdit'])
   }
 }
 </script>

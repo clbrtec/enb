@@ -1,14 +1,26 @@
 <template>
   <div class='InputCateg'>
-    <input type="checkbox">
-    <label>{{ data }}</label>
+    <input @change="Update" :checked="data.active" type="checkbox">
+    <label>{{ data.name }}</label>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'InputCateg',
-  props: ['data']
+  props: ['data'],
+  methods: {
+    ...mapActions(['UpdateProdCateg', 'ChangeProdEdit']),
+    Update () {
+      let checked = !this.data.active
+      this.UpdateProdCateg({ name: this.data.name, active: checked })
+      this.ChangeProdEdit({ categoria: '' })
+      if (checked) {
+        this.ChangeProdEdit({ categoria: this.data.name })
+      }
+    }
+  }
 }
 </script>
 

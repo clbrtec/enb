@@ -8,7 +8,8 @@
       />
     </div>
     <div class="cont-btn">
-      <button @click="$refs.in.click()">Selecionar arquivos</button>
+      <button @click="$refs.in.click()">Adicionar arquivos</button>
+      <button @click="SetModal({ component: '', active: false })">Selecionado</button>
       <input ref="in" v-show="false" type="file" @change="inFile" multiple/>
     </div>
   </div>
@@ -24,7 +25,7 @@ export default {
     ...mapGetters(['UploadImg'])
   },
   methods: {
-    ...mapActions(['PushImg']),
+    ...mapActions(['PushImg', 'SetModal']),
     inFile (e) {
       for (let key in e.target.files) {
         if (key !== 'length' && key !== 'item') {
@@ -66,5 +67,17 @@ export default {
   align-items: first baseline;
   justify-content: center;
   flex-wrap: wrap;
+  overflow: auto;
+}
+
+button {
+  border: 0;
+  font-size: 16px;
+  padding: 2%;
+  margin: 1%;
+  border-radius: 5px;
+  background-color: #333333;
+  color: #FFFFFF;
+  cursor: pointer;
 }
 </style>
