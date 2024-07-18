@@ -1,13 +1,13 @@
 export default {
   EnbModal: { component: '', active: false },
   UploadImg: [],
-  SelectedProdEdit: {
+  SelectedProdEdit: [{
     id: '',
     code: '',
     tipo: '',
     name: '',
-    preco: '',
-    oferta: '',
+    preco: 0,
+    oferta: 0,
     img: [],
     descricao: '',
     dateOfertaStart: '',
@@ -18,8 +18,9 @@ export default {
     estoque: 0,
     pendencia: '',
     visibilidade: '',
+    visualizacao: 0,
     individual: false
-  },
+  }],
   Categorias: [
     {
       active: false,

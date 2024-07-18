@@ -1,4 +1,3 @@
-import produtos from "./produtos"
 export default {
   Profile01: {
     logged: false,
@@ -30,6 +29,6 @@ export default {
       path: ''
     }
   ],
-  Produtos01: produtos,
+  Produtos01: [[], []],
   ResultSearch01: []
 }

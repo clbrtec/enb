@@ -21,6 +21,16 @@ const routes = [
         path: '/painel/produtos/register',
         name: 'Adicionar produto',
         component: RegisterProd
+      },
+      {
+        path: '/painel/produtos/edit',
+        name: 'Editar produto',
+        component: RegisterProd
+      },
+      {
+        path: '/painel/produtos/copy',
+        name: 'Copiar produto',
+        component: RegisterProd
       }
     ]
   },

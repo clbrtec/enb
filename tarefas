@@ -2,9 +2,30 @@
 - Lojista
 - Cardápio
 
-- gerenciamento de produtos
-
-
 - Exibição de produtos scroll infinito
 - Exibição de produtos randon
 
+
+22/07/2024:
+* Gerenciamento de Produtos:
+ - Cadastro #
+ - Seleção de mais de uma imagem #
+ - Edição #
+ - Clonagem #
+ - Edição rápida Modal
+ - Deletar #
+ - Arquivar
+ - visualizar 
+
+* Painel:
+ - Mensagem de retorno(Sucesso ou erro)
+ - Icones menu gerenciamento
+ - Logo
+
+* Loja:
+ - Icones navegação loja
+ - Exibição de mais de uma imagem na view do produto
+ - Logo
+
+* Clientes:
+ - iniciar a pagina clientes

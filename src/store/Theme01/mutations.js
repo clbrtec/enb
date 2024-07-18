@@ -59,5 +59,13 @@ export default {
     }
     let res = state.Produtos01[0].concat(state.Produtos01[1]).filter(p => p.name.toUpperCase().indexOf(payload.toUpperCase()) >= 0)
     state.ResultSearch01 = res
+  },
+  'DELETE_PROD' (state, payload) {
+    for(let key in payload) {
+      state.Produtos01[0] = state.Produtos01[0].filter(p => p.id !== payload[key].id)
+    }
+  },
+   'PUSH_PROD' (state, payload) {
+    state.Produtos01[0].push(payload)
   }
 }

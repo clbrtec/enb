@@ -31,5 +31,35 @@ export default {
   },
   SearchProd01 ({ commit }, payload) {
     commit('SEARCH_PROD01', payload)
-  }
+  },
+  DeleteProd: ({ commit }, payload) => new Promise((resolve) => {
+    commit('DELETE_PROD', payload)
+    resolve()
+  }),
+  PushProd: ({ commit }, payload) => new Promise((resolve) => {
+    let date = new Date()
+    let newItem = {
+      id: Math.round(Math.random() * 1000000),
+      code: payload.code,
+      tipo: payload.tipo,
+      name: payload.name,
+      preco: payload.preco,
+      oferta: payload.oferta,
+      img: payload.img,
+      descricao: payload.descricao,
+      dateOfertaStart: payload.dateOfertaStart,
+      dateOfertaEnd: payload.dateOfertaEnd,
+      categoria: payload.categoria,
+      gerEstoque: payload.gerEstoque,
+      statusEstoque: payload.statusEstoque,
+      estoque: payload.estoque,
+      pendencia: payload.pendencia,
+      visibilidade: payload.visibilidade,
+      visualizacao: payload.visualizacao,
+      individual: payload.individual,
+      dateCreate: `${date.getDate()}/${('00' + (date.getMonth() + 1)).slice(-2)}/${date.getFullYear()}`
+    }
+    commit('PUSH_PROD', newItem)
+    resolve(newItem)
+  })
 }

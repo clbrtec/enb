@@ -1,7 +1,7 @@
 <template>
   <div class='ProdsHeader'>
     <div style="width: 4%">
-      <input type="checkbox" name="" id="">
+      <input @change="pushAll" type="checkbox">
     </div>
     <div style="width: 8%">
       <img-icon/>
@@ -22,12 +22,33 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 import ImgIcon from '../../Icons/ImgIcon'
 import BoxIcon from '../../Icons/BoxIcon.vue'
 import EyesIcon from '../../Icons/EyesIcon.vue'
 export default {
   name: 'ProdsHeader',
-  components: { ImgIcon, BoxIcon, EyesIcon }
+  components: { ImgIcon, BoxIcon, EyesIcon },
+  data () {
+    return {
+      checked: false
+    }
+  },
+  computed: {
+    ...mapGetters(['Produtos01'])
+  },
+  methods: {
+    ...mapActions(['PushAllEdit', 'ClearProdEdit']),
+    pushAll () {
+      this.checked = !this.checked
+      if(this.checked) {
+        this.PushAllEdit(this.Produtos01[0])
+      }
+      if(!this.checked) {
+        this.ClearProdEdit()
+      }
+    }
+  }
 }
 </script>
 

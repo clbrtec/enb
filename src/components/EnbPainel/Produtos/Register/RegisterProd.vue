@@ -12,7 +12,7 @@
         />
       </div>
       <div class="rigth">
-        <button>Adicionar novo</button>
+        <button v-if="!edit" @click="push">Adicionar novo</button>
       </div>
     </div>
     <div class="block">
@@ -39,10 +39,19 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['SelectedProdEdit'])
+    ...mapGetters(['SelectedProdEdit']),
+    edit () {
+      return this.SelectedProdEdit.id !== ''
+    }
   },
   methods: {
-    ...mapActions(['ChangeProdEdit'])
+    ...mapActions(['ChangeProdEdit', 'PushProd', 'ClearProdEdit']),
+    push () {
+      this.PushProd(this.SelectedProdEdit)
+        .then(() => {
+          this.ClearProdEdit()
+        })
+    }
   }
 }
 </script>

@@ -11,7 +11,7 @@
     <div style="display: flex">
       <input-reg
       :value="SelectedProdEdit.preco"
-      @update:model-value="newValue => ChangeProdEdit({ preco: newValue })"
+      @update:model-value="newValue => ChangeProdEdit({ preco: parseFloat(newValue) })"
       text="Preço (R$)"
       :cont="{ textAlign: 'left' }"
       :label="{ marginLeft: '3px', marginTop: '8px' }"
@@ -19,7 +19,7 @@
       />
       <input-reg
       :value="SelectedProdEdit.oferta"
-      @update:model-value="newValue => ChangeProdEdit({ oferta: newValue })"
+      @update:model-value="newValue => ChangeProdEdit({ oferta: parseFloat(newValue) })"
       text="Preço de oferta (R$)"
       :cont="{ textAlign: 'left' }"
       :label="{ marginLeft: '3px', marginTop: '8px' }"
