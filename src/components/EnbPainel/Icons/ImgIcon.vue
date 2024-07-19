@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ action: options.action }" class='ImgIcon'>
+  <div :class="{ action: options.action }" class='ImgIcon' @mouseenter="textShow=true" @mouseleave="textShow=false">
     <svg :width="options.width" :height="options.height" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
       <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-360.000000, -99.000000)" :fill="options.color">
@@ -8,6 +8,14 @@
         </g>
       </g>
     </svg>
+    <div
+    :style="optionsLabel"
+    :class="{ active: !active }"
+    class="label"
+    v-if="textShow"
+    >
+      {{ text }}
+    </div>
   </div>
 </template>
 
@@ -18,6 +26,23 @@ export default {
     options: {
       type: Object,
       default: () => ({ width: '12px', height: '12px', color: '#000000', action: false })
+    },
+    text: {
+      type: String,
+      default: ''
+    },
+    optionsLabel: {
+      type: Object,
+      default: () => ({})
+    },
+    active: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data () {
+    return {
+      textShow: false
     }
   }
 }
@@ -25,7 +50,23 @@ export default {
 
 <style scoped>
 .ImgIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.label {
+  background-color: #FFFFFF;
+  border: thin solid #CCCCCC;
+  border-radius: 5px;
+  position: absolute;
+  padding: 0.5%;
+}
+
+.active {
+  display: none;
+}
+
 .action {
   cursor: pointer;
 }

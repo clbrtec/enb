@@ -35,14 +35,13 @@ export default {
   ],
   LinkSidebar: [
     {
-      text: 'Conta'
-    },
-    {
       text: 'Produtos',
-      path: '/painel/produtos'
+      path: '/painel/produtos',
+      icon: 'ProdIcon'
     },
     {
-      text: 'Clientes'
+      text: 'Clientes',
+      icon: 'ClientIcon'
     }
     // {
     //   text: 'Componentes',

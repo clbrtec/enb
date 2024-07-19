@@ -1,7 +1,8 @@
 <template>
   <div class='LinkSidebar'>
     <div :class="{ contActive: $route.path.indexOf(data.path) >= 0 }" class="cont-link" @click="run">
-      &nbsp;&nbsp;
+      <component :is="data.icon"/>
+      &nbsp;
       {{ data.text }}
     </div>
     <div v-if="showSubLink">
@@ -15,10 +16,12 @@
 </template>
 
 <script>
-import SubLink from '@/components/EnbPainel/SubLink.vue'
+import ProdIcon from './Icons/ProdIcon'
+import ClientIcon from './Icons/ClientIcon'
+import SubLink from '@/components/EnbPainel/SubLink'
 export default {
   name: 'LinkSidebar',
-  components: { SubLink },
+  components: { SubLink, ProdIcon, ClientIcon },
   data () {
     return {
       showSubLink: false
@@ -51,8 +54,10 @@ export default {
 }
 
 .cont-link {
+  display: flex;
   padding: 5%;
-  text-align: left;
+  justify-content: left;
+  align-items: center;
   border-left: 7px solid #FFFFFF;
 }
 

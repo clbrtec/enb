@@ -38,6 +38,7 @@ export default {
       reader.readAsDataURL(file)
       reader.onload = () => {
         this.PushImg(reader.result)
+        // console.log(reader.result)
       }
       reader.onerror = (error) => {
         console.log('Error: ', error)

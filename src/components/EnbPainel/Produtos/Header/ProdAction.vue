@@ -1,25 +1,59 @@
 <template>
   <div class='ProdAction'>
     <div class="cont">
-      <edit-icon @click="edit"/>
+      <edit-icon
+      @click="edit"
+      text="Editar"
+      :active="true"
+      :optionsLabel="{ marginTop: '65px' }"
+      />
     </div>
     <div class="cont">
-      <edit-fast-icon/>
+      <edit-fast-icon
+      @click="fastEdit"
+      text="Edição rápida"
+      :active="true"
+      :optionsLabel="{ marginTop: '65px' }"
+      />
     </div>
     <div class="cont">
-      <diretory-icon/>
+      <diretory-icon
+      text="Arquivar"
+      :active="true"
+      :optionsLabel="{ marginTop: '65px' }"
+      />
     </div>
-    <div class="cont">
-      <eyes-icon :options="{ width: '30px', height: '30px', action: true }"/>
+    <div @click="view" class="cont">
+      <eyes-icon
+      :options="{ width: '30px', height: '30px', action: true }"
+      text="Visualizar"
+      :active="true"
+      :optionsLabel="{ marginTop: '65px' }"
+      />
     </div>
     <div @click="copy" class="cont">
-      <copy-icon/>
+      <copy-icon
+      :options="{ width: '30px', height: '30px', action: true }"
+      text="Copiar produto"
+      :active="true"
+      :optionsLabel="{ marginTop: '65px' }"
+      />
     </div>
     <div @click="del" class="cont">
-      <delete-icon/>
+      <delete-icon
+      :options="{ width: '30px', height: '30px', action: true }"
+      text="Excluir"
+      :active="true"
+      :optionsLabel="{ marginTop: '65px' }"
+      />
     </div>
     <div class="cont-add">
-      <add-icon @click="add"/>
+      <add-icon
+      @click="add"
+      text="Adiconar um produto"
+      :active="true"
+      :optionsLabel="{ width: '100px', marginTop: '90px', marginRight: '50px' }"
+      />
     </div>
   </div>
 </template>
@@ -43,15 +77,15 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['ClearProdEdit', 'PushProd', 'CopyProd', 'DeleteProd']),
+    ...mapActions(['ClearProdEdit', 'PushProd', 'CopyProd', 'DeleteProd', 'SetModal', 'SetItem01', 'PushMsg']),
     del () {
       if(this.empty) {
-        alert('selecione um item')
+        this.PushMsg({ msg: 'Selecione um produto', color: '#eba134' })
         return
       }
       this.DeleteProd(this.SelectedProds)
         .then(() => {
-          this.ClearProdEdit()  
+          this.ClearProdEdit()
         })
     },
     add () {
@@ -62,20 +96,46 @@ export default {
     },
     edit () {
       if(this.empty) {
-        alert('Selecione um item')
+        this.PushMsg({ msg: 'Selecione um produto', color: '#eba134' })
         return
       }
       this.$router.push('/painel/produtos/edit')
     },
+    fastEdit () {
+      if(this.empty) {
+        this.PushMsg({ msg: 'Selecione um produto', color: '#eba134' })
+        return
+      }
+      if(this.SelectedProds.length > 1) {
+        alert('Selecione apenas um item')
+        this.PushMsg({ msg: 'Selecione apenas um produto', color: '#eba134' })
+        return
+      }
+      this.SetModal({ component: 'FastProdEdit', active: true })
+    },
     copy () {
       if(this.empty) {
-        alert('Selecione um item')
+        this.PushMsg({ msg: 'Selecione um produto', color: '#eba134' })
         return
       }
       this.PushProd(this.SelectedProds[0])
         .then(res => this.CopyProd(res))
         .then(() => {
           this.$router.push('/painel/produtos/copy')
+        })
+    },
+    view () {
+      if(this.empty) {
+        this.PushMsg({ msg: 'Selecione um produto', color: '#eba134' })
+        return
+      }
+      if(this.SelectedProds.length > 1) {
+        this.PushMsg({ msg: 'Selecione apenas um produto', color: '#eba134' })
+        return
+      }
+      this.SetItem01(this.SelectedProds[0])
+        .then(() => {
+          this.$router.push('/itemview')
         })
     }
   }

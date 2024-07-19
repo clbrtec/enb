@@ -4,7 +4,11 @@
       <input @change="pushAll" type="checkbox">
     </div>
     <div style="width: 8%">
-      <img-icon/>
+      <img-icon
+      text="Imagem"
+      :active="true"
+      :optionsLabel="{ marginTop: '65px' }"
+      />
     </div>
     <div style="width: 35%; text-align: left">Nome</div>
     <div style="width: 8%">Status</div>
@@ -12,10 +16,18 @@
     <div style="width: 8%">Preço</div>
     <div style="width: 10%">Categoria</div>
     <div style="width: 4%">
-      <box-icon/>
+      <box-icon
+      text="Tipo"
+      :active="true"
+      :optionsLabel="{ marginTop: '65px' }"
+      />
     </div>
     <div style="width: 4%">
-      <eyes-icon/>
+      <eyes-icon
+      text="Visualizações"
+      :active="true"
+      :optionsLabel="{ marginTop: '65px' }"
+      />
     </div>
     <div style="width: 10%">Data</div>
   </div>

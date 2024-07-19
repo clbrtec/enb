@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ action: options.action }" class='EyesIcon'>
+  <div :class="{ action: options.action }" class='EyesIcon' @mouseenter="textShow=true" @mouseleave="textShow=false">
     <svg :width="options.width" :height="options.height" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="style=stroke">
         <g id="eye-open">
@@ -8,6 +8,14 @@
         </g>
       </g>
     </svg>
+    <div
+    :style="optionsLabel"
+    :class="{ active: !active }"
+    class="label"
+    v-if="textShow"
+    >
+      {{ text }}
+    </div>
   </div>
 </template>
 
@@ -18,6 +26,22 @@ export default {
     options: {
       type: Object,
       default: () => ({ width: '20px', height: '20px', action: false })
+    },text: {
+      type: String,
+      default: ''
+    },
+    optionsLabel: {
+      type: Object,
+      default: () => ({})
+    },
+    active: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data () {
+    return {
+      textShow: false
     }
   }
 }
@@ -25,9 +49,23 @@ export default {
 
 <style scoped>
 .EyesIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .action {
   cursor: pointer;
+}
+.label {
+  background-color: #FFFFFF;
+  border: thin solid #CCCCCC;
+  border-radius: 5px;
+  position: absolute;
+  padding: 0.5%;
+}
+
+.active {
+  display: none;
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div class='EnbPainel'>
+    <enb-msg/>
     <enb-modal v-if="EnbModal.active"/>
     <enb-sidebar/>
     <div class="cont-painel">
@@ -21,9 +22,10 @@ import { mapGetters } from 'vuex'
 import EnbSidebar from '@/components/EnbPainel/EnbSidebar.vue'
 import EnbLabel from '@/components/EnbLabel.vue';
 import EnbModal from '@/components/EnbPainel/Modal/EnbModal'
+import EnbMsg from '@/components/EnbMsg/EnbMsg'
 export default {
   name: 'EnbPainel',
-  components: { EnbSidebar, EnbLabel, EnbModal },
+  components: { EnbSidebar, EnbLabel, EnbModal, EnbMsg },
   computed: {
     ...mapGetters(['EnbModal'])
   }

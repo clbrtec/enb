@@ -17,9 +17,10 @@ export default {
   DeleteCheckout01 ({ commit }, payload) {
     commit('DELETE_CHECKOUT01', payload)
   },
-  SetItem01 ({ commit }, payload) {
+  SetItem01: ({ commit }, payload) => new Promise((resolve) => {
     commit('ITEM_SELECTED01', payload)
-  },
+    resolve()
+  }),
   SetModal01 ({ commit }, payload) {
     commit('SET_MODAL01', payload)
   },

@@ -12,7 +12,11 @@
     <div style="width: 8%">{{ data.preco }}</div>
     <div style="width: 10%">{{ data.categoria }}</div>
     <div style="width: 4%">
-      {{ data.tipo }}
+      <box-icon
+      :options="{ width: '13px', height: '13px' }"
+      :text="data.tipo"
+      :active="true"
+      />
     </div>
     <div style="width: 4%">
       {{ data.visualizacao }}
@@ -23,9 +27,11 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import BoxIcon from '../../Icons/BoxIcon'
 export default {
   name: 'ListItem',
   props: ['data'],
+  components: { BoxIcon },
   computed: {
     ...mapGetters(['SelectedProds']),
     status () {

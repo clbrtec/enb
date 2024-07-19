@@ -45,11 +45,12 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['ChangeProdEdit', 'PushProd', 'ClearProdEdit']),
+    ...mapActions(['ChangeProdEdit', 'PushProd', 'ClearProdEdit', 'PushMsg']),
     push () {
       this.PushProd(this.SelectedProdEdit)
         .then(() => {
           this.ClearProdEdit()
+          this.PushMsg({ msg: 'Produto cadastrado com sucesso.', color: '#326e3d' })
         })
     }
   }
