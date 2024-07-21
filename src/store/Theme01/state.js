@@ -14,19 +14,23 @@ export default {
   LinksTheme01: [
     {
       text: 'Produtos',
-      path: '/'
+      path: '/',
+      icon: 'StoreIcon01'
     },
     {
       text: 'Carrinho',
-      path: '/checkout'
+      path: '/checkout',
+      icon: 'CartShopIcon01'
     },
     {
       text: 'Finalizar Compra',
-      path: ''
+      path: '',
+      icon: 'LikeIcon01'
     },
     {
       text: 'Meus Pedidos',
-      path: ''
+      path: '',
+      icon: 'ListIcon01'
     }
   ],
   Produtos01: [[], []],

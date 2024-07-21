@@ -4,7 +4,7 @@
       x
     </div>
     <div class="img">
-      <img :src="data.img">
+      <img :src="data.img[0]">
     </div>
     <div class="desc">
       {{ data.name }}

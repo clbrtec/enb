@@ -1,12 +1,18 @@
 <template>
   <div class='EnbLogo01'>
-    Logo
+    <img :src="img">
   </div>
 </template>
 
 <script>
+import logo from '../../../assets/logo'
 export default {
-  name: 'EnbLogo01'
+  name: 'EnbLogo01',
+  data () {
+    return {
+      img: logo
+    }
+  }
 }
 </script>
 
@@ -18,5 +24,9 @@ export default {
   font-weight: bold;
   font-size: 30px;
   width: 20%;
+}
+
+img {
+  width: 70%;
 }
 </style>

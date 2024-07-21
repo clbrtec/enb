@@ -1,6 +1,6 @@
 <template>
   <div class='EnbItemImg01' @click="Select">
-    <img :src="data.img">
+    <img :src="data.img[0]">
     <!-- <input type="file" @change="inFile"/> -->
   </div>
 </template>

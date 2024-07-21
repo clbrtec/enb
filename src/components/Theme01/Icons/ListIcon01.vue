@@ -1,0 +1,18 @@
+<template>
+  <div class='ListIcon01'>
+    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 8H17M7 12H17M7 16H13M4 4H20V20H4V4Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'ListIcon01'
+}
+</script>
+
+<style scoped>
+.ListIcon01 {
+}
+</style>

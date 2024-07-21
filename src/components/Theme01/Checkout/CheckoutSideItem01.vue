@@ -1,7 +1,7 @@
 <template>
   <div class='CheckoutSideItem01'>
     <div class="cont-img">
-      <img :src="data.img">
+      <img :src="data.img[0]">
     </div>
     <div class="cont">
       <div class="desc">{{ data.name }}</div>

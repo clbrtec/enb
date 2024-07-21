@@ -1,11 +1,18 @@
 <template>
   <div class='EnbItemView01'>
-    <vue-image-zoomer
-    :regular="ItemSelected01.img"
-    hover-message="⚲ Zoom"
-    img-width="300"
-    img-height="300"
-    />
+    <carousel>
+      <slide v-for="(img, key) in ItemSelected01.img" :key="key">
+        <vue-image-zoomer
+        :regular="img"
+        hover-message="⚲ Zoom"
+        img-width="300"
+        img-height="300"
+        />
+      </slide>
+      <template #addons>
+        <navigation />
+      </template>
+    </carousel>
     <div class="cont">
       <div class="cont-desc">
         {{ ItemSelected01.name }}
@@ -30,9 +37,10 @@ import { mapGetters, mapActions } from 'vuex'
 import { VueImageZoomer } from 'vue-image-zoomer'
 import 'vue-image-zoomer/dist/style.css'
 import EnbSetQtda01 from './EnbSetQtda01.vue'
+import { Carousel, Slide, Navigation } from 'vue3-carousel'
 export default {
   name: 'EnbItemView01',
-  components: { VueImageZoomer, EnbSetQtda01 },
+  components: { VueImageZoomer, EnbSetQtda01, Carousel, Slide, Navigation },
   computed: {
     ...mapGetters(['ItemSelected01'])
   },
