@@ -14,7 +14,6 @@
  - Clonagem #
  - Edição rápida Modal #
  - Deletar #
- - Arquivar 
  - visualizar #
  - Descrição botôes de ação #
 
@@ -29,5 +28,38 @@
  - Logo #
  - Botões de gerencimento(Editar, edição rápida e excluir) #
 
+
 * Clientes:
- - iniciar a pagina clientes
+ - iniciar a pagina clientes #
+
+29/07/2024
+* Clientes:
+ - Cadastro
+ - Edição
+ - Pedidos
+ - Minha conta
+
+* Gerenciamento de Produtos:
+ - Arquivar
+ - Status
+ - Cadastro - melhoria no layout da tela
+ - Filtro produtos (por categoria)
+ - Perguntar antes de excluir
+ - Produto tipo variável
+ - Cadastro(remover individualmente)
+
+* Gerenciamento de Pedidos:
+ - Visualização
+
+* Loja:
+ - Meus pedidos
+ - Filtro produtos
+ - Descrição do produto
+ - Sub menu categorias (Produtos)
+
+* Usuários:
+ - Cadastro
+ - Edição
+
+* Geral:
+ - Loader

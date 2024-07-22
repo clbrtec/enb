@@ -4,7 +4,7 @@
       <input :checked="checked" @change="toggle" type="checkbox">
     </div>
     <div style="width: 8%">
-      <img :src="data.img">
+      <img :src="data.img[0]">
     </div>
     <div style="width: 35%; text-align: left">{{ data.name }}</div>
     <div style="width: 8%">{{ status }}</div>
