@@ -1,7 +1,8 @@
 export default {
-  SetModal ({ commit }, payload) {
+  SetModal: ({ commit }, payload) => new Promise((resolve) => {
     commit('SET_MODAL', payload)
-  },
+    resolve()
+  }),
   PushImg ({ commit }, payload) {
     commit('PUSH_IMG', payload)
   },
@@ -14,15 +15,17 @@ export default {
   PushCateg ({ commit }, payload) {
     commit('PUSH_CATEG', payload)
   },
-  PushProdEdit ({ commit }, payload) {
+  PushProdEdit: ({ commit }, payload) => new Promise((resolve) => {
     commit('PUSH_PRODEDIT', payload)
-  },
+    resolve()
+  }),
   DeleteProdEdit ({ commit }, payload) {
     commit('DELETE_PRODEDIT', payload)
   },
-  ClearProdEdit ({ commit }) {
+  ClearProdEdit: ({ commit }) => new Promise((resolve) => {
     commit('CLEAR_PRODEDIT')
-  },
+    resolve()
+  }),
   PushAllEdit ({ commit }, payload) {
     commit('PUSH_ALLEDIT', payload)
   },

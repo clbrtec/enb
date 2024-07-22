@@ -3,7 +3,7 @@
     <div class="header">
       <div class="label">Edição rápida produto</div>
       <div class="close">
-        <close-icon @click="SetModal({ component: '', active: false })"/>
+        <close-icon @click="close"/>
       </div>
     </div>
     <div class="cont">
@@ -65,7 +65,11 @@ export default {
     ...mapGetters(['SelectedProdEdit'])
   },
   methods: {
-    ...mapActions(['SetModal', 'ChangeProdEdit'])
+    ...mapActions(['SetModal', 'ChangeProdEdit', 'SetModal01']),
+    close () {
+      this.SetModal({ component: '', active: false })
+      this.SetModal01({ component: '', active: false })
+    }
   }
 }
 </script>

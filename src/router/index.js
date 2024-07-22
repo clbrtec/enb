@@ -5,6 +5,7 @@ import MyStore from '../views/MyStore.vue'
 import Theme01 from './Theme01'
 import Produtos from '@/components/EnbPainel/Produtos/Produtos.vue'
 import RegisterProd from '@/components/EnbPainel/Produtos/Register/RegisterProd'
+import EnbClients from '@/components/EnbPainel/Clients/EnbClients'
 
 const routes = [
   {  
@@ -31,6 +32,11 @@ const routes = [
         path: '/painel/produtos/copy',
         name: 'Copiar produto',
         component: RegisterProd
+      },
+      {
+        path: '/client',
+        name: 'Clientes',
+        component: EnbClients
       }
     ]
   },

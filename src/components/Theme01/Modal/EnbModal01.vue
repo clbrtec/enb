@@ -8,9 +8,10 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import EnbLogin01 from './EnbLogin01.vue'
+import FastProdEdit from '@/components/EnbPainel/Modal/FastProdEdit'
 export default {
   name: 'EnbModal01',
-  components: { EnbLogin01 },
+  components: { EnbLogin01, FastProdEdit },
   computed: {
     ...mapGetters(['Modal01']),
   },

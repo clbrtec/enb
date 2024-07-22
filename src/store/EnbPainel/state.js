@@ -41,6 +41,7 @@ export default {
     },
     {
       text: 'Clientes',
+      path: '/client',
       icon: 'ClientIcon'
     }
     // {

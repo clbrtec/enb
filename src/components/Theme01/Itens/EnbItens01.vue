@@ -1,6 +1,6 @@
 <template>
   <div class='EnbItens01'>
-    <carousel>
+    <carousel v-if="Produtos01.length">
       <slide v-for="(produtos, key) in Produtos01" :key="key">
         <package-itens01 :data="produtos"/>
       </slide>

@@ -107,7 +107,6 @@ export default {
         return
       }
       if(this.SelectedProds.length > 1) {
-        alert('Selecione apenas um item')
         this.PushMsg({ msg: 'Selecione apenas um produto', color: '#eba134' })
         return
       }
