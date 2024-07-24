@@ -2,6 +2,7 @@
   <div class='ClientAction'>
     <div class="cont-add">
       <add-icon
+      @click="$router.push('/painel/client/register')"
       text="Adiconar um cliente"
       :active="true"
       :optionsLabel="{ width: '100px', marginTop: '90px', marginRight: '60px' }"

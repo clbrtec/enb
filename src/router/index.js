@@ -6,6 +6,7 @@ import Theme01 from './Theme01'
 import Produtos from '@/components/EnbPainel/Produtos/Produtos.vue'
 import RegisterProd from '@/components/EnbPainel/Produtos/Register/RegisterProd'
 import EnbClients from '@/components/EnbPainel/Clients/EnbClients'
+import RegisterClient from '@/components/EnbPainel/Clients/Register/RegisterClient'
 
 const routes = [
   {  
@@ -34,9 +35,14 @@ const routes = [
         component: RegisterProd
       },
       {
-        path: '/client',
+        path: '/painel/client',
         name: 'Clientes',
         component: EnbClients
+      },
+      {
+        path: '/painel/client/register',
+        name: 'Adicionar cliente',
+        component: RegisterClient
       }
     ]
   },

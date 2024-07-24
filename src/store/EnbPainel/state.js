@@ -41,7 +41,7 @@ export default {
     },
     {
       text: 'Clientes',
-      path: '/client',
+      path: '/painel/client',
       icon: 'ClientIcon'
     }
     // {
