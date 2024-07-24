@@ -8,6 +8,7 @@
     :style="input"
     :value="value"
     @input="$emit('update:modelValue', $event.target.value)"
+    :disabled="disabled"
     >
   </div>
 </template>
@@ -40,6 +41,10 @@ export default {
     type: {
       type: String,
       default: 'text'
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   }
 }

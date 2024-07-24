@@ -6,5 +6,11 @@ export default {
   },
   'PUSH_CLIENT' (state, payload) {
     state.Clients.push(payload)
+  },
+  'SET_CLIENTEDIT' (state, payload) {
+    state.SelectedClientEdit = payload
+  },
+  'SET_CLIENTVIEW' (state, payload) {
+    state.ClientView = payload
   }
 }

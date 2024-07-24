@@ -1,6 +1,7 @@
 import EnbItens01 from '@/components/Theme01/Itens/EnbItens01'
 import EnbItemView01 from '@/components/Theme01/Itens/EnbItemView01'
 import EnbCheckoutView01 from '@/components/Theme01/Checkout/EnbCheckoutView01'
+import CompletePurchase from '@/components/Theme01/Client/CompletePurchase'
 export default [
   {
     path: '/',
@@ -16,5 +17,10 @@ export default [
     path: '/checkout',
     name: 'Carrinho',
     component: EnbCheckoutView01
+  },
+  {
+    path: '/complete',
+    name: 'Finalizar compra',
+    component: CompletePurchase
   }
 ]

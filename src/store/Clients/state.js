@@ -1,5 +1,6 @@
 export default {
   Clients: [],
+  ClientView: {},
   SelectedClientEdit: {
     usuario: '',
     email: '',

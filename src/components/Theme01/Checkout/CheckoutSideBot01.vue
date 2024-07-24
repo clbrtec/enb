@@ -4,7 +4,7 @@
       <div class="label">Total</div>
       <div class="value">R$ {{ CheckoutTotal01 }}</div>
     </div>
-    <button>Finalizar a Compra</button>
+    <button @click="complete">Finalizar a Compra</button>
   </div>
 </template>
 
@@ -12,8 +12,16 @@
 import { mapGetters } from 'vuex'
 export default {
   name: 'CheckoutSideBot01',
+  props: ['out'],
+  emits: ['update:out'],
   computed: {
     ...mapGetters(['CheckoutItens01', 'CheckoutTotal01'])
+  },
+  methods: {
+    complete () {
+      this.$emit('update:out', true)
+      this.$router.push('/complete')
+    }
   }
 }
 </script>

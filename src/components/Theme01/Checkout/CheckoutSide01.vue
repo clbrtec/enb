@@ -4,7 +4,7 @@
     <div :class="{ contOut: out }" class="cont" ref="cont">
       <checkout-sideHead01 v-model:out="out"/>
       <checkout-sideItens01/>
-      <checkout-sideBot01/>
+      <checkout-sideBot01 v-model:out="out"/>
     </div>
   </div>
 </template>

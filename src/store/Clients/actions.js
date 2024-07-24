@@ -17,5 +17,13 @@ export default {
     }
     commit('PUSH_CLIENT', newClient)
     resolve()
+  }),
+  SetClientEdit: ({ commit }, payload) => new Promise((resolve) => {
+    commit('SET_CLIENTEDIT', payload)
+    resolve()
+  }),
+  SetClientView: ({ commit }, payload) => new Promise((resolve) => {
+    commit('SET_CLIENTVIEW', payload)
+    resolve()
   })
 }

@@ -1,25 +1,20 @@
 <template>
-  <div class='RegisterClient'>
-    <div class="btn-add">
-      <button
-      v-if="$route.path !== '/painel/client/edit'"
-      @click="push"
-      >
-      Adicionar
-    </button>
+  <div class='ClientView'>
+    <div class="title">
+      {{ ClientView.nome }} {{ ClientView.sobrenome }} ({{ ClientView.email }})
     </div>
     <div class="block">
       <input-reg
-      :value="SelectedClientEdit.usuario"
-      @update:model-value="newValue => ChangeClientEdit({ usuario: newValue })"
+      disabled
+      :value="ClientView.usuario"
       text="Usuário"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
       :input="{ fontSize: '20px', padding: '1.5%', width: '94%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
       <input-reg
-      :value="SelectedClientEdit.email"
-      @update:model-value="newValue => ChangeClientEdit({ email: newValue })"
+      disabled
+      :value="ClientView.email"
       text="Email"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
@@ -28,16 +23,16 @@
     </div>
     <div class="block">
       <input-reg
-      :value="SelectedClientEdit.nome"
-      @update:model-value="newValue => ChangeClientEdit({ nome: newValue })"
+      disabled
+      :value="ClientView.nome"
       text="Primeiro nome"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
       :input="{ fontSize: '20px', padding: '1.5%', width: '94%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
       <input-reg
-      :value="SelectedClientEdit.sobrenome"
-      @update:model-value="newValue => ChangeClientEdit({ sobrenome: newValue })"
+      disabled
+      :value="ClientView.sobrenome"
       text="Sobrenome"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
@@ -46,24 +41,24 @@
     </div>
     <div class="block">
       <input-reg
-      :value="SelectedClientEdit.cep"
-      @update:model-value="newValue => ChangeClientEdit({ cep: newValue })"
+      disabled
+      :value="ClientView.cep"
       text="CEP"
       :cont="{ width: '30%', paddingLeft: '0.6%' }"
       :label="{ textAlign: 'left', marginLeft: '1%' }"
       :input="{ fontSize: '20px', padding: '2.4%', width: '94%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
       <input-reg
-      :value="SelectedClientEdit.endereco"
-      @update:model-value="newValue => ChangeClientEdit({ endereco: newValue })"
+      disabled
+      :value="ClientView.endereco"
       text="Endereço"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '3%' }"
       :input="{ fontSize: '20px', padding: '1.5%', width: '92%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
       <input-reg
-      :value="SelectedClientEdit.numero"
-      @update:model-value="newValue => ChangeClientEdit({ numero: newValue })"
+      disabled
+      :value="ClientView.numero"
       text="Número"
       :cont="{ width: '18.5%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
@@ -72,16 +67,16 @@
     </div>
     <div class="block">
       <input-reg
-      :value="SelectedClientEdit.cidade"
-      @update:model-value="newValue => ChangeClientEdit({ cidade: newValue })"
+      disabled
+      :value="ClientView.cidade"
       text="Cidade"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
       :input="{ fontSize: '20px', padding: '1.5%', width: '94%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
       <input-reg
-      :value="SelectedClientEdit.uf"
-      @update:model-value="newValue => ChangeClientEdit({ uf: newValue })"
+      disabled
+      :value="ClientView.uf"
       text="Estado(UF)"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
@@ -92,48 +87,26 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
-import InputReg from '../../Produtos/Register/InputReg'
+import { mapGetters } from 'vuex'
+import InputReg from '../Produtos/Register/InputReg'
 export default {
-  name: 'RegisterClient',
+  name: 'ClientView',
   components: { InputReg },
   computed: {
-    ...mapGetters(['SelectedClientEdit'])
-  },
-  methods: {
-    ...mapActions(['ChangeClientEdit', 'PushClient', 'PushMsg']),
-    push () {
-      this.PushClient(this.SelectedClientEdit)
-        .then(() => {
-          this.PushMsg({ msg: 'Cliente adicionado com sucesso.', color: '#326e3d' })
-        })
-    }
+    ...mapGetters(['ClientView'])
   }
 }
 </script>
 
 <style scoped>
-.RegisterClient {
-}
-
-.btn-add {
+.title {
   display: flex;
-  justify-content: end;
-  padding-right: 1.3%;
+  padding: 1.5%;
+  font-size: 22px;
 }
 
 .block {
   display: flex;
   padding: 0.5%;
-}
-
-button {
-  border: 0;
-  font-size: 16px;
-  padding: 1%;
-  border-radius: 5px;
-  background-color: #333333;
-  color: #FFFFFF;
-  cursor: pointer;
 }
 </style>
