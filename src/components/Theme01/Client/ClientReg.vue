@@ -3,11 +3,19 @@
     <div class="title">
       Informações
     </div>
+    <div class="login">
+      Já é cliente? 
+      <span
+      @click="SetModal01({ component: 'EnbLogin01', active: true })"
+      class="link-login">
+        Clique aqui para entrar
+      </span>
+    </div>
     <div>
       <input-reg
       text="Nome"
       :cont="{ width: '100%' }"
-      :label="{ textAlign: 'left', marginLeft: '2%' }"
+      :label="{ textAlign: 'left', marginLeft: '2%', marginTop: '5px' }"
       :input="{ fontSize: '20px', padding: '1.5%', width: '94%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
     </div>
@@ -106,11 +114,15 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import InputReg from '@/components/EnbPainel/Produtos/Register/InputReg'
 import InputText from '@/components/EnbPainel/Produtos/Register/InputText'
 export default {
   name: 'ClientReg',
-  components: { InputReg, InputText }
+  components: { InputReg, InputText },
+  methods: {
+    ...mapActions(['SetModal01'])
+  }
 }
 </script>
 
@@ -121,5 +133,19 @@ export default {
 
 .title {
   font-size: 22px;
+}
+
+.login {
+  width: 93%;
+  border: thin solid #007cba;
+  border-radius: 5px;
+  padding: 2%;
+  margin: auto;
+  margin-top: 2%;
+}
+
+.link-login {
+  cursor: pointer;
+  color: #007cba;
 }
 </style>

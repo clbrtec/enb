@@ -24,7 +24,7 @@ export default {
     },
     {
       text: 'Finalizar Compra',
-      path: '',
+      path: '/complete',
       icon: 'LikeIcon01'
     },
     {

@@ -1,21 +1,22 @@
 <template>
   <div class='CheckoutItem'>
     <div class="img">
-      <img src="img.png">
-      <div class="qtde">1</div>
+      <img :src="data.img[0]">
+      <div class="qtde">{{ data.qtda }}</div>
     </div>
     <div class="desc">
-      desc
+      {{ data.name }}
     </div>
     <div class="valor">
-      valor
+      R$ {{ data.preco * data.qtda }}
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CheckoutItem'
+  name: 'CheckoutItem',
+  props: ['data']
 }
 </script>
 
@@ -23,7 +24,6 @@ export default {
 .CheckoutItem {
   display: flex;
   height: 20%;
-  background-color: yellow;
 }
 
 .img {
@@ -31,6 +31,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 img {
@@ -48,15 +49,14 @@ img {
   color: #FFFFFF;
   background-color: #000000;
   position: absolute;
-  margin-top: -4%;
-  margin-left: 3%;
+  margin-top: -48%;
+  margin-left: 40%;
 }
 
 .desc {
   width: 60%;
   display: flex;
   align-items: center;
-  background-color: green;
 }
 
 .valor {
