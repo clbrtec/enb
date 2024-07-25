@@ -7,8 +7,9 @@
         @update:model-value="newValue => ChangeProdEdit({ tipo: newValue })"
         :data="types"
         text="Tipo"
+        :cont="{ width: '40%' }"
         :label="{ textAlign: 'left', marginTop: '5px', marginLeft: '3px' }"
-        :input="{ width: '100%', padding: '3%', fontSize: '16px', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
+        :input="{ width: '100%', padding: '4%', fontSize: '16px', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
         />
       </div>
       <div class="rigth">
@@ -58,26 +59,33 @@ export default {
 </script>
 
 <style scoped>
+.RegisterProd {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
 .block {
   display: flex;
   padding: 2%;
 }
 
 .rigth {
-  width: 70%;
+  width: 30%;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
 }
 
 .left {
-  width: 30%;
+  width: 70%;
+  display: flex;
 }
 
 button {
   border: 0;
   font-size: 16px;
-  padding: 2%;
+  padding: 5%;
   margin: 1%;
   border-radius: 5px;
   background-color: #333333;

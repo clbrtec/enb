@@ -13,7 +13,15 @@
     </div>
     <div>
       <input-reg
-      text="Nome"
+      text="Usuários"
+      :cont="{ width: '100%' }"
+      :label="{ textAlign: 'left', marginLeft: '2%', marginTop: '5px' }"
+      :input="{ fontSize: '20px', padding: '1.5%', width: '94%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
+      />
+    </div>
+    <div>
+      <input-reg
+      text="Primeiro nome"
       :cont="{ width: '100%' }"
       :label="{ textAlign: 'left', marginLeft: '2%', marginTop: '5px' }"
       :input="{ fontSize: '20px', padding: '1.5%', width: '94%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
@@ -71,12 +79,18 @@
       :input="{ fontSize: '20px', padding: '1.5%', width: '94%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
     </div>
-    <div>
+    <div style="display: flex; justify-content: center">
+      <input-reg
+      text="Estado(UF)"
+      :cont="{ width: '48.5%' }"
+      :label="{ textAlign: 'left', marginLeft: '2%', marginTop: '5px' }"
+      :input="{ fontSize: '20px', padding: '2.5%', width: '95%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
+      />
       <input-reg
       text="Celular"
-      :cont="{ width: '100%' }"
+      :cont="{ width: '47%', paddingLeft: '2%' }"
       :label="{ textAlign: 'left', marginLeft: '2%', marginTop: '5px' }"
-      :input="{ fontSize: '20px', padding: '1.5%', width: '94%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
+      :input="{ fontSize: '20px', padding: '2.5%', width: '95%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
     </div>
     <div>

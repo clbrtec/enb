@@ -1,10 +1,12 @@
 export default {
   EnbModal: { component: '', active: false },
   UploadImg: [],
+  StatusProd: true,
   SelectedProdEdit: [{
     id: '',
     code: '',
     tipo: '',
+    status: true,
     name: '',
     preco: 0,
     oferta: 0,

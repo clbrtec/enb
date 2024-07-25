@@ -4,5 +4,6 @@ export default {
   UploadImg: state => state.UploadImg,
   SelectedProdEdit: state => state.SelectedProdEdit[0],
   Categorias: state => state.Categorias,
-  SelectedProds: state => state.SelectedProdEdit
+  SelectedProds: state => state.SelectedProdEdit,
+  StatusProd: state => state.StatusProd
 }

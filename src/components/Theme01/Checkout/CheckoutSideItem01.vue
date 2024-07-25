@@ -25,7 +25,7 @@ export default {
   props: ['data'],
   computed: {
     preco () {
-      return (this.data.preco * this.data.qtda).toFixed(2).replace('.', ',')
+      return (this.data.preco * this.data.qtda).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
     }
   }
 }

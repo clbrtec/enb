@@ -67,12 +67,14 @@ export default {
 
 <style scoped>
 .SelectCateg {
-  width: 50%;
+  width: 90%;
+  margin: auto;
   border-radius: 5px;
+  margin-top: 6%;
 }
 
 .cont-categ {
-  height: 180px;
+  height: 220px;
   border: thin solid #CCCCCC;
   border-radius: 5px;
 }

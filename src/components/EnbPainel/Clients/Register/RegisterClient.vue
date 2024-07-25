@@ -48,7 +48,33 @@
       <input-reg
       :value="SelectedClientEdit.cep"
       @update:model-value="newValue => ChangeClientEdit({ cep: newValue })"
+      text="CPF"
+      :cont="{ width: '30%', paddingLeft: '0.6%' }"
+      :label="{ textAlign: 'left', marginLeft: '1%' }"
+      :input="{ fontSize: '20px', padding: '2.4%', width: '94%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
+      />
+      <input-reg
+      :value="SelectedClientEdit.endereco"
+      @update:model-value="newValue => ChangeClientEdit({ endereco: newValue })"
+      text="Celular"
+      :cont="{ width: '50%' }"
+      :label="{ textAlign: 'left', marginLeft: '3%' }"
+      :input="{ fontSize: '20px', padding: '1.5%', width: '92%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
+      />
+      <input-reg
+      :value="SelectedClientEdit.numero"
+      @update:model-value="newValue => ChangeClientEdit({ numero: newValue })"
       text="CEP"
+      :cont="{ width: '18.5%' }"
+      :label="{ textAlign: 'left', marginLeft: '2%' }"
+      :input="{ fontSize: '20px', padding: '4%', width: '92%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
+      />
+    </div>
+    <div class="block">
+      <input-reg
+      :value="SelectedClientEdit.cep"
+      @update:model-value="newValue => ChangeClientEdit({ cep: newValue })"
+      text="Bairro"
       :cont="{ width: '30%', paddingLeft: '0.6%' }"
       :label="{ textAlign: 'left', marginLeft: '1%' }"
       :input="{ fontSize: '20px', padding: '2.4%', width: '94%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
@@ -83,6 +109,24 @@
       :value="SelectedClientEdit.uf"
       @update:model-value="newValue => ChangeClientEdit({ uf: newValue })"
       text="Estado(UF)"
+      :cont="{ width: '50%' }"
+      :label="{ textAlign: 'left', marginLeft: '2%' }"
+      :input="{ fontSize: '20px', padding: '1.5%', width: '94%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
+      />
+    </div>
+    <div class="block">
+      <input-reg
+      :value="SelectedClientEdit.cidade"
+      @update:model-value="newValue => ChangeClientEdit({ cidade: newValue })"
+      text="Senha"
+      :cont="{ width: '50%' }"
+      :label="{ textAlign: 'left', marginLeft: '2%' }"
+      :input="{ fontSize: '20px', padding: '1.5%', width: '94%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
+      />
+      <input-reg
+      :value="SelectedClientEdit.uf"
+      @update:model-value="newValue => ChangeClientEdit({ uf: newValue })"
+      text="Confirmar senha"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
       :input="{ fontSize: '20px', padding: '1.5%', width: '94%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"

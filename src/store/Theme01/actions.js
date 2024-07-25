@@ -44,6 +44,7 @@ export default {
       code: payload.code,
       tipo: payload.tipo,
       name: payload.name,
+      status: true,
       preco: payload.preco,
       oferta: payload.oferta,
       img: payload.img,

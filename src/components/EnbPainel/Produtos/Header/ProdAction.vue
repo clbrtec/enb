@@ -1,5 +1,6 @@
 <template>
   <div class='ProdAction'>
+    <nave-prod/>
     <div class="cont">
       <edit-icon
       @click="edit"
@@ -18,7 +19,16 @@
     </div>
     <div class="cont">
       <diretory-icon
+      v-if="StatusProd"
+      @click="toFile(false)"
       text="Arquivar"
+      :active="true"
+      :optionsLabel="{ marginTop: '65px' }"
+      />
+      <checked-icon
+      v-if="!StatusProd"
+      @click="toFile(true)"
+      text="Publicar"
       :active="true"
       :optionsLabel="{ marginTop: '65px' }"
       />
@@ -39,7 +49,9 @@
       :optionsLabel="{ marginTop: '65px' }"
       />
     </div>
-    <div @click="del" class="cont">
+    <div
+    @click="del"
+    class="cont">
       <delete-icon
       :options="{ width: '30px', height: '30px', action: true }"
       text="Excluir"
@@ -67,26 +79,31 @@ import DiretoryIcon from '../../Icons/DiretoryIcon'
 import EditFastIcon from '../../Icons/EditFastIcon'
 import EditIcon from '../../Icons/EditIcon'
 import AddIcon from '../../Icons/AddIcon'
+import NaveProd from '../Nave/NaveProd'
+import CheckedIcon from '../../Icons/CheckedIcon'
 export default {
   name: 'ProdAction',
-  components: { AddIcon, EditIcon, EditFastIcon, DiretoryIcon, EyesIcon, CopyIcon, DeleteIcon },
+  components: { AddIcon, EditIcon, EditFastIcon, DiretoryIcon, EyesIcon, CopyIcon, DeleteIcon, NaveProd, CheckedIcon },
   computed: {
-    ...mapGetters(['SelectedProds']),
+    ...mapGetters(['SelectedProds', 'StatusProd']),
     empty () {
       return this.SelectedProds[0].id === ''
     }
   },
   methods: {
-    ...mapActions(['ClearProdEdit', 'PushProd', 'CopyProd', 'DeleteProd', 'SetModal', 'SetItem01', 'PushMsg']),
+    ...mapActions(['ClearProdEdit', 'PushProd', 'CopyProd', 'DeleteProd', 'SetModal', 'SetItem01', 'PushMsg', 'ToFileProd']),
     del () {
       if(this.empty) {
         this.PushMsg({ msg: 'Selecione um produto', color: '#eba134' })
         return
       }
-      this.DeleteProd(this.SelectedProds)
-        .then(() => {
-          this.ClearProdEdit()
-        })
+      this.SetModal({ 
+        component: 'AskAction',
+        active: true,
+        ask: 'Tem certeza que deseja excluir o produto?',
+        action: 'DeleteProd',
+        payload: this.SelectedProds
+      })
     },
     add () {
       if(!this.empty) {
@@ -135,6 +152,17 @@ export default {
       this.SetItem01(this.SelectedProds[0])
         .then(() => {
           this.$router.push('/itemview')
+        })
+    },
+    toFile (payload) {
+      if(this.empty) {
+        this.PushMsg({ msg: 'Selecione um ou mais produtos', color: '#eba134' })
+        return
+      }
+      this.ToFileProd(payload)
+        .then(() => {
+          let str = payload ? 'puclicado' : 'arquivado'
+          this.PushMsg({ msg: `Produto ${str} com sucesso.`, color: '#326e3d' })
         })
     }
   }

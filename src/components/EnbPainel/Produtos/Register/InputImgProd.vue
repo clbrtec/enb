@@ -29,7 +29,7 @@ export default {
 
 <style scoped>
 .InputImgProd {
-  width: 50%;
+  width: 100%;
 }
 
 img {

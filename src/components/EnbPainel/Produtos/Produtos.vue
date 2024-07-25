@@ -4,7 +4,7 @@
     <prods-header/>
     <div class="cont-prod">
       <list-item
-      v-for="(data, key) in ProdutosTotal01"
+      v-for="(data, key) in Produtos"
       :key="key"
       :data="data"
       />
@@ -21,7 +21,10 @@ export default {
   name: 'EnbProdutos',
   components: { ProdsHeader, ListItem, ProdAction },
   computed: {
-    ...mapGetters(['ProdutosTotal01'])
+    ...mapGetters(['ProdutosTotal01', 'StatusProd']),
+    Produtos () {
+      return this.ProdutosTotal01.filter(p => p.status === this.StatusProd)
+    }
   }
 }
 </script>

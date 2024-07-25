@@ -9,6 +9,13 @@ export default {
   ChangeProdEdit ({ commit }, payload) {
     commit('CHANGE_PRODEDIT', payload)
   },
+  ToFileProd: ({ commit }, payload) => new Promise((resolve) => {
+    commit('TOFILE_PROD', payload)
+    resolve()
+  }),
+  ChangeStatusProd ({ commit }, payload) {
+    commit('CHANGESTATUS_PROD', payload)
+  },
   UpdateProdCateg ({ commit }, payload) {
     commit('UPDATE_PRODCATEG', payload)
   },

@@ -12,6 +12,12 @@ export default {
       state.SelectedProdEdit[0][key] = payload[key]
     }
   },
+  'TOFILE_PROD' (state, payload) {
+    state.SelectedProdEdit.map(p => p.status = payload)
+  },
+  'CHANGESTATUS_PROD' (state, payload) {
+    state.StatusProd = payload
+  },
   'UPDATE_PRODCATEG' (state, payload) {
     state.Categorias.map(c => c.active = false)
     state.Categorias.map(c => {

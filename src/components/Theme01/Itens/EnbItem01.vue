@@ -12,7 +12,7 @@
       {{ data.name }} - {{ data.un }}
     </div>
     <div class="cont-valor">
-      R$ {{ data.preco.toFixed(2).replace('.', ',') }}
+      R$ {{ data.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}
     </div>
     <div class="cont-btn">
       <enb-itemBtn01 :data="data"/>

@@ -13,8 +13,8 @@
     @update:model-value="newValue => ChangeProdEdit({ statusEstoque: newValue })"
     :data="status"
     text="Status do estoque"
-    :label="{ textAlign: 'left', marginTop: '5px', marginLeft: '7%' }"
-    :input="{ width: '90%', padding: '2%', fontSize: '16px', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
+    :label="{ textAlign: 'left', marginTop: '5px', marginLeft: '5px' }"
+    :input="{ width: '100%', padding: '2%', fontSize: '16px', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
     />
     <input-reg
     v-if="SelectedProdEdit.gerEstoque"
@@ -23,7 +23,7 @@
     text="Quantidade de estoque"
     type="number"
     :label="{ textAlign: 'left', marginLeft: '7%', marginTop: '8px' }"
-    :input="{ fontSize: '18px', padding: '2%', width: '85%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
+    :input="{ fontSize: '18px', padding: '2%', width: '95.5%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
     />
     <input-select
     v-if="SelectedProdEdit.gerEstoque"
@@ -32,15 +32,8 @@
     :data="pendentes"
     text="Permitir Pedidos pendentes?"
     :label="{ textAlign: 'left', marginTop: '5px', marginLeft: '7%' }"
-    :input="{ width: '90%', padding: '2%', fontSize: '16px', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
+    :input="{ width: '100%', padding: '2%', fontSize: '16px', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
     />
-    <div class="check end">
-      <input
-      :checked="SelectedProdEdit.individual"
-      @change="ChangeProdEdit({ individual: !SelectedProdEdit.individual })"
-      type="checkbox">
-      <label>Vendido individualmente</label>
-    </div>
   </div>
 </template>
 
@@ -77,13 +70,14 @@ export default {
 
 <style scoped>
 .EstoqueProd {
-  width: 50%;
+  width: 100%;
 }
 
 .check {
-  width: 87%;
+  width: 100%;
   margin: auto;
   text-align: left;
+  margin-top: 8px;
 }
 
 label {

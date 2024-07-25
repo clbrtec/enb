@@ -5,7 +5,7 @@
     @update:model-value="newValue => ChangeProdEdit({ visibilidade: newValue })"
     :data="visibilidade"
     text="Visibilidade no Catálogo"
-    :label="{ textAlign: 'left', marginTop: '9%', marginLeft: '2%' }"
+    :label="{ textAlign: 'left', marginTop: '1%', marginLeft: '5px' }"
     :input="{ width: '100%', padding: '2%', fontSize: '16px', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
     />
   </div>
@@ -38,6 +38,6 @@ export default {
 
 <style scoped>
 .VisibProd {
-  width: 50%;
+  width: 100%;
 }
 </style>

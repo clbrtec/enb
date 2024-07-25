@@ -18,7 +18,7 @@
         {{ ItemSelected01.name }}
       </div>
       <div class="cont-desc valor">
-        R$ {{ ItemSelected01.preco.toFixed(2).replace('.', ',') }}
+        R$ {{ ItemSelected01.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}
       </div>
       <div class="qtda-btn">
         <div class="qtda">

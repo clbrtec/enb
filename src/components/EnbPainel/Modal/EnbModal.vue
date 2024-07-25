@@ -9,9 +9,10 @@
 import { mapGetters, mapActions } from 'vuex'
 import SelectImg from './SelectImg'
 import FastProdEdit from './FastProdEdit'
+import AskAction from './AskAction'
 export default {
   name: 'EnbModal',
-  components: { SelectImg, FastProdEdit },
+  components: { SelectImg, FastProdEdit, AskAction },
   computed: {
     ...mapGetters(['EnbModal'])
   },

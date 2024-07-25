@@ -11,19 +11,19 @@
     <div style="display: flex">
       <input-reg
       :value="SelectedProdEdit.preco"
-      @update:model-value="newValue => ChangeProdEdit({ preco: parseFloat(newValue) })"
+      @update:model-value="newValue => ChangeProdEdit({ preco: parseFloat(newValue.replace(',', '.')) })"
       text="Preço (R$)"
       :cont="{ textAlign: 'left' }"
       :label="{ marginLeft: '3px', marginTop: '8px' }"
-      :input="{ fontSize: '26px', padding: '1.5%', width: '90%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
+      :input="{ textAlign: 'right', fontSize: '26px', padding: '1.5%', width: '90%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
       <input-reg
       :value="SelectedProdEdit.oferta"
-      @update:model-value="newValue => ChangeProdEdit({ oferta: parseFloat(newValue) })"
+      @update:model-value="newValue => ChangeProdEdit({ oferta: parseFloat(newValue.replace(',', '.')) })"
       text="Preço de oferta (R$)"
       :cont="{ textAlign: 'left' }"
       :label="{ marginLeft: '3px', marginTop: '8px' }"
-      :input="{ fontSize: '26px', padding: '1.5%', width: '93%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
+      :input="{ textAlign: 'right', fontSize: '26px', padding: '1.5%', width: '93%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
       <div class="crono">
         <crono-icon @click="showCrono=!showCrono"/>
@@ -37,6 +37,10 @@
     :label="{ textAlign: 'left', marginLeft: '3px', marginTop: '5px' }"
     :input="{ padding: '2%', fontSize: '18px', width: '95%', border: 'thin solid #CCC', borderRadius: '5px' }"
     />
+    <div>
+      <visib-prod/>
+      <estoque-prod/>
+    </div>
   </div>
 </template>
 
@@ -46,9 +50,11 @@ import InputReg from './InputReg'
 import CronoIcon from '../../Icons/CronoIcon'
 import InputCrono from './InputCrono'
 import InputText from './InputText'
+import VisibProd from './VisibProd'
+import EstoqueProd from './EstoqueProd'
 export default {
   name: 'InputInfo',
-  components: { InputReg, CronoIcon, InputCrono, InputText },
+  components: { InputReg, CronoIcon, InputCrono, InputText, VisibProd, EstoqueProd },
   methods: {
     ...mapActions(['ChangeProdEdit'])
   },
@@ -68,7 +74,7 @@ export default {
 
 <style scoped>
 .InputInfo {
-  width: 50%;
+  width: 75%;
 }
 
 .crono {

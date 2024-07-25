@@ -20,10 +20,10 @@ export default {
   props: ['data'],
   computed: {
     preco () {
-      return this.data.preco.toFixed(2).replace('.', ',')
+      return this.data.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
     },
     subtotal () {
-      return (this.data.preco * this.data.qtda).toFixed(2).replace('.', ',')
+      return (this.data.preco * this.data.qtda).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
     }
   }
 }
