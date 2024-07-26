@@ -46,24 +46,24 @@
     </div>
     <div class="block">
       <input-reg
-      :value="SelectedClientEdit.cep"
-      @update:model-value="newValue => ChangeClientEdit({ cep: newValue })"
+      :value="SelectedClientEdit.cpf"
+      @update:model-value="newValue => ChangeClientEdit({ cpf: newValue })"
       text="CPF"
       :cont="{ width: '30%', paddingLeft: '0.6%' }"
       :label="{ textAlign: 'left', marginLeft: '1%' }"
       :input="{ fontSize: '20px', padding: '2.4%', width: '94%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
       <input-reg
-      :value="SelectedClientEdit.endereco"
-      @update:model-value="newValue => ChangeClientEdit({ endereco: newValue })"
+      :value="SelectedClientEdit.celular"
+      @update:model-value="newValue => ChangeClientEdit({ celular: newValue })"
       text="Celular"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '3%' }"
       :input="{ fontSize: '20px', padding: '1.5%', width: '92%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
       <input-reg
-      :value="SelectedClientEdit.numero"
-      @update:model-value="newValue => ChangeClientEdit({ numero: newValue })"
+      :value="SelectedClientEdit.cep"
+      @update:model-value="newValue => ChangeClientEdit({ cep: newValue })"
       text="CEP"
       :cont="{ width: '18.5%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
@@ -72,8 +72,8 @@
     </div>
     <div class="block">
       <input-reg
-      :value="SelectedClientEdit.cep"
-      @update:model-value="newValue => ChangeClientEdit({ cep: newValue })"
+      :value="SelectedClientEdit.bairro"
+      @update:model-value="newValue => ChangeClientEdit({ bairro: newValue })"
       text="Bairro"
       :cont="{ width: '30%', paddingLeft: '0.6%' }"
       :label="{ textAlign: 'left', marginLeft: '1%' }"
@@ -116,16 +116,14 @@
     </div>
     <div class="block">
       <input-reg
-      :value="SelectedClientEdit.cidade"
-      @update:model-value="newValue => ChangeClientEdit({ cidade: newValue })"
+      :value="SelectedClientEdit.senha"
+      @update:model-value="newValue => ChangeClientEdit({ senha: newValue })"
       text="Senha"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
       :input="{ fontSize: '20px', padding: '1.5%', width: '94%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
       <input-reg
-      :value="SelectedClientEdit.uf"
-      @update:model-value="newValue => ChangeClientEdit({ uf: newValue })"
       text="Confirmar senha"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
