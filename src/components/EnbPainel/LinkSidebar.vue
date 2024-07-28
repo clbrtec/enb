@@ -18,10 +18,12 @@
 <script>
 import ProdIcon from './Icons/ProdIcon'
 import ClientIcon from './Icons/ClientIcon'
+import ListIcon01 from '../Theme01/Icons/ListIcon01'
+import StoreIcon01 from '../Theme01/Icons/StoreIcon01'
 import SubLink from '@/components/EnbPainel/SubLink'
 export default {
   name: 'LinkSidebar',
-  components: { SubLink, ProdIcon, ClientIcon },
+  components: { SubLink, ProdIcon, ClientIcon, ListIcon01, StoreIcon01 },
   data () {
     return {
       showSubLink: false

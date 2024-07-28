@@ -1,3 +1,4 @@
 export default {
-  EnbMsg: state => state.EnbMsg
+  EnbMsg: state => state.EnbMsg,
+  Profile: state => state.Profile
 }

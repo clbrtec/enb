@@ -1,7 +1,7 @@
 <template>
   <div class='EnbItem01'>
     <div class="cont-img">
-      <div class="btn-action" v-if="Profile01.logged && Profile01.admin">
+      <div class="btn-action" v-if="Profile.logged && Profile.admin">
         <edit-icon @click="edit"/>
         <edit-fast-icon @click="fastEdit"/>
         <delete-icon @click="del"/>
@@ -31,7 +31,7 @@ export default {
   name: 'EnbItem01',
   components: { EnbItemImg01, EnbItemBtn01, EditFastIcon, EditIcon, DeleteIcon },
   computed: {
-    ...mapGetters(['Profile01', 'SelectedProds'])
+    ...mapGetters(['Profile', 'SelectedProds'])
   },
   props: {
     data: {

@@ -45,6 +45,16 @@ export default {
       text: 'Clientes',
       path: '/painel/client',
       icon: 'ClientIcon'
+    },
+    {
+      text: 'Pedidos',
+      path: '/painel/pedidos',
+      icon: 'ListIcon01'
+    },
+    {
+      text: 'Loja',
+      path: '/loja',
+      icon: 'StoreIcon01'
     }
     // {
     //   text: 'Componentes',

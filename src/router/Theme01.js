@@ -22,5 +22,10 @@ export default [
     path: '/complete',
     name: 'Finalizar compra',
     component: CompletePurchase
+  },
+  {
+    path: '/loja',
+    name: 'Loja',
+    component: EnbItens01
   }
 ]

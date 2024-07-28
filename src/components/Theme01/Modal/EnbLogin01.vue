@@ -17,9 +17,9 @@ export default {
   name: 'EnbLogin01',
   components: { EnbLabel, EnbInput, EnbButton },
   methods: {
-    ...mapActions(['GetLogin01', 'SetModal01']),
+    ...mapActions(['GetLogin', 'SetModal01']),
     login () {
-      this.GetLogin01()
+      this.GetLogin({ logged: true, admin: true })
       this.SetModal01({ active: false })
     }
   }

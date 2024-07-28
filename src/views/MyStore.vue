@@ -1,4 +1,5 @@
 <template>
+  <enb-msg/>
   <div class='MyStore'>
     <component v-if="Modal01.active" :is="'EnbModal01'"/>
     <component v-if="ShowCheckout" :is="'CheckoutSide01'"/>
@@ -17,9 +18,10 @@ import CheckoutSide01 from '@/components/Theme01/Checkout/CheckoutSide01'
 import SearchCont01 from '@/components/Theme01/Search/SearchCont01'
 import EnbModal01 from '@/components/Theme01/Modal/EnbModal01.vue'
 import EnbFooter01 from '@/components/Theme01/Footer/EnbFooter01.vue'
+import EnbMsg from '@/components/EnbMsg/EnbMsg'
 export default {
   name: 'MyStore',
-  components: { EnbNave01, EnbContent01, CheckoutSide01, EnbModal01, SearchCont01, EnbFooter01 },
+  components: { EnbNave01, EnbContent01, CheckoutSide01, EnbModal01, SearchCont01, EnbFooter01, EnbMsg },
   computed: {
     ...mapGetters(['ShowCheckout', 'ShowSearch01', 'Modal01'])
   }

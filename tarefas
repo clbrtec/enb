@@ -32,12 +32,11 @@
 * Clientes:
  - iniciar a pagina clientes #
 
-29/07/2024
+29/07/2024:
 * Clientes:
  - Cadastro #
  - Edição #
- - Pedidos
- - Minha conta
+ - Pedidos # 
 
 * Gerenciamento de Produtos:
  - Arquivar #
@@ -50,11 +49,14 @@
 
 * Gerenciamento de Pedidos:
  - Visualização
+ - Marcar como concluido
+ - Excluir
 
 * Loja:
  - Meus pedidos
+ - Minha conta
  - Filtro produtos
- - Descrição do produto
+ - Descrição do produto #
  - Sub menu categorias (Produtos)
 
 * Usuários:

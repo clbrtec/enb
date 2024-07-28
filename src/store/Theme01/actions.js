@@ -8,6 +8,10 @@ export default {
   PushCheckout01 ({ commit }, payload) {
     commit('PUSH_CHECKOUT01', payload)
   },
+  ClearCheckout01: ({ commit }) => new Promise((resolve) => {
+    commit('CLEAR_CHECKOUT01')
+    resolve()
+  }),
   QtdaCheckoutAdd01 ({ commit }, payload) {
     commit('QTDA_CHECKOUTADD01', payload)
   },
@@ -23,12 +27,6 @@ export default {
   }),
   SetModal01 ({ commit }, payload) {
     commit('SET_MODAL01', payload)
-  },
-  GetLogin01 ({ commit }) {
-    commit('GET_LOGIN01')
-  },
-  GetLogout01 ({ commit }) {
-    commit('GET_LOGOUT01')
   },
   SearchProd01 ({ commit }, payload) {
     commit('SEARCH_PROD01', payload)

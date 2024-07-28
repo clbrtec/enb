@@ -1,8 +1,5 @@
+import img from './img'
 export default {
-  Profile01: {
-    logged: false,
-    admin: false
-  },
   Modal01: {
     component: 'EnbLogin01',
     active: false
@@ -33,6 +30,28 @@ export default {
       icon: 'ListIcon01'
     }
   ],
-  Produtos01: [[], []],
+  Produtos01: [[
+    {
+      id: 15248,
+      code: '',
+      tipo: 'Simples',
+      name: 'Massa Lasanha Vilma 500gr',
+      status: true,
+      preco: 1.99,
+      oferta: 0.99,
+      img: [img],
+      descricao: 'No mundo atual, o desenvolvimento contínuo de distintas formas de atuação causa impacto indireto na reavaliação das diretrizes de desenvolvimento para o futuro',
+      dateOfertaStart: '',
+      dateOfertaEnd: '',
+      categoria: 'Massas',
+      gerEstoque: false,
+      statusEstoque: '',
+      estoque: 0,
+      pendencia: '',
+      visibilidade: '',
+      visualizacao: 0,
+      dateCreate: '28/07/2024'
+    }
+  ], []],
   ResultSearch01: []
 }

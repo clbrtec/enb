@@ -15,5 +15,6 @@ export default {
     cidade: '',
     uf: '',
     senha: ''
-  }
+  },
+  Pedidos: []
 }

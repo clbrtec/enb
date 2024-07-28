@@ -8,5 +8,14 @@ export default {
   },
   'DEL_MSG' (state, payload) {
     state.EnbMsg = state.EnbMsg.filter(m => m.id !== payload)
+  },
+  'GET_LOGIN' (state, payload) {
+    state.Profile = payload
+  },
+  'GET_LOGOUT' (state) {
+    state.Profile = {
+      logged: false,
+      admin: false
+    }
   }
 }

@@ -36,9 +36,6 @@ export default {
   padding-top: 0%;
 }
 
-.header {
-}
-
 .cont {
   width: 100%;
   height: 84%;

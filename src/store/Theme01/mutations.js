@@ -46,12 +46,6 @@ export default {
   'SET_MODAL01' (state, payload) {
     state.Modal01 = payload
   },
-  'GET_LOGIN01' (state) {
-    state.Profile01 = { logged: true, admin: true }
-  },
-  'GET_LOGOUT01' (state) {
-    state.Profile01 = { logged: false, admin: false }
-  },
   'SEARCH_PROD01' (state, payload) {
     if (payload === '') {
       state.ResultSearch01 = []
@@ -67,5 +61,8 @@ export default {
   },
    'PUSH_PROD' (state, payload) {
     state.Produtos01[0].push(payload)
+  },
+  'CLEAR_CHECKOUT01' (state) {
+    state.CheckoutItens01 = []
   }
 }

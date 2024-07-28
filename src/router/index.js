@@ -8,6 +8,7 @@ import RegisterProd from '@/components/EnbPainel/Produtos/Register/RegisterProd'
 import EnbClients from '@/components/EnbPainel/Clients/EnbClients'
 import RegisterClient from '@/components/EnbPainel/Clients/Register/RegisterClient'
 import ClientView from '@/components/EnbPainel/Clients/ClientView'
+import EnbPedidos from '@/components/EnbPainel/Pedidos/EnbPedido'
 
 const routes = [
   {  
@@ -54,6 +55,11 @@ const routes = [
         path: '/painel/client/view',
         name: 'Cliente',
         component: ClientView
+      },
+      {
+        path: '/painel/pedidos',
+        name: 'Pedidos',
+        component: EnbPedidos
       }
     ]
   },

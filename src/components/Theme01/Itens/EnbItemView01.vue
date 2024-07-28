@@ -1,5 +1,6 @@
 <template>
   <div class='EnbItemView01'>
+    <div class="cont-imgs">
     <carousel>
       <slide v-for="(img, key) in ItemSelected01.img" :key="key">
         <vue-image-zoomer
@@ -11,11 +12,16 @@
       </slide>
       <template #addons>
         <navigation />
+        <pagination />
       </template>
     </carousel>
+    </div>
     <div class="cont">
       <div class="cont-desc">
         {{ ItemSelected01.name }}
+      </div>
+      <div class="cont-desc desc">
+        {{ ItemSelected01.descricao }}
       </div>
       <div class="cont-desc valor">
         R$ {{ ItemSelected01.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}
@@ -37,10 +43,10 @@ import { mapGetters, mapActions } from 'vuex'
 import { VueImageZoomer } from 'vue-image-zoomer'
 import 'vue-image-zoomer/dist/style.css'
 import EnbSetQtda01 from './EnbSetQtda01.vue'
-import { Carousel, Slide, Navigation } from 'vue3-carousel'
+import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel'
 export default {
   name: 'EnbItemView01',
-  components: { VueImageZoomer, EnbSetQtda01, Carousel, Slide, Navigation },
+  components: { VueImageZoomer, EnbSetQtda01, Carousel, Slide, Navigation, Pagination },
   computed: {
     ...mapGetters(['ItemSelected01'])
   },
@@ -65,7 +71,11 @@ export default {
 .EnbItemView01 {
   display: flex;
   justify-content: center;
-  padding-top: 2%
+  padding-top: 2%;
+}
+
+.cont-imgs {
+  width: 40%;
 }
 
 .cont {
@@ -77,6 +87,11 @@ export default {
   text-align: left;
   font-size: 22px;
   padding: 1%;
+}
+
+.desc {
+  font-size: 18px;
+  color: #333333;
 }
 
 .valor {

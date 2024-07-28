@@ -12,5 +12,8 @@ export default {
   },
   'SET_CLIENTVIEW' (state, payload) {
     state.ClientView = payload
+  },
+  'PUSH_PEDIDO' (state, payload) {
+    state.Pedidos.push(payload)
   }
 }
