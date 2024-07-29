@@ -44,7 +44,6 @@
  - Cadastro - melhoria no layout da tela #
  - Filtro produtos (por categoria) #
  - Perguntar antes de excluir #
- - Produto tipo variável
  - Cadastro(remover individualmente) #
 
 * Gerenciamento de Pedidos:
@@ -54,15 +53,36 @@
  - Detalhes
 
 * Loja:
- - Meus pedidos
- - Minha conta
- - Filtro produtos
  - Descrição do produto #
  - Sub menu categorias (Produtos) #
 
+05/08/2024:
+
+* Gerenciamento de Produtos:
+ - Produto tipo variável
+ - Preço de promoção
+ - botão para edição (gatilho)
+
+* Gerenciamento de Pedidos:
+ - Detalhes
+
+* Loja:
+ - Meus pedidos
+ - Minha conta
+ - Filtro produtos
+
 * Usuários:
+ - Visualização
  - Cadastro
  - Edição
 
 * Geral:
  - Loader
+
+* Cupons:
+ - Visualização
+ - Cadastro
+ - Edição
+ - Excluir
+
+  

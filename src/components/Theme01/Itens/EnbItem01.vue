@@ -9,7 +9,7 @@
       <enb-itemImg01 :data="data"/>
     </div>
     <div class="cont-desc">
-      {{ data.name }} - {{ data.un }}
+      {{ data.name }}
     </div>
     <div class="cont-valor">
       R$ {{ data.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}

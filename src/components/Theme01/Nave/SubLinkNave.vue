@@ -28,7 +28,7 @@ export default {
 <style scoped>
 .SubLinkNave {
   text-align: left;
-  padding: 8%;
+  padding: 5%;
   cursor: pointer;
 }
 
