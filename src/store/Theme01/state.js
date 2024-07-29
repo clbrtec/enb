@@ -45,7 +45,7 @@ export default {
       dateOfertaEnd: '',
       categoria: 'Massas',
       gerEstoque: false,
-      statusEstoque: '',
+      statusEstoque: 'Em estoque',
       estoque: 0,
       pendencia: '',
       visibilidade: '',
@@ -53,5 +53,6 @@ export default {
       dateCreate: '28/07/2024'
     }
   ], []],
-  ResultSearch01: []
+  ResultSearch01: [],
+  ResultFilterCateg: []
 }

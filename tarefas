@@ -42,22 +42,23 @@
  - Arquivar #
  - Status #
  - Cadastro - melhoria no layout da tela #
- - Filtro produtos (por categoria)
+ - Filtro produtos (por categoria) #
  - Perguntar antes de excluir #
  - Produto tipo variável
  - Cadastro(remover individualmente) #
 
 * Gerenciamento de Pedidos:
- - Visualização
- - Marcar como concluido
- - Excluir
+ - Visualização #
+ - Marcar como concluido #
+ - Excluir #
+ - Detalhes
 
 * Loja:
  - Meus pedidos
  - Minha conta
  - Filtro produtos
  - Descrição do produto #
- - Sub menu categorias (Produtos)
+ - Sub menu categorias (Produtos) #
 
 * Usuários:
  - Cadastro

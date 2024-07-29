@@ -21,9 +21,14 @@ export default {
   name: 'EnbProdutos',
   components: { ProdsHeader, ListItem, ProdAction },
   computed: {
-    ...mapGetters(['ProdutosTotal01', 'StatusProd']),
+    ...mapGetters(['ProdutosTotal01', 'StatusProd', 'ResultFilterCateg']),
     Produtos () {
-      return this.ProdutosTotal01.filter(p => p.status === this.StatusProd)
+      if (!this.ResultFilterCateg.length) {
+        return this.ProdutosTotal01.filter(p => p.status === this.StatusProd)
+      }
+      else {
+        return this.ResultFilterCateg.filter(p => p.status === this.StatusProd)
+      }
     }
   }
 }

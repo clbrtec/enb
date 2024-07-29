@@ -11,9 +11,17 @@ export default {
     commit('PUSH_PEDIDO', newPedido)
     resolve(newPedido)
   }),
+  UpdateStatusPedido: ({ commit }, payload) => new Promise((resolve) => {
+    commit('UPDATESTATUS_PEDIDO', payload)
+    resolve()
+  }),
   ChangeClientEdit ({ commit }, payload) {
     commit('CHANGE_CLIENTEDIT', payload)
   },
+  DeletePedido: ({ commit }, payload) => new Promise((resolve) => {
+    commit('DELETE_PEDIDO', payload)
+    resolve()
+  }),
   PushClient: ({ commit }, payload) => new Promise((resolve) => {
     let newClient = {
       id: Math.round(Math.random() * 1000000),

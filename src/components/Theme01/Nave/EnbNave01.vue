@@ -2,10 +2,14 @@
   <div class='EnbNave01'>
     <div class="cont-top">
       <enb-logo01/>
+      <sub-nave
+      :show="showsubnave"
+      />
       <enb-link01
       v-for="(l, key) in LinksTheme01"
       :key="key"
       :data="l"
+      v-model:showsubnave="showsubnave"
       />
       <div class="icons">
         <div class="cont-icons">
@@ -37,12 +41,14 @@ import CartIcon01 from '../Icons/CartIcon01.vue'
 import UserIcon01 from '../Icons/UserIcon01.vue'
 import SearchIcon01 from '../Icons/SearchIcon01'
 import EnbProfileLink01 from './EnbProfileLink01.vue'
+import SubNave from './SubNave'
 export default {
   name: 'EnbNave01',
-  components: { EnbLogo01, EnbLink01, CartIcon01, UserIcon01, SearchIcon01, EnbProfileLink01 },
+  components: { EnbLogo01, EnbLink01, CartIcon01, UserIcon01, SearchIcon01, EnbProfileLink01, SubNave },
   data () {
     return {
-      ShowProfileLink: false
+      ShowProfileLink: false,
+      showsubnave: false
     }
   },
   computed: {

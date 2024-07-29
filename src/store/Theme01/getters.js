@@ -8,5 +8,6 @@ export default {
   CheckoutTotal01: state => state.CheckoutItens01.map(i => i.preco * i.qtda).reduce((t, n) => t + n, 0),
   ItemSelected01: state => state.ItemSelected01,
   Modal01: state => state.Modal01,
-  ResultSearch01: state => state.ResultSearch01
+  ResultSearch01: state => state.ResultSearch01,
+  ResultFilterCateg: state => state.ResultFilterCateg
 }

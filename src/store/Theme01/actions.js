@@ -61,5 +61,9 @@ export default {
     }
     commit('PUSH_PROD', newItem)
     resolve(newItem)
+  }),
+  FilterCateg: ({ commit }, payload) => new Promise((resolve) => {
+    commit('FILTER_CATEG', payload)
+    resolve()
   })
 }

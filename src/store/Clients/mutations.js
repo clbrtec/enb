@@ -15,5 +15,15 @@ export default {
   },
   'PUSH_PEDIDO' (state, payload) {
     state.Pedidos.push(payload)
+  },
+  'UPDATESTATUS_PEDIDO' (state, payload) {
+    state.Pedidos.map(p => {
+      if (p.id === payload.id) {
+        p.status = payload.status
+      }
+    })
+  },
+  'DELETE_PEDIDO' (state, payload) {
+    state.Pedidos = state.Pedidos.filter(p => p.id !== payload)
   }
 }

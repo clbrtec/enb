@@ -1,5 +1,5 @@
 <template>
-  <div class='EnbLink01'>
+  <div class='EnbLink01' @mouseenter="emit(true)" @mouseleave="emit(false)">
     <component :is="data.icon"/>
     <div class="cont" @click="$router.push(data.path)">{{ data.text }}</div>
   </div>
@@ -17,6 +17,18 @@ export default {
     data: {
       text: Object,
       default: () => ({ text: 'Link', path: '' })
+    },
+    showsubnave: {
+      type: Boolean,
+      default: false
+    }
+  },
+  emits: ['update:showsubnave'],
+  methods: {
+    emit (bool) {
+      if(this.data.text === 'Produtos') {
+        this.$emit('update:showsubnave', bool)
+      }
     }
   }
 }
@@ -28,6 +40,7 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 2%;
+  position: relative;
 }
 
 .cont {

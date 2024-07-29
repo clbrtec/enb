@@ -7,13 +7,16 @@
     <span :class="{ focus: !StatusProd }" @click="ChangeStatusProd(false)">
       Arquivado ({{ toFile }})
     </span>
+    <select-categ/>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import SelectCateg from './SelectCateg'
 export default {
   name: 'NaveProd',
+  components: { SelectCateg },
   computed: {
     ...mapGetters(['StatusProd', 'ProdutosTotal01']),
     toFile () {

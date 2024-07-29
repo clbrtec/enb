@@ -9,6 +9,11 @@ export default [
     component: EnbItens01
   },
   {
+    path: '/categorias',
+    name: 'Categorias',
+    component: EnbItens01
+  },
+  {
     path: '/itemview',
     name: 'Produto',
     component: EnbItemView01

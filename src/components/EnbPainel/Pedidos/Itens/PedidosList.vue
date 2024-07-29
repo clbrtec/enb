@@ -41,6 +41,7 @@
     </div>
     <div class="acoes">
       <good-icon
+      @click="update"
       :options="{ width: '15px', height: '15px', action: true }"
       text="Marcar como completo"
       :active="true"
@@ -53,6 +54,7 @@
       :optionsLabel="{ marginTop: '65px' }"
       />
       <delete-icon
+      @click="del"
       :options="{ width: '18px', height: '18px', action: true }"
       text="Excluir"
       :active="true"
@@ -63,6 +65,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import StatusIcon from '../../Icons/StatusIcon'
 import GoodIcon from '../../Icons/GoodIcon'
 import EyesIcon from '../../Icons/EyesIcon'
@@ -80,6 +83,24 @@ export default {
     },
     strItens () {
       return this.qtdeItens > 1 ? 'itens' : 'item'
+    }
+  },
+  methods: {
+    ...mapActions(['UpdateStatusPedido', 'PushMsg', 'SetModal']),
+    update () {
+      this.UpdateStatusPedido({ id: this.data.id, status: 1 })
+        .then(() => {
+          this.PushMsg({ msg: 'Pedido marcado como concluído', color: 'green' })
+        })
+    },
+    del () {
+      this.SetModal({ 
+        component: 'AskAction',
+        active: true,
+        ask: 'Tem certeza que deseja excluir o pedido?',
+        action: 'DeletePedido',
+        payload: this.data.id
+      })
     }
   }
 }
