@@ -1,6 +1,7 @@
 export default {
   Clients: [],
   ClientView: {},
+  PedidoView: {},
   SelectedClientEdit: {
     usuario: '',
     cpf: '',

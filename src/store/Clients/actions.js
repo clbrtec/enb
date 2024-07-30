@@ -49,5 +49,9 @@ export default {
   SetClientView: ({ commit }, payload) => new Promise((resolve) => {
     commit('SET_CLIENTVIEW', payload)
     resolve()
+  }),
+  SetPedidoView: ({ commit }, payload) => new Promise((resolve) => {
+    commit('SET_PEDIDOVIEW', payload)
+    resolve()
   })
 }

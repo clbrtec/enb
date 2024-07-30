@@ -1,12 +1,16 @@
 <template>
-  <div class='ClientView'>
+  <div class='PedidoView'>
+    <div class="numero-status">
+      <div>Pedido #{{ PedidoView.id }}</div>
+      <div class="status">{{ status }}</div>
+    </div>
     <div class="title">
-      {{ ClientView.nome }} {{ ClientView.sobrenome }} ({{ ClientView.email }})
+      Informações do cliente
     </div>
     <div class="block">
       <input-reg
       disabled
-      :value="ClientView.usuario"
+      :value="PedidoView.usuario.usuario"
       text="Usuário"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
@@ -14,7 +18,7 @@
       />
       <input-reg
       disabled
-      :value="ClientView.email"
+      :value="PedidoView.usuario.email"
       text="Email"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
@@ -24,7 +28,7 @@
     <div class="block">
       <input-reg
       disabled
-      :value="ClientView.nome"
+      :value="PedidoView.usuario.nome"
       text="Primeiro nome"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
@@ -32,7 +36,7 @@
       />
       <input-reg
       disabled
-      :value="ClientView.sobrenome"
+      :value="PedidoView.usuario.sobrenome"
       text="Sobrenome"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
@@ -42,7 +46,7 @@
     <div class="block">
       <input-reg
       disabled
-      :value="ClientView.cpf"
+      :value="PedidoView.usuario.cpf"
       text="CPF"
       :cont="{ width: '30%', paddingLeft: '0.6%' }"
       :label="{ textAlign: 'left', marginLeft: '1%' }"
@@ -50,7 +54,7 @@
       />
       <input-reg
       disabled
-      :value="ClientView.celular"
+      :value="PedidoView.usuario.celular"
       text="Celular"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '3%' }"
@@ -58,7 +62,7 @@
       />
       <input-reg
       disabled
-      :value="ClientView.cep"
+      :value="PedidoView.usuario.cep"
       text="CEP"
       :cont="{ width: '18.5%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
@@ -68,7 +72,7 @@
     <div class="block">
       <input-reg
       disabled
-      :value="ClientView.bairro"
+      :value="PedidoView.usuario.bairro"
       text="Bairro"
       :cont="{ width: '30%', paddingLeft: '0.6%' }"
       :label="{ textAlign: 'left', marginLeft: '1%' }"
@@ -76,7 +80,7 @@
       />
       <input-reg
       disabled
-      :value="ClientView.endereco"
+      :value="PedidoView.usuario.endereco"
       text="Endereço"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '3%' }"
@@ -84,7 +88,7 @@
       />
       <input-reg
       disabled
-      :value="ClientView.numero"
+      :value="PedidoView.usuario.numero"
       text="Número"
       :cont="{ width: '18.5%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
@@ -94,7 +98,7 @@
     <div class="block">
       <input-reg
       disabled
-      :value="ClientView.cidade"
+      :value="PedidoView.usuario.cidade"
       text="Cidade"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
@@ -102,7 +106,7 @@
       />
       <input-reg
       disabled
-      :value="ClientView.uf"
+      :value="PedidoView.usuario.uf"
       text="Estado(UF)"
       :cont="{ width: '50%' }"
       :label="{ textAlign: 'left', marginLeft: '2%' }"
@@ -110,17 +114,21 @@
       />
     </div>
     <div class="title">
-      Pedidos
+      Itens do pedido
     </div>
-    <div class="cont-pedidos">
-      <pedidos-header/>
+    <pedido-header-view/>
+    <pedido-item-view
+    v-for="(i, k) in PedidoView.itens"
+    :key="k"
+    :data="i"
+    />
+    <div class="values">
+      <div class="desc">Desconto:</div>
+      <div class="valor">R$ 0.00</div>
     </div>
-    <div class="cont">
-      <pedidos-list
-      v-for="(p, key) in PedidosClient"
-      :key="key"
-      :data="p"
-      />
+    <div class="values bold">
+      <div class="desc">Total do pedido:</div>
+      <div class="valor">R$ {{ total }}</div>
     </div>
   </div>
 </template>
@@ -128,30 +136,56 @@
 <script>
 import { mapGetters } from 'vuex'
 import InputReg from '../Produtos/Register/InputReg'
-import PedidosHeader from '../Pedidos/header/PedidosHeader'
-import PedidosList from '../Pedidos/Itens/PedidosList'
+import PedidoHeaderView from './Itens/PedidoHeaderView'
+import PedidoItemView from './Itens/PedidoItemView'
 export default {
-  name: 'ClientView',
-  components: { InputReg, PedidosHeader, PedidosList },
+  name: 'PedidoView',
+  components: { InputReg, PedidoHeaderView, PedidoItemView },
   computed: {
-    ...mapGetters(['ClientView', 'Pedidos']),
-    PedidosClient () {
-      return this.Pedidos.filter(p => p.usuario.id === this.ClientView.id)
+    ...mapGetters(['PedidoView']),
+    status () {
+      if (this.PedidoView.status === 1) {
+        return 'Concluído'
+      }
+      return 'Recebido'
+    },
+    total () {
+      return this.PedidoView.itens.map(i => i.preco * i.qtda).reduce((p, c) => c + p, 0)
     }
   }
 }
 </script>
 
 <style scoped>
-.ClientView {
+.PedidoView {
   width: 100%;
-  height: 100%;
+  height: 84%;
+  padding-bottom: 7%;
   overflow: auto;
 }
-.title {
+
+.numero-status {
   display: flex;
+  align-items: center;
   padding: 1.5%;
-  font-size: 22px;
+  font-size: 20px;
+  color: #a50201;
+}
+
+.status {
+  background-color: #20c997;
+  color: #FFFFFF;
+  font-size: 16px;
+  padding: 0.4%;
+  border-radius: 5px;
+  margin-left: 1%;
+}
+
+.title {
+  text-align: left;
+  padding: 1.5%;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .block {
@@ -159,14 +193,23 @@ export default {
   padding: 0.5%;
 }
 
-.cont-pedidos {
-  width: 95%;
-  margin: auto;
+.values {
+  display: flex;
+  justify-content: end;
+  padding: 1%;
 }
 
-.cont {
-  width: 95%;
-  margin: auto;
-  padding-bottom: 10%;
+.desc {
+  width: 15%;
+  text-align: right;
+}
+
+.valor {
+  width: 15%;
+}
+
+.bold {
+  font-size: 18px;
+  font-weight: bold;
 }
 </style>

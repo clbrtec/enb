@@ -50,7 +50,6 @@
  - Visualização #
  - Marcar como concluido #
  - Excluir #
- - Detalhes
 
 * Loja:
  - Descrição do produto #
@@ -63,8 +62,12 @@
  - Preço de promoção
  - botão para edição (gatilho)
 
+* Clientes:
+ - Detalhes clientes e Pedidos #
+
 * Gerenciamento de Pedidos:
- - Detalhes
+ - Detalhes #
+ - Update status pedido(na view)
 
 * Loja:
  - Meus pedidos
@@ -84,5 +87,3 @@
  - Cadastro
  - Edição
  - Excluir
-
-  

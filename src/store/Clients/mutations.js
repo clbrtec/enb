@@ -25,5 +25,8 @@ export default {
   },
   'DELETE_PEDIDO' (state, payload) {
     state.Pedidos = state.Pedidos.filter(p => p.id !== payload)
+  },
+  'SET_PEDIDOVIEW' (state, payload) {
+    state.PedidoView = payload
   }
 }

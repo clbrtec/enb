@@ -48,6 +48,7 @@
       :optionsLabel="{ marginTop: '65px' }"
       />
       <eyes-icon
+      @click="view"
       :options="{ width: '18px', height: '18px', action: true }"
       text="Detalhes"
       :active="true"
@@ -86,7 +87,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['UpdateStatusPedido', 'PushMsg', 'SetModal']),
+    ...mapActions(['UpdateStatusPedido', 'PushMsg', 'SetModal', 'SetPedidoView']),
     update () {
       this.UpdateStatusPedido({ id: this.data.id, status: 1 })
         .then(() => {
@@ -101,6 +102,12 @@ export default {
         action: 'DeletePedido',
         payload: this.data.id
       })
+    },
+    view () {
+      this.SetPedidoView(this.data)
+        .then(() => {
+          this.$router.push('/painel/pedidos/view')
+        })
     }
   }
 }
