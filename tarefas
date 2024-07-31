@@ -59,15 +59,15 @@
 
 * Gerenciamento de Produtos:
  - Produto tipo variável
- - Preço de promoção
- - botão para edição (gatilho)
+ - Preço de promoção #
+ - botão para edição (gatilho) #
 
 * Clientes:
  - Detalhes clientes e Pedidos #
 
 * Gerenciamento de Pedidos:
  - Detalhes #
- - Update status pedido(na view)
+ - Update status pedido(na view) #
 
 * Loja:
  - Meus pedidos

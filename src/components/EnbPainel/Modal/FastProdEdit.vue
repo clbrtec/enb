@@ -40,6 +40,7 @@
       :input="{ width: '99.5%', padding: '2.8%', paddingLeft: '1.2%', fontSize: '16px', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
     </div>
+    <button @click="update">Atualizar</button>
   </div>
 </template>
 
@@ -65,10 +66,14 @@ export default {
     ...mapGetters(['SelectedProdEdit'])
   },
   methods: {
-    ...mapActions(['SetModal', 'ChangeProdEdit', 'SetModal01']),
+    ...mapActions(['SetModal', 'ChangeProdEdit', 'SetModal01', 'PushMsg']),
     close () {
       this.SetModal({ component: '', active: false })
       this.SetModal01({ component: '', active: false })
+    },
+    update () {
+      this.PushMsg({ msg: 'Produto atualizado com sucesso', color: '#326e3d' })
+        .then(() => this.close())
     }
   }
 }
@@ -82,6 +87,7 @@ export default {
   margin: auto;
   background-color: #FFFFFF;
   border-radius: 5px;
+  padding-bottom: 2.5%;
 }
 
 .header {
@@ -103,5 +109,15 @@ export default {
 .cont {
   padding: 3%;
   padding-top: 0%;
+}
+
+button {
+  border: 0;
+  font-size: 16px;
+  padding: 2%;
+  border-radius: 5px;
+  background-color: #333333;
+  color: #FFFFFF;
+  cursor: pointer;
 }
 </style>

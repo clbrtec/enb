@@ -137,7 +137,7 @@ export default {
       this.PushProd(this.SelectedProds[0])
         .then(res => this.CopyProd(res))
         .then(() => {
-          this.$router.push('/painel/produtos/copy')
+          this.PushMsg({ msg: `Produto copiado com sucesso.`, color: '#326e3d' })
         })
     },
     view () {

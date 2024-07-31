@@ -12,7 +12,8 @@
       {{ data.name }}
     </div>
     <div class="cont-valor">
-      R$ {{ data.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}
+      <span :class="{ disabled: data.oferta > 0 }" style="margin: 5px">{{ data.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}</span>
+      <span v-if="data.oferta > 0" style="margin: 5px">{{ data.oferta.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}</span>
     </div>
     <div class="cont-btn">
       <enb-itemBtn01 :data="data"/>
@@ -107,5 +108,10 @@ export default {
   display: flex;
   position: absolute;
   background-color: #FFFFFF;
+}
+
+.disabled {
+  color: #CCCCCC;
+  text-decoration: line-through;
 }
 </style>

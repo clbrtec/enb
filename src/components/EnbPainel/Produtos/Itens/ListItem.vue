@@ -12,7 +12,10 @@
       <div v-if="!data.status" class="arq">Arquivado</div>
     </div>
     <div style="width: 10%">{{ data.statusEstoque }}</div>
-    <div style="width: 8%">{{ data.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}</div>
+    <div style="width: 8%">
+      <span :class="{ disabled: data.oferta > 0 }" style="display: block">{{ data.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}</span>
+      <span v-if="data.oferta > 0" style="display: block; color: #20c997">{{ data.oferta.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}</span>
+    </div>
     <div style="width: 10%">{{ data.categoria }}</div>
     <div style="width: 4%">
       <box-icon
@@ -87,5 +90,10 @@ img {
   padding: 3px;
   font-size: 12px;
   border-radius: 3px;
+}
+
+.disabled {
+  color: red;
+  text-decoration: line-through;
 }
 </style>

@@ -4,6 +4,9 @@
       <div>Pedido #{{ PedidoView.id }}</div>
       <div class="status">{{ status }}</div>
     </div>
+      <update-status-pedido
+      :data="PedidoView"
+      />
     <div class="title">
       Informações do cliente
     </div>
@@ -138,9 +141,10 @@ import { mapGetters } from 'vuex'
 import InputReg from '../Produtos/Register/InputReg'
 import PedidoHeaderView from './Itens/PedidoHeaderView'
 import PedidoItemView from './Itens/PedidoItemView'
+import UpdateStatusPedido from './UpdateStatusPedido'
 export default {
   name: 'PedidoView',
-  components: { InputReg, PedidoHeaderView, PedidoItemView },
+  components: { InputReg, PedidoHeaderView, PedidoItemView, UpdateStatusPedido },
   computed: {
     ...mapGetters(['PedidoView']),
     status () {

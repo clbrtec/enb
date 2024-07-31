@@ -75,6 +75,7 @@ export default {
     state.SelectedProdEdit = payload
   },
   'COPY_PROD' (state, payload) {
+    payload.name = payload.name + ' - copia'
     state.SelectedProdEdit[0] = payload
   }
 }

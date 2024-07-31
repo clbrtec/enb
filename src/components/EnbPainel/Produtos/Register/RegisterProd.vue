@@ -14,6 +14,7 @@
       </div>
       <div class="rigth">
         <button v-if="!edit" @click="push">Adicionar novo</button>
+        <button v-if="edit" @click="update">Atualizar</button>
       </div>
     </div>
     <div class="block">
@@ -53,6 +54,9 @@ export default {
           this.ClearProdEdit()
           this.PushMsg({ msg: 'Produto cadastrado com sucesso.', color: '#326e3d' })
         })
+    },
+    update () {
+      this.PushMsg({ msg: 'Produto atuliazdo com sucesso.', color: 'green' })
     }
   }
 }
