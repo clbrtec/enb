@@ -38,6 +38,7 @@
     :input="{ padding: '2%', fontSize: '18px', width: '95%', border: 'thin solid #CCC', borderRadius: '5px' }"
     />
     <div>
+      <props-prod/>
       <visib-prod/>
       <estoque-prod/>
     </div>
@@ -52,9 +53,10 @@ import InputCrono from './InputCrono'
 import InputText from './InputText'
 import VisibProd from './VisibProd'
 import EstoqueProd from './EstoqueProd'
+import PropsProd from './PropsProd'
 export default {
   name: 'InputInfo',
-  components: { InputReg, CronoIcon, InputCrono, InputText, VisibProd, EstoqueProd },
+  components: { InputReg, CronoIcon, InputCrono, InputText, VisibProd, EstoqueProd, PropsProd },
   methods: {
     ...mapActions(['ChangeProdEdit'])
   },
