@@ -56,7 +56,7 @@ export default {
       pendencia: payload.pendencia,
       visibilidade: payload.visibilidade,
       visualizacao: payload.visualizacao,
-      individual: payload.individual,
+      atributos: payload.atributos,
       dateCreate: `${date.getDate()}/${('00' + (date.getMonth() + 1)).slice(-2)}/${date.getFullYear()}`
     }
     commit('PUSH_PROD', newItem)

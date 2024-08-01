@@ -1,43 +1,55 @@
 <template>
   <div class='PropProd'>
-    <div><input type="checkbox">Ativo</div>
+    <div><input type="checkbox" @change="updateActive" :checked="data.active">{{ data.name }}</div>
     <div>
-      <input-reg
-      text="Nome"
-      :label="{ marginLeft: '3px', marginTop: '8px' }"
-      :input="{ fontSize: '18px', padding: '1%', width: '97.5%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
-      />
-    </div>
-    <div>
-      <label style="font-size: 12px; padding: 3px;">Valores:</label>
-      <div class="cont-values">
+      <label style="font-size: 12px; padding: 3px;" v-if="data.values.length">Valores:</label>
+      <div class="cont-values" v-if="data.values.length">
         <div
         class="value"
-        v-for="(v, k) in 20"
+        v-for="(value, k) in data.values"
         :key="k"
         >
-          <input type="checkbox">
-          Vermelho
+          <input type="checkbox" @change="updateValue(value.id)" :checked="value.active">
+          {{ value.name }}
         </div>
-      </div>
-      <div class="value-btn">
-        <input-reg
-        text="Valor"
-        :cont="{ width: '85%' }"
-        :label="{ marginLeft: '3px', marginTop: '3px' }"
-        :input="{ fontSize: '18px', padding: '1%', width: '95%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
-        />
-        <button>Adicionar valor</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import InputReg from './InputReg';
+import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'PropProd',
-  components: { InputReg }
+  props: ['data'],
+  data () {
+    return {
+      value: ''
+    }
+  },
+  computed: {
+    ...mapGetters(['PropsProd', 'SelectedProdEdit'])
+  },
+  created () {
+    this.SyncProps({ PropsProd: this.PropsProd, SelectedProdEdit: this.SelectedProdEdit })
+  },
+  methods: {
+    ...mapActions(['ChangePropProd', 'ChangeProdEdit', 'SyncProps']),
+    updateValue (valueID) {
+      let values = this.PropsProd.filter(p => p.id === this.data.id)[0].values
+      values.map(v => {
+        if(v.id === valueID) {
+          v.active = !v.active
+        }
+      })
+      this.ChangePropProd({ id: this.data.id, prop: { values: values } })
+        .then(() => this.ChangeProdEdit({ atributos: this.PropsProd }))
+    },
+    updateActive () {
+      this.ChangePropProd({ id: this.data.id, prop: { active: !this.data.active } })
+        .then(() => this.ChangeProdEdit({ atributos: this.PropsProd }))
+    }
+  }
 }
 </script>
 

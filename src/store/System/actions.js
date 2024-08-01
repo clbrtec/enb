@@ -14,5 +14,23 @@ export default {
   GetLogout: ({ commit }) => new Promise((resolve) => {
     commit('GET_LOGOUT')
     resolve()
+  }),
+  PushPropProd: ({ commit }, payload) => new Promise((resolve) => {
+    let newProp = {
+      id: Math.round(Math.random() * 1000000),
+      active: false,
+      name: payload.name,
+      values: payload.values
+    }
+    commit('PUSH_PROPPROD', newProp)
+    resolve()
+  }),
+  ChangePropProd: ({ commit }, payload) => new Promise((resolve) => {
+    commit('CHANGE_PROPPROD', payload)
+    resolve()
+  }),
+  SyncProps: ({ commit }, payload) => new Promise((resolve) => {
+    commit('SYNC_PROPS', payload)
+    resolve()
   })
 }

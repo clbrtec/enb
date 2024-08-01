@@ -38,7 +38,7 @@
     :input="{ padding: '2%', fontSize: '18px', width: '95%', border: 'thin solid #CCC', borderRadius: '5px' }"
     />
     <div>
-      <props-prod/>
+      <props-prod v-if="SelectedProdEdit.tipo === 'Variável'"/>
       <visib-prod/>
       <estoque-prod/>
     </div>

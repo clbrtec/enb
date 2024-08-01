@@ -2,17 +2,29 @@
   <div class='PropsProd'>
     <div class="header">
       <div class="header-left">Atributos:</div>
-      <div class="header-right"><button>Adicionar atributo</button></div>
     </div>
-    <prop-prod/>
+    <prop-prod
+    v-for="(prop, k) in PropsProd"
+    :key="k"
+    :data="prop"
+    />
+    <prop-prod-reg/>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
+import PropProdReg from './PropProdReg'
 import PropProd from './PropProd'
 export default {
   name: 'PropsProd',
-  components: { PropProd }
+  components: { PropProdReg, PropProd },
+  computed: {
+    ...mapGetters(['PropsProd'])
+  },
+  methods: {
+    ...mapActions(['PushPropProd'])
+  }
 }
 </script>
 
@@ -36,13 +48,5 @@ export default {
 .header-right {
   width: 50%;
   text-align: right;
-}
-
-button {
-  border: 0;
-  padding: 3%;
-  border-radius: 5px;
-  background-color: #CCCCCC;
-  cursor: pointer;
 }
 </style>

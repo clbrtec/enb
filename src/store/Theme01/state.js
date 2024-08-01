@@ -50,6 +50,7 @@ export default {
       pendencia: '',
       visibilidade: '',
       visualizacao: 0,
+      atributos: [],
       dateCreate: '28/07/2024'
     }
   ], []],
