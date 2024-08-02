@@ -3,6 +3,5 @@ export default {
     logged: false,
     admin: false
   },
-  EnbMsg: [],
-  PropsProd: []
+  EnbMsg: []
 }

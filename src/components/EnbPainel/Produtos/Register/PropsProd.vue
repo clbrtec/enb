@@ -4,7 +4,7 @@
       <div class="header-left">Atributos:</div>
     </div>
     <prop-prod
-    v-for="(prop, k) in PropsProd"
+    v-for="(prop, k) in SelectedProdEdit.atributos"
     :key="k"
     :data="prop"
     />
@@ -13,17 +13,14 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
 import PropProdReg from './PropProdReg'
 import PropProd from './PropProd'
 export default {
   name: 'PropsProd',
   components: { PropProdReg, PropProd },
   computed: {
-    ...mapGetters(['PropsProd'])
-  },
-  methods: {
-    ...mapActions(['PushPropProd'])
+    ...mapGetters(['SelectedProdEdit'])
   }
 }
 </script>

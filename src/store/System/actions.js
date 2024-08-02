@@ -24,13 +24,5 @@ export default {
     }
     commit('PUSH_PROPPROD', newProp)
     resolve()
-  }),
-  ChangePropProd: ({ commit }, payload) => new Promise((resolve) => {
-    commit('CHANGE_PROPPROD', payload)
-    resolve()
-  }),
-  SyncProps: ({ commit }, payload) => new Promise((resolve) => {
-    commit('SYNC_PROPS', payload)
-    resolve()
   })
 }

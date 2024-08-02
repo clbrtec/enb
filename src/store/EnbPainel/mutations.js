@@ -68,6 +68,7 @@ export default {
       pendencia: '',
       visibilidade: '',
       visualizacao: 0,
+      atributos: [],
       individual: false
     }]
   },

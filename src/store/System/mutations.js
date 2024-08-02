@@ -19,17 +19,6 @@ export default {
     }
   },
   'PUSH_PROPPROD' (state, payload) {
-    state.PropsProd.push(payload)
-  },
-  'CHANGE_PROPPROD' (state, payload) {
-    let upProp = state.PropsProd.filter(p => p.id === payload.id)[0]
-    for(let key in payload.prop) {
-      upProp[key] = payload.prop[key]
-    }
-  },
-  'SYNC_PROPS' (state, payload) {
-    for(let key in payload.SelectedProdEdit.atributos) {
-      payload.PropsProd.filter(p => p.id === payload.SelectedProdEdit.atributos[key].id)[0] = payload.SelectedProdEdit.atributos[key]
-    }
+    state.SelectedProdEdit[0].atributos.push(payload)
   }
 }

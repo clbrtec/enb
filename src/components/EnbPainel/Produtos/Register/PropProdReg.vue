@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions } from 'vuex'
 import InputReg from './InputReg';
 export default {
   name: 'PropProdReg',
@@ -51,9 +51,6 @@ export default {
       name: '',
       values: []
     }
-  },
-  computed: {
-    ...mapGetters(['PropsProd'])
   },
   methods: {
     ...mapActions(['PushPropProd']),

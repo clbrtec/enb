@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions } from 'vuex'
 export default {
   name: 'PropProd',
   props: ['data'],
@@ -27,27 +27,11 @@ export default {
       value: ''
     }
   },
-  computed: {
-    ...mapGetters(['PropsProd', 'SelectedProdEdit'])
-  },
-  created () {
-    this.SyncProps({ PropsProd: this.PropsProd, SelectedProdEdit: this.SelectedProdEdit })
-  },
   methods: {
-    ...mapActions(['ChangePropProd', 'ChangeProdEdit', 'SyncProps']),
-    updateValue (valueID) {
-      let values = this.PropsProd.filter(p => p.id === this.data.id)[0].values
-      values.map(v => {
-        if(v.id === valueID) {
-          v.active = !v.active
-        }
-      })
-      this.ChangePropProd({ id: this.data.id, prop: { values: values } })
-        .then(() => this.ChangeProdEdit({ atributos: this.PropsProd }))
+    ...mapActions(['ChangeProdEdit']),
+    updateValue () {
     },
     updateActive () {
-      this.ChangePropProd({ id: this.data.id, prop: { active: !this.data.active } })
-        .then(() => this.ChangeProdEdit({ atributos: this.PropsProd }))
     }
   }
 }
