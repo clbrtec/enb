@@ -26,7 +26,7 @@ export default {
     },
     {
       text: 'Meus Pedidos',
-      path: '',
+      path: '/pedidos',
       icon: 'ListIcon01'
     }
   ],

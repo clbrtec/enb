@@ -17,8 +17,5 @@ export default {
       logged: false,
       admin: false
     }
-  },
-  'PUSH_PROPPROD' (state, payload) {
-    state.SelectedProdEdit[0].atributos.push(payload)
   }
 }

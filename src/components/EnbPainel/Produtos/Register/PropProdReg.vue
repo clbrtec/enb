@@ -55,7 +55,7 @@ export default {
   methods: {
     ...mapActions(['PushPropProd']),
     pushValue () {
-      this.values.push({ active: false, id: Math.round(Math.random() * 1000000), name: this.value })
+      this.values.push({ active: false, id: Math.round(Math.random() * 1000000), name: this.value, selected: false })
       this.value = ''
     },
     pushProp () {

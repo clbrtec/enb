@@ -9,7 +9,7 @@
         v-for="(value, k) in data.values"
         :key="k"
         >
-          <input type="checkbox" @change="updateValue(value.id)" :checked="value.active">
+          <input type="checkbox" @change="updateValue(value)" :checked="value.active">
           {{ value.name }}
         </div>
       </div>
@@ -28,10 +28,12 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['ChangeProdEdit']),
-    updateValue () {
+    ...mapActions(['UpdatePropProd', 'UpdateValueProp']),
+    updateValue (value) {
+      this.UpdateValueProp({ prop: this.data, value: value })
     },
     updateActive () {
+      this.UpdatePropProd(this.data)
     }
   }
 }

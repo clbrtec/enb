@@ -38,5 +38,23 @@ export default {
   },
   CopyProd ({ commit }, payload) {
     commit('COPY_PROD', payload)
-  }
+  },
+  UpdatePropProd: ({ commit }, payload) => new Promise((resolve) => {
+    commit('UPDATE_PROPPROD', payload)
+    resolve()
+  }),
+  PushPropProd: ({ commit }, payload) => new Promise((resolve) => {
+    let newProp = {
+      id: Math.round(Math.random() * 1000000),
+      active: false,
+      name: payload.name,
+      values: payload.values
+    }
+    commit('PUSH_PROPPROD', newProp)
+    resolve()
+  }),
+  UpdateValueProp: ({ commit }, payload) => new Promise((resolve) => {
+    commit('UPDATE_VALUEPROP', payload)
+    resolve()
+  })
 }

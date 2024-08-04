@@ -55,12 +55,13 @@
  - Descrição do produto #
  - Sub menu categorias (Produtos) #
 
-05/08/2024:
+06/08/2024:
 
 * Gerenciamento de Produtos:
- - Produto tipo variável
+ - Produto tipo variável #
  - Preço de promoção #
  - botão para edição (gatilho) #
+ - Slide das imagens inseridas no cadastro do produto #
 
 * Clientes:
  - Detalhes clientes e Pedidos #
@@ -70,20 +71,21 @@
  - Update status pedido(na view) #
 
 * Loja:
- - Meus pedidos
+ - Seleção das variações do produto #
+ - Meus pedidos #
  - Minha conta
  - Filtro produtos
-
-* Usuários:
- - Visualização
- - Cadastro
- - Edição
-
-* Geral:
- - Loader
 
 * Cupons:
  - Visualização
  - Cadastro
  - Edição
  - Excluir
+
+* Usuários:
+ - Visualização
+ - Cadastro
+ - Edição
+
+ * Geral:
+ - Loader

@@ -68,5 +68,12 @@ export default {
   },
   'CLEAR_CHECKOUT01' (state) {
     state.CheckoutItens01 = []
+  },
+  'SELECT_PROPPROD' (state, payload) {
+    let prop = state.ItemSelected01.atributos.filter(p => p.id === payload.prop.id)[0]
+    prop.values.map(v => {
+      v.selected = false
+    })
+    prop.values.filter(v => v.id === payload.value.id)[0].selected = true
   }
 }

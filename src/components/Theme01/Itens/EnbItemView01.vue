@@ -17,12 +17,17 @@
     </carousel>
     </div>
     <div class="cont">
-      <div class="cont-desc">
+      <div class="cont-desc name">
         {{ ItemSelected01.name }}
       </div>
       <div class="cont-desc desc">
         {{ ItemSelected01.descricao }}
       </div>
+      <select-prop
+      v-for="(data, k) in ItemSelected01.atributos"
+      :key="k"
+      :data="data"
+      />
       <div class="cont-desc valor">
         R$ {{ ItemSelected01.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}
       </div>
@@ -44,9 +49,10 @@ import { VueImageZoomer } from 'vue-image-zoomer'
 import 'vue-image-zoomer/dist/style.css'
 import EnbSetQtda01 from './EnbSetQtda01.vue'
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel'
+import SelectProp from './SelectProp'
 export default {
   name: 'EnbItemView01',
-  components: { VueImageZoomer, EnbSetQtda01, Carousel, Slide, Navigation, Pagination },
+  components: { VueImageZoomer, EnbSetQtda01, Carousel, Slide, Navigation, Pagination, SelectProp },
   computed: {
     ...mapGetters(['ItemSelected01'])
   },
@@ -89,13 +95,18 @@ export default {
   padding: 1%;
 }
 
+.name {
+  font-weight: bold;
+}
+
 .desc {
   font-size: 18px;
   color: #333333;
 }
 
 .valor {
-  font-weight: bold
+  font-weight: bold;
+  padding-top: 5%;
 }
 
 .qtda-btn {

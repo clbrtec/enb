@@ -65,5 +65,9 @@ export default {
   FilterCateg: ({ commit }, payload) => new Promise((resolve) => {
     commit('FILTER_CATEG', payload)
     resolve()
+  }),
+  SelectPropProd: ({ commit }, payload) => new Promise((resolve) => {
+    commit('SELECT_PROPPROD', payload)
+    resolve()
   })
 }

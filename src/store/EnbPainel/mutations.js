@@ -78,5 +78,23 @@ export default {
   'COPY_PROD' (state, payload) {
     payload.name = payload.name + ' - copia'
     state.SelectedProdEdit[0] = payload
+  },
+  'PUSH_PROPPROD' (state, payload) {
+    state.SelectedProdEdit[0].atributos.push(payload)
+  },
+  'UPDATE_PROPPROD' (state, payload) {
+    state.SelectedProdEdit[0].atributos.map(p => {
+      if(p.id === payload.id) {
+        p.active = !payload.active
+      }
+    })
+  },
+  'UPDATE_VALUEPROP' (state, payload) {
+    let prop = state.SelectedProdEdit[0].atributos.filter(p => p.id === payload.prop.id)[0]
+    prop.values.map(v => {
+      if (v.id === payload.value.id) {
+        v.active = !payload.value.active
+      }
+    })
   }
 }
