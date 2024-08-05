@@ -2,6 +2,7 @@
   <div class='EnbProfileLink01'>
     <profile-link01 text="Login" v-if="!Profile.logged" @click="SetModal01({ component: 'EnbLogin01', active: true })"/>
     <profile-link01 @click="$router.push('/painel')" text="Painel" v-if="Profile.logged && Profile.admin"/>
+    <profile-link01 @click="$router.push('/account')" text="Minha conta" v-if="Profile.logged && !Profile.admin"/>
     <profile-link01 @click="GetLogout" text="Sair" v-if="Profile.logged"/>
   </div>
 </template>

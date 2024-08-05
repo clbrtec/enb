@@ -4,6 +4,7 @@ import EnbCheckoutView01 from '@/components/Theme01/Checkout/EnbCheckoutView01'
 import CompletePurchase from '@/components/Theme01/Client/CompletePurchase'
 import EnbPedidos01 from '@/components/Theme01/Pedidos/EnbPedidos01'
 import PedidoView from '@/components/Theme01/Pedidos/PedidoView'
+import EnbAccount01 from '@/components/Theme01/Account/EnbAccount01'
 export default [
   {
     path: '/',
@@ -44,5 +45,10 @@ export default [
     path: '/pedidos/view',
     name: 'Pedido View',
     component: PedidoView
+  },
+  {
+    path: '/account',
+    name: 'Minha conta',
+    component: EnbAccount01
   }
 ]
