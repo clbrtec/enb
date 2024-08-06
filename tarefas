@@ -60,7 +60,7 @@
  - Produto tipo variável #
  - Preço de promoção #
  - botão para edição (gatilho) #
- - Slide das imagens inseridas no cadastro do produto #
+ - Slide das imagens inseridas no cadastro do produto # 
 
 * Clientes:
  - Detalhes clientes e Pedidos #
@@ -73,10 +73,18 @@
  - Seleção das variações do produto #
  - Meus pedidos #
  - Minha conta #
- - Filtro produtos
 
 * Cupons:
- - View
+ - View #
+
+12/08/2024:
+
+* Gerenciamento de Pedidos:
+ - Gerenciamento de estoque
+ - Paginação com a própria imagem(miniatura) do produto
+ - Copia do produto, copiar a caracteristica
+
+* Cupons:
  - Cadastro
  - Edição
  - Excluir
@@ -85,6 +93,10 @@
  - Visualização
  - Cadastro
  - Edição
+
+*Loja:
+ - Melhorar o layout de minha conta
+ - Filtros produtos
 
  * Geral:
  - Loader
