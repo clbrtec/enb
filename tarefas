@@ -56,7 +56,6 @@
  - Sub menu categorias (Produtos) #
 
 06/08/2024:
-
 * Gerenciamento de Produtos:
  - Produto tipo variável #
  - Preço de promoção #
@@ -77,7 +76,7 @@
  - Filtro produtos
 
 * Cupons:
- - Visualização
+ - View
  - Cadastro
  - Edição
  - Excluir

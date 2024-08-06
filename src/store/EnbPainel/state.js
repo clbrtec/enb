@@ -53,6 +53,11 @@ export default {
       icon: 'ListIcon01'
     },
     {
+      text: 'Cupons',
+      path: '/painel/gift',
+      icon: 'GiftIcon'
+    },
+    {
       text: 'Loja',
       path: '/loja',
       icon: 'StoreIcon01'

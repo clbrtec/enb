@@ -29,7 +29,8 @@
       :data="data"
       />
       <div class="cont-desc valor">
-        R$ {{ ItemSelected01.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}
+        <span :class="{ disabled: ItemSelected01.oferta > 0 }" style="margin: 5px">{{ ItemSelected01.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}</span>
+        <span v-if="ItemSelected01.oferta > 0" style="margin: 5px">{{ ItemSelected01.oferta.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}</span>
       </div>
       <div class="qtda-btn">
         <div class="qtda">
@@ -133,5 +134,10 @@ button {
   background-color: #4E7826;
   color: #FFFFFF;
   cursor: pointer;
+}
+
+.disabled {
+  color: #CCCCCC;
+  text-decoration: line-through;
 }
 </style>
