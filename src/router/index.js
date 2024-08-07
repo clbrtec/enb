@@ -11,6 +11,7 @@ import ClientView from '@/components/EnbPainel/Clients/ClientView'
 import EnbPedidos from '@/components/EnbPainel/Pedidos/EnbPedido'
 import PedidoView from '@/components/EnbPainel/Pedidos/PedidoView'
 import EnbGift from '@/components/EnbPainel/Gift/EnbGift'
+import GiftRegister from '@/components/EnbPainel/Gift/GiftRegister'
 
 const routes = [
   {  
@@ -72,6 +73,11 @@ const routes = [
         path: '/painel/gift',
         name: 'Cupons',
         component: EnbGift
+      },
+      {
+        path: '/painel/gift/register',
+        name: 'Cadastro de cupons',
+        component: GiftRegister
       }
     ]
   },

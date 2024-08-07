@@ -1,7 +1,7 @@
 <template>
   <div class='EnbGift'>
     <div class="cont-btn">
-      <button>Adicionar</button>
+      <button @click="$router.push('/painel/gift/register')">Adicionar</button>
     </div>
     <gift-header/>
   </div>
