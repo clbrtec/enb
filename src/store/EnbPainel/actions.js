@@ -56,5 +56,9 @@ export default {
   UpdateValueProp: ({ commit }, payload) => new Promise((resolve) => {
     commit('UPDATE_VALUEPROP', payload)
     resolve()
+  }),
+  ChangeGiftEdit: ({ commit }, payload) => new Promise((resolve) => {
+    commit('CHANGE_GIFT_EDIT', payload)
+    resolve()
   })
 }

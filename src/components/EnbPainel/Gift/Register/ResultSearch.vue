@@ -1,5 +1,5 @@
 <template>
-  <div class='ResultSearch' @click="PushMultiSelect({ store: store, data: dados })">
+  <div class='ResultSearch' @click="select">
     {{ dados.name }}
   </div>
 </template>
@@ -10,7 +10,10 @@ export default {
   name: 'ResultSearch',
   props: ['store', 'dados'],
   methods: {
-    ...mapActions(['PushMultiSelect'])
+    ...mapActions(['PushMultiSelect']),
+    select () {
+      this.PushMultiSelect({ store: this.store, data: this.dados })
+    }
   }
 }
 </script>
@@ -20,5 +23,9 @@ export default {
   text-align: left;
   padding: 2%;
   cursor: pointer;
+}
+
+.ResultSearch:hover {
+  background-color: #EEEEEE;
 }
 </style>

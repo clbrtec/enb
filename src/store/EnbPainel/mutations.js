@@ -96,5 +96,10 @@ export default {
         v.active = !payload.value.active
       }
     })
+  },
+  'CHANGE_GIFT_EDIT' (state, payload) {
+    for(let key in payload) {
+      state.SelectedGiftEdit[key] = payload[key]
+    }
   }
 }

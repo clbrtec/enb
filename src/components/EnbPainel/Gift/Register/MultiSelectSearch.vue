@@ -1,9 +1,9 @@
 <template>
   <div class='MultiSelectSearch' v-show="show">
-    <input v-model="str" type="text" ref="in"/>
+    <input v-model="str" type="text" ref="in" v-if="!noSearch"/>
     <div class="cont-result">
       <result-search
-      v-for="(r, key) in result"
+      v-for="(r, key) in Res"
       :key="key"
       :store="store"
       :dados="r"
@@ -29,6 +29,14 @@ export default {
     data: {
       type: Array,
       default: () => ([{ id: 2541, name: 'teste' }])
+    },
+    noSearch: {
+      type: Boolean,
+      default: false
+    },
+    srcFixed: {
+      type: Array,
+      default: () => ([{ id: 2541, name: 'teste' }])
     }
   },
   data () {
@@ -40,11 +48,14 @@ export default {
   computed: {
     result () {
       return this.str === '' ? [] : this.data.filter(r => r.name.indexOf(this.str) > -1)
+    },
+    Res () {
+      return this.noSearch ? this.srcFixed : this.result
     }
   },
   watch: {
     show (n) {
-      if(n) {
+      if(n && !this.noSearch) {
         setTimeout(() => {
           this.$refs.in.focus()
         }, 100)
@@ -59,6 +70,8 @@ export default {
   width: 100%;
   position: absolute;
   box-shadow: 0px 1px 2px 1px #CCCCCC;
+  background-color: #FFFFFF;
+  z-index: 999;
 }
 
 input {

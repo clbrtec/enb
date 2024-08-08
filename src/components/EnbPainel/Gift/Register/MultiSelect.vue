@@ -1,7 +1,7 @@
 <template>
   <div class='MultiSelect'>
     <div class="label">{{ label }}:</div>
-    <div class="view-select" @click="showSearch=!showSearch">
+    <div :class="{ viewSelectEmpty: Itens.length <= 0 }" class="view-select" @click="showSearch=!showSearch">
       <multi-select-item
       v-for="(d, key) in Itens"
       :key="key"
@@ -13,6 +13,9 @@
     <multi-select-search
     :show="showSearch"
     :store="store"
+    :data="src"
+    :noSearch="noSearch"
+    :srcFixed="srcFixed"
     />
   </div>
 </template>
@@ -31,6 +34,18 @@ export default {
     store: {
       type: String,
       default: 'MultiSelectStore'
+    },
+    src: {
+      type: Array,
+      default: () => ([])
+    },
+    noSearch: {
+      type: Boolean,
+      default: false
+    },
+    srcFixed: {
+      type: Array,
+      default: () => ([])
     }
   },
   computed: {
@@ -68,5 +83,9 @@ export default {
   padding: 2.5%;
   border: thin solid #CCCCCC;
   border-radius: 5px;
+}
+
+.viewSelectEmpty {
+  padding: 4.5%;
 }
 </style>
