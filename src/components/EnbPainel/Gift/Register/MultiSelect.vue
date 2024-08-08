@@ -1,14 +1,19 @@
 <template>
   <div class='MultiSelect'>
-    <div class="label">Label:</div>
-    <div class="view-select">
+    <div class="label">{{ label }}:</div>
+    <div class="view-select" @click="showSearch=!showSearch">
       <multi-select-item
-      v-for="(data, key) in 3"
+      v-for="(d, key) in Itens"
       :key="key"
       :chave="key"
+      :data="d"
+      :store="store"
       />
     </div>
-    <multi-select-search/>
+    <multi-select-search
+    :show="showSearch"
+    :store="store"
+    />
   </div>
 </template>
 
@@ -17,7 +22,30 @@ import MultiSelectSearch from './MultiSelectSearch'
 import MultiSelectItem from './MultiSelectItem'
 export default {
   name: 'MultiSelect',
-  components: { MultiSelectSearch, MultiSelectItem }
+  components: { MultiSelectSearch, MultiSelectItem },
+  props: {
+    label: {
+      type: String,
+      default: 'Label'
+    },
+    store: {
+      type: String,
+      default: 'MultiSelectStore'
+    }
+  },
+  computed: {
+    Itens () {
+      return typeof this.$store.state.System[this.store] === 'undefined' ? [] : this.$store.state.System[this.store]
+    }
+  },
+  data () {
+    return {
+      showSearch: false
+    }
+  },
+  created () {
+    console.log(this.$store.state.System.Profile.admin)
+  }
 }
 </script>
 

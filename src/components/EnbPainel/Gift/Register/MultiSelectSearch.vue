@@ -1,10 +1,12 @@
 <template>
-  <div class='MultiSelectSearch'>
-    <input type="text"/>
+  <div class='MultiSelectSearch' v-show="show">
+    <input v-model="str" type="text" ref="in"/>
     <div class="cont-result">
       <result-search
-      v-for="(data, key) in 3"
+      v-for="(r, key) in result"
       :key="key"
+      :store="store"
+      :dados="r"
       />
     </div>
   </div>
@@ -14,7 +16,41 @@
 import ResultSearch from './ResultSearch'
 export default {
   name: 'MultiSelectSearch',
-  components: { ResultSearch }
+  components: { ResultSearch },
+  props: {
+    show: {
+      type: Boolean,
+      default: false
+    },
+    store: {
+      type: String,
+      default: 'MultiSelectStore'
+    },
+    data: {
+      type: Array,
+      default: () => ([{ id: 2541, name: 'teste' }])
+    }
+  },
+  data () {
+    return {
+      ref: null,
+      str: ''
+    }
+  },
+  computed: {
+    result () {
+      return this.str === '' ? [] : this.data.filter(r => r.name.indexOf(this.str) > -1)
+    }
+  },
+  watch: {
+    show (n) {
+      if(n) {
+        setTimeout(() => {
+          this.$refs.in.focus()
+        }, 100)
+      }
+    }
+  }
 }
 </script>
 
@@ -22,12 +58,12 @@ export default {
 .MultiSelectSearch {
   width: 100%;
   position: absolute;
-  box-shadow: 1px 1px 1px 1px #CCCCCC;
+  box-shadow: 0px 1px 2px 1px #CCCCCC;
 }
 
 input {
   font-size: 18px;
-  width: 96.5%;
+  width: 96%;
   padding: 1.8%;
   border: 0;
 }

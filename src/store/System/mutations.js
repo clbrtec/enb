@@ -17,5 +17,15 @@ export default {
       logged: false,
       admin: false
     }
+  },
+  'PUSH_MULTI_SELECT' (state, payload) {
+    if(typeof state[payload.store] === 'undefined') {
+      state[payload.store] = []
+    }
+    state[payload.store].push(payload.data)
+  },
+  'DEL_MULTI_SELECT' (state, payload) {
+    let newList = state[payload.store].filter(i => i.id !== payload.data.id)
+    state[payload.store] = newList
   }
 }

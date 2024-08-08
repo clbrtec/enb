@@ -57,7 +57,9 @@
       :label="{ marginLeft: '3px', marginTop: '10px' }"
       :input="{ fontSize: '26px', padding: '1.5%', width: '97%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
-      <multi-select/>
+      <multi-select
+      label="Produtos"
+      />
     </div>
   </div>
 </template>
