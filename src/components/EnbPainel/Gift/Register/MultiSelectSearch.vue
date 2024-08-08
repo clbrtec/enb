@@ -7,6 +7,7 @@
       :key="key"
       :store="store"
       :dados="r"
+      @update:show="$emit('update:show', false)"
       />
     </div>
   </div>
@@ -17,6 +18,7 @@ import ResultSearch from './ResultSearch'
 export default {
   name: 'MultiSelectSearch',
   components: { ResultSearch },
+  emits: ['update:show'],
   props: {
     show: {
       type: Boolean,

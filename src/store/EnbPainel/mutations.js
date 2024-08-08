@@ -101,5 +101,8 @@ export default {
     for(let key in payload) {
       state.SelectedGiftEdit[key] = payload[key]
     }
+  },
+  'PUSH_GIFT' (state, payload) {
+    state.Gifts.push(payload)
   }
 }

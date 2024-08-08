@@ -1,7 +1,7 @@
 <template>
   <div class='MultiSelect'>
     <div class="label">{{ label }}:</div>
-    <div :class="{ viewSelectEmpty: Itens.length <= 0 }" class="view-select" @click="showSearch=!showSearch">
+    <div :class="{ viewSelectEmpty: Itens.length <= 0 }" class="view-select" @click="toggle">
       <multi-select-item
       v-for="(d, key) in Itens"
       :key="key"
@@ -11,6 +11,7 @@
       />
     </div>
     <multi-select-search
+    @update:show="showSearch=false"
     :show="showSearch"
     :store="store"
     :data="src"
@@ -60,6 +61,11 @@ export default {
   },
   created () {
     console.log(this.$store.state.System.Profile.admin)
+  },
+  methods: {
+    toggle () {
+      this.showSearch = !this.showSearch
+    }
   }
 }
 </script>

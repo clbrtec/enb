@@ -60,5 +60,29 @@ export default {
   ChangeGiftEdit: ({ commit }, payload) => new Promise((resolve) => {
     commit('CHANGE_GIFT_EDIT', payload)
     resolve()
+  }),
+  PushGift: ({ commit }, payload) => new Promise((resolve) => {
+    let newGift = {
+      id: Math.round(Math.random() * 1000000),
+      codigo: payload.gift.codigo,
+      tipo: payload.gift.tipo,
+      valor: payload.gift.valor,
+      validade: payload.gift.validade,
+      gastoMin: payload.gift.gastoMin,
+      gastoMax: payload.gift.gastoMax,
+      produtos: payload.produtos,
+      produtoDel: payload.produtoDel,
+      categorias: payload.categorias,
+      categoriasDel: payload.categoriasDel,
+      emailsDel: payload.gift.emailsDel,
+      limiteCupom: payload.gift.limiteCupom,
+      limiteNprodutos: payload.gift.limiteNprodutos,
+      limiteUser: payload.gift.limiteUser,
+      freteGratis: payload.gift.freteGratis,
+      individual: payload.gift.individual,
+      itensVendaDel: payload.gift.itensVendaDel
+    }
+    commit('PUSH_GIFT', newGift)
+    resolve()
   })
 }

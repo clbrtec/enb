@@ -56,6 +56,7 @@ export default {
     individual: false,
     itensVendaDel: false
   },
+  Gifts: [],
   LinkSidebar: [
     {
       text: 'Produtos',

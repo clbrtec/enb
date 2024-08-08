@@ -1,6 +1,6 @@
 <template>
   <div :class="{ marginLeft: chave > 0 }" class='MultiSelectItem'>
-    <span class="close" @click="DelMultiSelect({ store: store, data: data })">x</span>
+    <span class="close" @click="del">x</span>
     <span class="desc">{{ data.name }}</span>
   </div>
 </template>
@@ -11,7 +11,11 @@ export default {
   name: 'MultiSelectItem',
   props: ['data', 'chave', 'store'],
   methods: {
-    ...mapActions(['DelMultiSelect'])
+    ...mapActions(['DelMultiSelect']),
+    del (e) {
+      e.cancelBubble = true
+      this.DelMultiSelect({ store: this.store, data: this.data })
+    }
   }
 }
 </script>

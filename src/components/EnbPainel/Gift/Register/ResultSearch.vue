@@ -13,6 +13,7 @@ export default {
     ...mapActions(['PushMultiSelect']),
     select () {
       this.PushMultiSelect({ store: this.store, data: this.dados })
+      this.$emit('update:show', false)
     }
   }
 }
