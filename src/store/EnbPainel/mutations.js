@@ -104,5 +104,11 @@ export default {
   },
   'PUSH_GIFT' (state, payload) {
     state.Gifts.push(payload)
+  },
+  'SET_GIFT_EDIT' (state, payload) {
+    state.SelectedGiftEdit = payload
+  },
+  'DELETE_GIFT' (state, payload) {
+    state.Gifts = state.Gifts.filter(g => g.id !== payload.id)
   }
 }

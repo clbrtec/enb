@@ -22,5 +22,9 @@ export default {
   DelMultiSelect: ({ commit }, payload) => new Promise((resolve) => {
     commit('DEL_MULTI_SELECT', payload)
     resolve()
+  }),
+  SetMultiSelect: ({ commit }, payload) => new Promise((resolve) => {
+    commit('SET_MULTI_SELECT', payload)
+    resolve()
   })
 }

@@ -73,7 +73,7 @@ export default {
   position: absolute;
   box-shadow: 0px 1px 2px 1px #CCCCCC;
   background-color: #FFFFFF;
-  z-index: 999;
+  z-index: 990;
 }
 
 input {

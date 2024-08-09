@@ -1,7 +1,8 @@
 <template>
   <div class='GiftRegister'>
     <div class="cont-btn">
-      <button @click="push">Adicionar</button>
+      <button v-if="$route.path !== '/painel/gift/update'" @click="push">Adicionar</button>
+      <button v-if="$route.path === '/painel/gift/update'" @click="update">Atualizar</button>
     </div>
     <div class="cont-form">
       <div class="block-left">
@@ -196,6 +197,17 @@ export default {
         .then(() => {
           this.PushMsg({ msg: 'Cupom cadastrado com sucesso.', color: 'green' })
         })
+    },
+    update () {
+      this.ChangeGiftEdit({
+        produtos: this.$store.state.System.ProdutosGift,
+        produtoDel: this.$store.state.System.DelProdutosGift,
+        categorias: this.$store.state.System.CategoriasGift,
+        categoriasDel: this.$store.state.System.DelCategoriasGift
+      })
+      .then(() => {
+        this.PushMsg({ msg: 'Cupom atualizado com sucesso.', color: 'green' })
+      })
     }
   }
 }

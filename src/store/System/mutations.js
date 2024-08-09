@@ -27,5 +27,8 @@ export default {
   'DEL_MULTI_SELECT' (state, payload) {
     let newList = state[payload.store].filter(i => i.id !== payload.data.id)
     state[payload.store] = newList
+  },
+  'SET_MULTI_SELECT' (state, payload) {
+    state[payload.store] = payload.list
   }
 }

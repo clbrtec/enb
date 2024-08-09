@@ -84,5 +84,13 @@ export default {
     }
     commit('PUSH_GIFT', newGift)
     resolve()
+  }),
+  SetGiftEdit: ({ commit }, payload) => new Promise((resolve) => {
+    commit('SET_GIFT_EDIT', payload)
+    resolve()
+  }),
+  DeleteGift: ({ commit }, payload) => new Promise((resolve) => {
+    commit('DELETE_GIFT', payload)
+    resolve()
   })
 }

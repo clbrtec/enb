@@ -21,10 +21,11 @@ import ClientIcon from './Icons/ClientIcon'
 import ListIcon01 from '../Theme01/Icons/ListIcon01'
 import StoreIcon01 from '../Theme01/Icons/StoreIcon01'
 import GiftIcon from '../EnbPainel/Icons/GiftIcon'
+import UserIcon from '../EnbPainel/Icons/UserIcon'
 import SubLink from '@/components/EnbPainel/SubLink'
 export default {
   name: 'LinkSidebar',
-  components: { SubLink, ProdIcon, ClientIcon, ListIcon01, StoreIcon01, GiftIcon },
+  components: { SubLink, ProdIcon, ClientIcon, ListIcon01, StoreIcon01, GiftIcon, UserIcon },
   data () {
     return {
       showSubLink: false

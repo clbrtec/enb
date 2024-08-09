@@ -74,6 +74,11 @@ export default {
       icon: 'ListIcon01'
     },
     {
+      text: 'Usuários',
+      path: '/painel/users',
+      icon: 'UserIcon'
+    },
+    {
       text: 'Cupons',
       path: '/painel/gift',
       icon: 'GiftIcon'

@@ -26,7 +26,7 @@ export default {
     ...mapGetters(['EnbModal'])
   },
   methods: {
-    ...mapActions(['SetModal', 'SetModal01', 'DeleteProd', 'DeletePedido']),
+    ...mapActions(['SetModal', 'SetModal01', 'DeleteProd', 'DeletePedido', 'DeleteGift']),
     close () {
       this.SetModal({ component: '', active: false })
       this.SetModal01({ component: '', active: false })

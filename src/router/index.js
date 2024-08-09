@@ -12,6 +12,8 @@ import EnbPedidos from '@/components/EnbPainel/Pedidos/EnbPedido'
 import PedidoView from '@/components/EnbPainel/Pedidos/PedidoView'
 import EnbGift from '@/components/EnbPainel/Gift/EnbGift'
 import GiftRegister from '@/components/EnbPainel/Gift/GiftRegister'
+import EnbUser from '@/components/EnbPainel/User/EnbUser'
+import UserRegister from '@/components/EnbPainel/User/UserRegister'
 
 const routes = [
   {  
@@ -78,6 +80,21 @@ const routes = [
         path: '/painel/gift/register',
         name: 'Cadastro de cupons',
         component: GiftRegister
+      },
+      {
+        path: '/painel/gift/update',
+        name: 'Editar cupom',
+        component: GiftRegister
+      },
+      {
+        path: '/painel/users',
+        name: 'Usuários',
+        component: EnbUser
+      },
+      {
+        path: '/painel/users/register',
+        name: 'Cadastro de usuário',
+        component: UserRegister
       }
     ]
   },
