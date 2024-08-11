@@ -50,6 +50,16 @@
       />
     </div>
     <div
+    @click="stock"
+    class="cont">
+      <stock-icon
+      :options="{ width: '30px', height: '30px', action: true }"
+      text="Gerencimento de estoque"
+      :active="true"
+      :optionsLabel="{ marginTop: '65px' }"
+      />
+    </div>
+    <div
     @click="del"
     class="cont">
       <delete-icon
@@ -81,9 +91,10 @@ import EditIcon from '../../Icons/EditIcon'
 import AddIcon from '../../Icons/AddIcon'
 import NaveProd from '../Nave/NaveProd'
 import CheckedIcon from '../../Icons/CheckedIcon'
+import StockIcon from '../../Icons/StockIcon'
 export default {
   name: 'ProdAction',
-  components: { AddIcon, EditIcon, EditFastIcon, DiretoryIcon, EyesIcon, CopyIcon, DeleteIcon, NaveProd, CheckedIcon },
+  components: { AddIcon, EditIcon, EditFastIcon, DiretoryIcon, EyesIcon, CopyIcon, DeleteIcon, NaveProd, CheckedIcon, StockIcon },
   computed: {
     ...mapGetters(['SelectedProds', 'StatusProd']),
     empty () {
@@ -164,6 +175,13 @@ export default {
           let str = payload ? 'puclicado' : 'arquivado'
           this.PushMsg({ msg: `Produto ${str} com sucesso.`, color: '#326e3d' })
         })
+    },
+    stock () {
+      if(this.empty) {
+        this.PushMsg({ msg: 'Selecione um produto', color: '#eba134' })
+        return
+      }
+      this.$router.push('/painel/stock')
     }
   }
 }

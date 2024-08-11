@@ -14,6 +14,7 @@ import EnbGift from '@/components/EnbPainel/Gift/EnbGift'
 import GiftRegister from '@/components/EnbPainel/Gift/GiftRegister'
 import EnbUser from '@/components/EnbPainel/User/EnbUser'
 import UserRegister from '@/components/EnbPainel/User/UserRegister'
+import EnbEstoque from '@/components/EnbPainel/Estoque/EnbEstoque'
 
 const routes = [
   {  
@@ -100,6 +101,11 @@ const routes = [
         path: '/painel/user/edit',
         name: 'Editar usuário',
         component: UserRegister
+      },
+      {
+        path: '/painel/stock',
+        name: 'Gerenciamento de estoque',
+        component: EnbEstoque
       }
     ]
   },
