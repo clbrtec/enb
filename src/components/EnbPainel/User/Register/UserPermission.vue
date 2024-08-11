@@ -1,9 +1,9 @@
 <template>
   <div class='UserPermission'>
-    <div class="cont-label">Permisssões do usuário:</div>
+    <div class="cont-label">Permissões do usuário:</div>
     <div class="cont">
       <user-permission-list
-      v-for="(data, key) in UsersPermission"
+      v-for="(data, key) in SelectedUserEdit.permission"
       :key="key"
       :data="data"
       />
@@ -18,7 +18,7 @@ export default {
   name: 'UserPermission',
   components: { UserPermissionList },
   computed: {
-    ...mapGetters(['UsersPermission'])
+    ...mapGetters(['SelectedUserEdit'])
   }
 }
 </script>
@@ -27,6 +27,7 @@ export default {
 .cont-label {
   text-align: left;
   padding: 1%;
+  font-size: 12px
 }
 
 .cont {

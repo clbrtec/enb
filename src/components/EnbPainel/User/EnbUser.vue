@@ -3,12 +3,25 @@
     <div class="cont-btn">
       <button @click="$router.push('/painel/users/register')">Adicionar</button>
     </div>
+    <user-header/>
+    <user-list
+    v-for="(data, key) in Users"
+    :key="key"
+    :data="data"
+    />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import UserHeader from './header/UserHeader'
+import UserList from './Itens/UserList'
 export default {
-  name: 'EnbUser'
+  name: 'EnbUser',
+  components: { UserHeader, UserList },
+  computed: {
+    ...mapGetters(['Users'])
+  }
 }
 </script>
 

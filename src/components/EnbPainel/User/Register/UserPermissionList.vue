@@ -3,15 +3,19 @@
   class='UserPermissionList'
   :class="{ nivel1: data.nivel === 1 }"
   >
-    <div><input type="checkbox"></div>
+    <div><input @change="e => ChangeUserPermission(data)" type="checkbox" :checked="data.active"></div>
     <div :class="{ parent: data.parent === 0 }">{{ data.name }}</div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'UserPermissionList',
-  props: ['data']
+  props: ['data'],
+  methods: {
+    ...mapActions(['ChangeUserPermission'])
+  }
 }
 </script>
 

@@ -95,6 +95,11 @@ const routes = [
         path: '/painel/users/register',
         name: 'Cadastro de usuário',
         component: UserRegister
+      },
+      {
+        path: '/painel/user/edit',
+        name: 'Editar usuário',
+        component: UserRegister
       }
     ]
   },

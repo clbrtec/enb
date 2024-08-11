@@ -30,5 +30,33 @@ export default {
   },
   'SET_MULTI_SELECT' (state, payload) {
     state[payload.store] = payload.list
+  },
+  'CHANGE_USER_EDIT' (state, payload) {
+    for(let key in payload) {
+      state.SelectedUserEdit[key] = payload[key]
+    }
+  },
+  'CHANGE_USER_PERMISSION' (state, payload) {
+    state.SelectedUserEdit.permission.map(p => {
+      if(p.id === payload.id) {
+        p.active = !p.active
+      }
+    })
+  },
+  'PUSH_USER' (state, payload) {
+    state.Users.push(payload)
+  },
+  'UPDATE_STATUS_USER' (state, payload) {
+    state.Users.map(u => {
+      if(u.id === payload.id) {
+        u.status = payload.status
+      }
+    })
+  },
+  'DELETE_USER' (state, payload) {
+    state.Users = state.Users.filter(u => u.id !== payload.id)
+  },
+  'SET_USER_EDIT' (state, payload) {
+    state.SelectedUserEdit = payload
   }
 }

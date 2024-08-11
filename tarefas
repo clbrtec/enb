@@ -81,8 +81,8 @@
 
 * Gerenciamento de Pedidos:
  - Gerenciamento de estoque
- - Paginação com a própria imagem(miniatura) do produto
- - Copia do produto, copiar a caracteristica
+ - Paginação com a própria imagem(miniatura) do produto #
+ - Copia do produto, copiar a caracteristica #
 
 * Cupons:
  - Cadastro #
@@ -90,13 +90,15 @@
  - Excluir #
 
 * Usuários:
- - Visualização
- - Cadastro
- - Edição
+ - Visualização #
+ - Cadastro #
+ - Edição #
+ - Excluir #
+ - Status #
 
-*Loja:
+* Loja:
  - Melhorar o layout de minha conta
  - Filtros produtos
 
- * Geral:
+* Geral:
  - Loader
