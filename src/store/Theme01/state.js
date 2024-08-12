@@ -51,6 +51,7 @@ export default {
       visibilidade: '',
       visualizacao: 0,
       atributos: [],
+      estoqueVariavel: [],
       dateCreate: '28/07/2024'
     }
   ], []],

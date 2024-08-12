@@ -7,6 +7,12 @@
     <input-estoque
     :prod="SelectedProdEdit"
     />
+    <var-header v-if="SelectedProdEdit.estoqueVariavel.lenght"/>
+    <var-list
+    v-for="(data, key) in SelectedProdEdit.estoqueVariavel"
+    :key="key"
+    :data="data"
+    />
   </div>
 </template>
 
@@ -15,9 +21,11 @@ import { mapGetters } from 'vuex'
 import EstoqueVariavel from './EstoqueVariavel'
 import EstoqueHeader from './EstoqueHeader'
 import InputEstoque from './InputEstoque'
+import VarHeader from './VarHeader'
+import VarList from './VarList'
 export default {
   name: 'EnbEstoque',
-  components: { EstoqueVariavel, EstoqueHeader, InputEstoque },
+  components: { EstoqueVariavel, EstoqueHeader, InputEstoque, VarHeader, VarList },
   computed: {
     ...mapGetters(['SelectedProdEdit'])
   }

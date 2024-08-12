@@ -57,6 +57,7 @@ export default {
       visibilidade: payload.visibilidade,
       visualizacao: payload.visualizacao,
       atributos: payload.atributos,
+      estoqueVariavel: [],
       dateCreate: `${date.getDate()}/${('00' + (date.getMonth() + 1)).slice(-2)}/${date.getFullYear()}`
     }
     commit('PUSH_PROD', newItem)

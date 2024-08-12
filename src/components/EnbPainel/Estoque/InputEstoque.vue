@@ -15,20 +15,22 @@
       <div class="cont-input">
         <input-reg
         text="Quantidade"
-        @update:modelValue="newValue => src.quantidede = newValue"
+        :value="src.quantidade"
+        @update:modelValue="newValue => src.quantidade = newValue"
         :cont="{ width: '100%', textAlign: 'left' }"
         :label="{ marginLeft: '3px' }"
         :input="{ textAlign: 'right', fontSize: '16px', padding: '2%', width: '90%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
         />
       </div>
       <div class="cont-btn">
-        <button>adicionar</button>
+        <button @click="push">adicionar</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import InputReg from '../Produtos/Register/InputReg.vue'
 import InputSelect from '../Produtos/Register/InputSelect.vue'
 export default {
@@ -38,12 +40,13 @@ export default {
   data () {
     return {
       src: {
-        quantidede: 0,
+        quantidade: 0,
         values: []
       }
     }
   },
   methods: {
+    ...mapActions(['PushEstoqueVariavel', 'UpdateEstoque']),
     get (id, name, value) {
       let atributo = this.prod.atributos.filter(a => a.id === id)[0]
       let target = atributo.values.filter(v => v.name === value)[0]
@@ -59,6 +62,16 @@ export default {
         name: name,
         value: value
       })
+    },
+    push () {
+      if (!this.src.values.length) {
+        if(this.src.quantidade) {
+          this.UpdateEstoque(this.src.quantidade)
+          this.src.quantidade = 0
+        }
+        return
+      }
+      this.PushEstoqueVariavel(this.src)
     }
   }
 }

@@ -69,6 +69,7 @@ export default {
       visibilidade: '',
       visualizacao: 0,
       atributos: [],
+      estoqueVariavel: [],
       individual: false
     }]
   },
@@ -110,5 +111,11 @@ export default {
   },
   'DELETE_GIFT' (state, payload) {
     state.Gifts = state.Gifts.filter(g => g.id !== payload.id)
+  },
+  'PUSH_ESTOQUE_VARIAVEL' (state, payload) {
+    state.SelectedProdEdit[0].estoqueVariavel.push(payload)
+  },
+  'UPDATE_ESTOQUE' (state, payload) {
+    state.SelectedProdEdit[0].estoque = payload
   }
 }

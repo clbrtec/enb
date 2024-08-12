@@ -8,7 +8,7 @@
       <div v-if="data.status" class="pub">Publicado</div>
       <div v-if="!data.status" class="arq">Arquivado</div>
     </div>
-    <div style="width: 10%">{{ data.statusEstoque }}</div>
+    <div style="width: 10%">{{ data.estoque > 0 ? data.estoque : data.statusEstoque }}</div>
     <div style="width: 8%">
       <span :class="{ disabled: data.oferta > 0 }" style="display: block">{{ data.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}</span>
       <span v-if="data.oferta > 0" style="display: block; color: #20c997">{{ data.oferta.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}</span>

@@ -92,5 +92,14 @@ export default {
   DeleteGift: ({ commit }, payload) => new Promise((resolve) => {
     commit('DELETE_GIFT', payload)
     resolve()
+  }),
+  PushEstoqueVariavel: ({ commit }, payload) => new Promise((resolve) => {
+    let idVar = payload.values.map(v => v.id).reduce((p, c) => p + c)
+    commit('PUSH_ESTOQUE_VARIAVEL', { id: idVar, src: payload })
+    resolve()
+  }),
+  UpdateEstoque: ({ commit }, payload) => new Promise((resolve) => {
+    commit('UPDATE_ESTOQUE', payload)
+    resolve()
   })
 }
