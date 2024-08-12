@@ -12,22 +12,26 @@
       {{ data.src.quantidade }}
     </div>
     <div style="width: 20%">
-      <update-qtde/>
+      <update-qtde :data="data"/>
     </div>
     <div style="width: 10%">
-      <delete-icon/>
+      <delete-icon @click="DeleteEstoqueVariavel(data)"/>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import VarValue from './VarValue'
 import UpdateQtde from './UpdateQtde'
 import DeleteIcon from '../Icons/DeleteIcon'
 export default {
   name: 'VarList',
   props: ['data'],
-  components: { VarValue, UpdateQtde, DeleteIcon }
+  components: { VarValue, UpdateQtde, DeleteIcon },
+  methods: {
+    ...mapActions(['DeleteEstoqueVariavel'])
+  }
 }
 </script>
 

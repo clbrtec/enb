@@ -1,17 +1,30 @@
 <template>
   <div class='UpdateQtde'>
-    <input type="text">
+    <input v-model="qtde" type="text">
     <div class="cont-btn-edit">
-      <edit-icon :options="{ width: '25px', height: '25px' }" color="#FFFFFF"/>
+      <edit-icon
+      @click="UpdateEstoqueQtde({ id: data.id, quantidade: qtde });qtde=0"
+      :options="{ width: '25px', height: '25px' }" color="#FFFFFF"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import EditIcon from '../Icons/EditIcon'
 export default {
   name: 'UpdateQtde',
-  components: { EditIcon }
+  components: { EditIcon },
+  props: ['data'],
+  methods: {
+    ...mapActions(['UpdateEstoqueQtde'])
+  },
+  data () {
+    return {
+      qtde: 0
+    }
+  }
 }
 </script>
 
@@ -32,8 +45,7 @@ export default {
 input {
   border: 0;
   width: 100%;
-  text-align: right;
-  padding-right: 10%;
+  text-align: center
 }
 
 input:focus {

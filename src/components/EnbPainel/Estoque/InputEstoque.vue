@@ -71,7 +71,10 @@ export default {
         }
         return
       }
-      this.PushEstoqueVariavel(this.src)
+      this.PushEstoqueVariavel({
+        quantidade: this.src.quantidade,
+        values: this.src.values
+      })
     }
   }
 }

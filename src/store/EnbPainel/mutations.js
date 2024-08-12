@@ -117,5 +117,16 @@ export default {
   },
   'UPDATE_ESTOQUE' (state, payload) {
     state.SelectedProdEdit[0].estoque = payload
+  },
+  'DELETE_ESTOQUE_VARIAVEL' (state, payload) {
+    state.SelectedProdEdit[0].estoqueVariavel = state.SelectedProdEdit[0].estoqueVariavel
+      .filter(e => e.id !== payload.id)
+  },
+  'UPDATE_ESTOQUE_QTDE' (state, payload) {
+    state.SelectedProdEdit[0].estoqueVariavel.map(e => {
+      if(e.id === payload.id) {
+        e.src.quantidade = payload.quantidade
+      }
+    })
   }
 }

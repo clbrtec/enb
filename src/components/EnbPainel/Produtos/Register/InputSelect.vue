@@ -4,6 +4,8 @@
       {{ text }}:
     </div>
     <select @change="e => $emit('update:modelValue', e.target.value)" :style="input">
+      <option>
+      </option>
       <option
       v-for="(d, key) in data"
       :key="key"

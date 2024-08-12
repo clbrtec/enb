@@ -7,7 +7,7 @@
     <input-estoque
     :prod="SelectedProdEdit"
     />
-    <var-header v-if="SelectedProdEdit.estoqueVariavel.lenght"/>
+    <var-header v-if="SelectedProdEdit.estoqueVariavel.length"/>
     <var-list
     v-for="(data, key) in SelectedProdEdit.estoqueVariavel"
     :key="key"

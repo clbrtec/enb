@@ -101,5 +101,13 @@ export default {
   UpdateEstoque: ({ commit }, payload) => new Promise((resolve) => {
     commit('UPDATE_ESTOQUE', payload)
     resolve()
+  }),
+  DeleteEstoqueVariavel: ({ commit }, payload) => new Promise((resolve) => {
+    commit('DELETE_ESTOQUE_VARIAVEL', payload)
+    resolve()
+  }),
+  UpdateEstoqueQtde: ({ commit }, payload) => new Promise((resolve) => {
+    commit('UPDATE_ESTOQUE_QTDE', payload)
+    resolve()
   })
 }
