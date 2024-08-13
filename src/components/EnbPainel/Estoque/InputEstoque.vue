@@ -7,7 +7,7 @@
       :key="key"
       :data="data.values"
       :text="data.name"
-      :label="{ textAlign: 'left', marginTop: '1%', marginLeft: '5px' }"
+      :label="{ textAlign: 'left', marginTop: '1%', marginLeft: '5px', fontSize: '16px' }"
       :input="{ width: '100%', padding: '1%', fontSize: '16px', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
     </div>
@@ -18,7 +18,7 @@
         :value="src.quantidade"
         @update:modelValue="newValue => src.quantidade = newValue"
         :cont="{ width: '100%', textAlign: 'left' }"
-        :label="{ marginLeft: '3px' }"
+        :label="{ marginLeft: '3px', fontSize: '16px' }"
         :input="{ textAlign: 'right', fontSize: '16px', padding: '2%', width: '90%', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
         />
       </div>

@@ -62,6 +62,7 @@ export default {
       this.PushPropProd({ name: this.name, values: this.values })
       this.name = ''
       this.value = ''
+      this.values = []
     }
   }
 }

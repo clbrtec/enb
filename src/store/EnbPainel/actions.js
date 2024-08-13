@@ -83,6 +83,7 @@ export default {
       itensVendaDel: payload.gift.itensVendaDel
     }
     commit('PUSH_GIFT', newGift)
+    commit('CLEAR_GIFT_EDIT')
     resolve()
   }),
   SetGiftEdit: ({ commit }, payload) => new Promise((resolve) => {

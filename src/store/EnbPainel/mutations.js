@@ -128,5 +128,27 @@ export default {
         e.src.quantidade = payload.quantidade
       }
     })
+  },
+  'CLEAR_GIFT_EDIT' (state) {
+    state.SelectedGiftEdit = {
+      id: '',
+      codigo: '',
+      tipo: '',
+      valor: 0,
+      validade: '',
+      gastoMin: 0,
+      gastoMax: 0,
+      produtos: [],
+      produtoDel: [],
+      categorias: [],
+      categoriasDel: [],
+      emailsDel: [],
+      limiteCupom: 0,
+      limiteNprodutos: 0,
+      limiteUser: 0,
+      freteGratis: false,
+      individual: false,
+      itensVendaDel: false
+    }
   }
 }

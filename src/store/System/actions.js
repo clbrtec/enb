@@ -47,6 +47,7 @@ export default {
       permission: payload.permission
     }
     commit('PUSH_USER', newUser)
+    commit('CLEAR_USER_EDIT')
     resolve()
   }),
   UpdateStatusUser: ({ commit }, payload) => new Promise((resolve) => {
