@@ -96,9 +96,34 @@
  - Excluir #
  - Status #
 
+19/08/2024
+
+* Gerenciamento de Pedidos:
+ - bug miniatura imagem do produto
+
+* Backend(api):
+ - Iniciar
+
+* Preferências:
+ - Novo Templete
+ - Cores
+ - Botões
+ - Logo
+
+* Usuário:
+ - Add Permissões
+
 * Loja:
  - Melhorar o layout de minha conta
  - Filtros produtos
+ - Integração cupons
 
 * Geral:
  - Loader
+
+
+
+
+
+
+
