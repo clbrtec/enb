@@ -3,6 +3,14 @@ export default {
     logged: false,
     admin: false
   },
+  Theme: {
+    modal: 'EnbModal01',
+    checkout: 'CheckoutSide01',
+    search: 'SearchCont01',
+    nave: 'EnbNave02',
+    content: 'EnbContent01',
+    footer: 'EnbFooter01'
+  },
   EnbMsg: [],
   Users: [],
   SelectedUserEdit: {

@@ -101,9 +101,6 @@
 * Gerenciamento de Pedidos:
  - bug miniatura imagem do produto
 
-* Backend(api):
- - Iniciar
-
 * Preferências:
  - Novo Templete
  - Cores
@@ -121,6 +118,8 @@
 * Geral:
  - Loader
 
+* Backend(api):
+ - Iniciar
 
 
 
