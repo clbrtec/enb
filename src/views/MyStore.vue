@@ -13,11 +13,11 @@
 <script>
 import { mapGetters } from 'vuex'
 import { EnbNave01, EnbContent01, CheckoutSide01, SearchCont01, EnbModal01, EnbFooter01 } from './Theme01'
-import { EnbNave02 } from './Theme02'
+import { EnbNave02, EnbModal02 } from './Theme02'
 import EnbMsg from '@/components/EnbMsg/EnbMsg'
 export default {
   name: 'MyStore',
-  components: { EnbNave01, EnbContent01, CheckoutSide01, EnbModal01, SearchCont01, EnbFooter01, EnbMsg, EnbNave02 },
+  components: { EnbNave01, EnbContent01, CheckoutSide01, EnbModal01, SearchCont01, EnbFooter01, EnbMsg, EnbNave02, EnbModal02 },
   computed: {
     ...mapGetters(['ShowCheckout', 'ShowSearch01', 'Modal01', 'Theme'])
   }

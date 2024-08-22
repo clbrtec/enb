@@ -4,7 +4,7 @@ export default {
     admin: false
   },
   Theme: {
-    modal: 'EnbModal01',
+    modal: 'EnbModal02',
     checkout: 'CheckoutSide01',
     search: 'SearchCont01',
     nave: 'EnbNave02',

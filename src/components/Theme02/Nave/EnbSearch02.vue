@@ -13,8 +13,9 @@ export default {
 
 <style scoped>
 .EnbSearch02 {
-  width: 40%;
+  width: 35%;
   display: flex;
+  justify-content: center;
 }
 
 input {
