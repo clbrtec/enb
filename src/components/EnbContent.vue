@@ -1,19 +1,18 @@
 <template>
-  <div class='EnbContent01'>
-    <router-view/>
+  <div class='EnbContent'>
+    <router-view :data="data"/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'EnbContent01'
+  name: 'EnbContent',
+  props: ['data']
 }
 </script>
 
 <style scoped>
 .EnbContent01 {
   width: 100%;
-  height: 70%;
-  overflow: auto;
 }
 </style>

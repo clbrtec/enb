@@ -21,13 +21,13 @@ export default {
 <style scoped>
 .BarModal02 {
   display: flex;
-  padding: 2%;
+  padding: 1%;
   color: #FFFFFF;
   background-color: #666666;
 }
 
 .text {
-  width: 95%;
+  width: 98%;
   text-align: left;
 }
 

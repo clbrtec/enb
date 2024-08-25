@@ -1,4 +1,5 @@
 import img from './img'
+import img2 from './img2'
 export default {
   Modal01: {
     component: 'EnbLogin01',
@@ -40,6 +41,29 @@ export default {
       preco: 1.99,
       oferta: 0.99,
       img: [img],
+      descricao: 'No mundo atual, o desenvolvimento contínuo de distintas formas de atuação causa impacto indireto na reavaliação das diretrizes de desenvolvimento para o futuro',
+      dateOfertaStart: '',
+      dateOfertaEnd: '',
+      categoria: 'Massas',
+      gerEstoque: false,
+      statusEstoque: 'Em estoque',
+      estoque: 0,
+      pendencia: '',
+      visibilidade: '',
+      visualizacao: 0,
+      atributos: [],
+      estoqueVariavel: [],
+      dateCreate: '28/07/2024'
+    },
+    {
+      id: 15249,
+      code: '',
+      tipo: 'Simples',
+      name: 'Camiseta Masculina básica paris casual Estampada T-shirt',
+      status: true,
+      preco: 1.99,
+      oferta: 0.99,
+      img: [img2],
       descricao: 'No mundo atual, o desenvolvimento contínuo de distintas formas de atuação causa impacto indireto na reavaliação das diretrizes de desenvolvimento para o futuro',
       dateOfertaStart: '',
       dateOfertaEnd: '',

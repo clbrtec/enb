@@ -8,9 +8,10 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import EnbLogin02 from './EnbLogin02'
+import SelectProduto02 from './SelectProduto02'
 export default {
   name: 'EnbModal02',
-  components: { EnbLogin02 },
+  components: { EnbLogin02, SelectProduto02 },
   computed: {
     ...mapGetters(['Modal01']),
   },

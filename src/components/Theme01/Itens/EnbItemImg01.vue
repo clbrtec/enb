@@ -14,7 +14,8 @@ export default {
     ...mapActions(['SetItem01']),
     Select () {
       this.SetItem01(this.data)
-      this.$router.push('/itemview')
+        .then(() => this.$router.push('/itemview'))
+      
     },
     inFile (e) {
       this.getBase64(e.target.files[0])

@@ -1,25 +1,28 @@
 <template>
   <div class='EnbNave02'>
-    <enb-logo02/>
-    <enb-link02
-    v-for="(link, key) in LinksTheme01"
-    :key="key"
-    :data="link"
-    />
-    <enb-search02/>
-    <link-profile02
-    @click="SetModal01({ component: 'EnbLogin02', active: true, barText: 'login' })"
-    />
-    <div class="cont-bag"
-    @mouseenter="showBag=true"
-    >
-      <bag-icon
-      @mouseenter="showBag=true"
+    <div class="cont-nave">
+      <enb-logo02/>
+      <enb-link02
+      v-for="(link, key) in LinksTheme01"
+      :key="key"
+      :data="link"
       />
-      <enb-bag02 v-if="showBag"
-      @mouseenter="showBag=true"
-      @mouseleave="showBag=false"
+      <enb-search02/>
+      <link-profile02
+      @click="SetModal01({ component: 'EnbLogin02', active: true, barText: 'login' })"
       />
+      <div class="cont-bag"
+      @mouseenter="showBag=true"
+      >
+        <bag-icon
+        @mouseenter="showBag=true"
+        />
+        <div v-if="CheckoutItens01.length">({{ CheckoutItens01.length }})</div>
+        <enb-bag02 v-if="showBag"
+        @mouseenter="showBag=true"
+        @mouseleave="showBag=false"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -36,7 +39,7 @@ export default {
   name: 'EnbNave02',
   components: { EnbLogo02, EnbSearch02, EnbLink02, BagIcon, LinkProfile02, EnbBag02 },
   computed: {
-    ...mapGetters(['LinksTheme01'])
+    ...mapGetters(['LinksTheme01', 'CheckoutItens01'])
   },
   data () {
     return {
@@ -51,12 +54,22 @@ export default {
 
 <style scoped>
 .EnbNave02 {
-  width: 80%;
+  width: 100%;
   height: 10%;
+  position: absolute;
+  background-color: #FFFFFF ;
+  border-bottom: thin solid #CCCCCC;
+  z-index: 1;
+}
+
+.cont-nave {
+  width: 80%;
+  height: 100%;
   display: flex;
   justify-content: start;
   align-items: center;
   margin: auto;
+  color: #666666
 }
 
 .cont-bag {

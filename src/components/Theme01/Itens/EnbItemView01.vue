@@ -1,20 +1,20 @@
 <template>
   <div class='EnbItemView01'>
     <div class="cont-imgs">
-    <carousel>
-      <slide v-for="(img, key) in ItemSelected01.img" :key="key">
-        <vue-image-zoomer
-        :regular="img"
-        hover-message="⚲ Zoom"
-        img-width="300"
-        img-height="300"
-        />
-      </slide>
-      <template #addons>
-        <navigation />
-        <pagination />
-      </template>
-    </carousel>
+      <carousel>
+        <slide v-for="(img, key) in ItemSelected01.img" :key="key">
+          <vue-image-zoomer
+          :regular="img"
+          hover-message="⚲ Zoom"
+          img-width="300"
+          img-height="300"
+          />
+        </slide>
+        <template #addons>
+          <navigation />
+          <pagination />
+        </template>
+      </carousel>
     </div>
     <div class="cont">
       <div class="cont-desc name">

@@ -1,5 +1,5 @@
 <template>
-  <div class='EnbBag02'>
+  <div class='EnbBag02' v-if="CheckoutItens01.length">
     <div class="cont-itens">
       <bag-item02
       v-for="(prod, key) in CheckoutItens01"
@@ -33,7 +33,7 @@ export default {
   margin-left: -250px;
   margin-top: 350px;
   background-color: #FFFFFF;
-  box-shadow: 1px 1px 10px 1px #EEEEEE;
+  box-shadow: 1px 1px 10px 1px #CCCCCC;
   padding: 1%;
   z-index: 99;
 }

@@ -8,8 +8,8 @@ export default {
     checkout: 'CheckoutSide01',
     search: 'SearchCont01',
     nave: 'EnbNave02',
-    content: 'EnbContent01',
-    footer: 'EnbFooter01'
+    footer: 'EnbFooter01',
+    route: 'Theme02'
   },
   EnbMsg: [],
   Users: [],

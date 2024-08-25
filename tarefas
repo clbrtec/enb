@@ -101,12 +101,12 @@
 * Gerenciamento de Pedidos:
  - bug miniatura imagem do produto
 
-* Preferências:
- - Novo Templete
- - Cores
- - Botões
- - Logo
+* Gerenciamento de Preferências:
+ - Seleção de Templetes
 
+* Preferências:
+ - Novo Templete #
+ 
 * Usuário:
  - Add Permissões
 
@@ -116,7 +116,7 @@
  - Integração cupons
 
 * Geral:
- - Loader
+ - Loader #
 
 * Backend(api):
  - Iniciar
