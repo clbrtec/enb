@@ -10,6 +10,7 @@ import GiftRegister from '@/components/EnbPainel/Gift/GiftRegister'
 import EnbUser from '@/components/EnbPainel/User/EnbUser'
 import UserRegister from '@/components/EnbPainel/User/UserRegister'
 import EnbEstoque from '@/components/EnbPainel/Estoque/EnbEstoque'
+import EnbPreference from '@/components/EnbPainel/Preferencia/EnbPreference'
 
 export default [
   {
@@ -96,5 +97,10 @@ export default [
     path: '/painel/stock',
     name: 'Gerenciamento de estoque',
     component: EnbEstoque
+  },
+  {
+    path: '/painel/preference',
+    name: 'Preferencias',
+    component: EnbPreference
   }
 ]

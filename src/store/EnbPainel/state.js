@@ -84,6 +84,11 @@ export default {
       icon: 'GiftIcon'
     },
     {
+      text: 'Preferências',
+      path: '/painel/preference',
+      icon: 'ConfigIcon'
+    },
+    {
       text: 'Loja',
       path: '/loja',
       icon: 'StoreIcon01'

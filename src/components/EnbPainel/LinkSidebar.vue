@@ -2,7 +2,7 @@
   <div class='LinkSidebar'>
     <div :class="{ contActive: $route.path.indexOf(data.path) >= 0 }" class="cont-link" @click="run">
       <component :is="data.icon"/>
-      &nbsp;
+      <div class="space"></div>
       {{ data.text }}
     </div>
     <div v-if="showSubLink">
@@ -22,10 +22,11 @@ import ListIcon01 from '../Theme01/Icons/ListIcon01'
 import StoreIcon01 from '../Theme01/Icons/StoreIcon01'
 import GiftIcon from '../EnbPainel/Icons/GiftIcon'
 import UserIcon from '../EnbPainel/Icons/UserIcon'
+import ConfigIcon from '../EnbPainel/Icons/ConfigIcon'
 import SubLink from '@/components/EnbPainel/SubLink'
 export default {
   name: 'LinkSidebar',
-  components: { SubLink, ProdIcon, ClientIcon, ListIcon01, StoreIcon01, GiftIcon, UserIcon },
+  components: { SubLink, ProdIcon, ClientIcon, ListIcon01, StoreIcon01, GiftIcon, UserIcon, ConfigIcon },
   data () {
     return {
       showSubLink: false
@@ -73,5 +74,9 @@ export default {
 .contActive {
   background-color: #EEEEEE;
   border-left: 7px solid #648EEA;
+}
+
+.space {
+  width: 2%;
 }
 </style>

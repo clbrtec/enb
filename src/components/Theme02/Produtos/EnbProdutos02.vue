@@ -8,7 +8,7 @@
       />
     </div>
     <div class="cont-loader">
-      <enb-sync-loader color="orange" size="10px" :loading="load"/>
+      <enb-sync-loader color="#666666" size="10px" :loading="load"/>
     </div>
   </div>
 </template>

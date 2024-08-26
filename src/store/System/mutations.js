@@ -1,3 +1,8 @@
+import router from '../../router'
+import Theme01 from '../../router/Theme01'
+import Theme02 from '../../router/Theme02'
+import MyStore from '../../views/MyStore'
+
 export default {
   'PUSH_MSG' (state, payload) {
     state.EnbMsg.push({
@@ -85,5 +90,23 @@ export default {
         }
       ]
     }
+  },
+  'CHANGE_THEME' (state, payload) {
+    let routeThemes = { Theme01, Theme02 }
+    let selectedTheme = state.Themes.filter(t => t.name === payload)[0]
+    state.Themes.map(t => {
+      t.active = false
+      if (t.name === payload) {
+        t.active = true
+      }
+    })
+    router.addRoute({
+      name: 'Minha Loja',
+      path: '/',
+      component: MyStore,
+      children: routeThemes[selectedTheme.route]
+    })
+    console.log(router.getRoutes())
+    state.Theme = selectedTheme
   }
 }

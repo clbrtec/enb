@@ -11,9 +11,11 @@
     :items-to-show="1"
     >
       <slide v-for="(img, key) in SelectedProdEdit.img" :key="key">
-        <img :src="img"
-        @click="SetModal({ component: 'SelectImg', active: true })" 
-        >
+        <div class="cont-img">
+          <img class="prod-img" :src="img"
+          @click="SetModal({ component: 'SelectImg', active: true })" 
+          >
+        </div>
       </slide>
       <template #addons>
         <navigation />
@@ -65,7 +67,7 @@ export default {
   width: 100%;
 }
 
-img {
+.prod-img {
   width: 150px;
   height: 150px;
   cursor: pointer;
@@ -74,5 +76,10 @@ img {
 .img-pagination {
   width: 50px;
   height: 50px;
+}
+
+.cont-img {
+  width: 100%;
+  height: 150px;
 }
 </style>

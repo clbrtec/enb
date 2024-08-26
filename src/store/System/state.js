@@ -3,13 +3,35 @@ export default {
     logged: false,
     admin: false
   },
+  Themes: [
+    {
+      name: 'Modelo 01',
+      modal: 'EnbModal01',
+      checkout: 'CheckoutSide01',
+      search: 'SearchCont01',
+      nave: 'EnbNave01',
+      footer: 'EnbFooter01',
+      route: 'Theme01',
+      active: true
+    },
+    {
+      name: 'Modelo 02',
+      modal: 'EnbModal02',
+      checkout: 'CheckoutSide01',
+      search: 'SearchCont01',
+      nave: 'EnbNave02',
+      footer: 'EnbFooter01',
+      route: 'Theme02',
+      active: false
+    }
+  ],
   Theme: {
-    modal: 'EnbModal02',
+    modal: 'EnbModal01',
     checkout: 'CheckoutSide01',
     search: 'SearchCont01',
-    nave: 'EnbNave02',
+    nave: 'EnbNave01',
     footer: 'EnbFooter01',
-    route: 'Theme02'
+    route: 'Theme01'
   },
   EnbMsg: [],
   Users: [],

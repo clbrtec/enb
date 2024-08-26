@@ -61,5 +61,9 @@ export default {
   SetUserEdit: ({ commit }, payload) => new Promise((resolve) => {
     commit('SET_USER_EDIT', payload)
     resolve()
+  }),
+  ChangeTheme: ({ commit }, payload) => new Promise((resolve) => {
+    commit('CHANGE_THEME', payload)
+    resolve()
   })
 }
