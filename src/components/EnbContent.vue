@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style scoped>
-.EnbContent01 {
+.EnbContent {
   width: 100%;
 }
 </style>

@@ -72,7 +72,7 @@ export default {
 button {
   border: 0;
   width: 100%;
-  height: 12%;
+  height: 45px;
   font-size: 16px;
   border-radius: 8px;
   background-color: #fe5020;

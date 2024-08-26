@@ -30,5 +30,6 @@ export default {
   display: flex;
   justify-content: center;
   padding-top: 3%;
+  min-height: 420px;
 }
 </style>

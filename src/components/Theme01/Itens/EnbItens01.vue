@@ -33,5 +33,6 @@ export default {
 <style scoped>
 .EnbItens01 {
   width: 100%;
+  height: 462px;
 }
 </style>

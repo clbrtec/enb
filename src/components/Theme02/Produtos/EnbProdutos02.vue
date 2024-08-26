@@ -41,7 +41,7 @@ export default {
     push () {
       this.load = true
       setTimeout(() => {
-        this.prods = this.prods + 6
+        this.prods = this.prods + 8
         this.load = false
       }, 2000)
     }

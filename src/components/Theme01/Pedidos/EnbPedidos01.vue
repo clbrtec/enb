@@ -30,6 +30,7 @@ export default {
 <style scoped>
 .EnbPedidos01 {
   width: 80%;
+  min-height: 462px;
   margin: auto;
 }
 

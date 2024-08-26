@@ -102,11 +102,22 @@
  - bug miniatura imagem do produto #
 
 * Gerenciamento de Preferências:
- - Seleção de Templetes #
+ - Seleção de Templates #
 
 * Preferências:
- - Novo Templete #
+ - Novo Template #
  
+* Geral:
+ - Loader #
+
+
+02/09/2024
+
+* Templates:
+ - Modelo 01
+ - Modelo 02
+ - Modelo 03
+
 * Usuário:
  - Add Permissões
 
@@ -115,14 +126,12 @@
  - Filtros produtos
  - Integração cupons
 
-* Geral:
- - Loader #
-
 * Backend(api):
  - Iniciar
 
+* Frente de loja(site):
+ - Preferências
 
-
-
-
-
+* Componentes laterais:
+ - Produto (destaque ou histórico)
+ - Localização
