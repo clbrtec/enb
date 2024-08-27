@@ -32,7 +32,10 @@ export default {
   },
   data () {
     return {
-      scroll: null
+      scroll: {
+        position: 0,
+        height: 1
+      }
     }
   }
 }

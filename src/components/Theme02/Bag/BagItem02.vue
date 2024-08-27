@@ -12,21 +12,29 @@
         <div class="valor">
           R$ {{ preco }}
         </div>
+        <div class="del">
+          <delete-icon @click="DeleteCheckout01(data)"/>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import BagQtde02 from './BagQtde02'
+import DeleteIcon from '../Icons/DeleteIcon'
 export default {
   name: 'BagItem02',
-  components: { BagQtde02 },
+  components: { BagQtde02, DeleteIcon },
   props: ['data'],
   computed: {
     preco () {
       return (this.data.preco * this.data.qtda).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
     }
+  },
+  methods: {
+    ...mapActions(['DeleteCheckout01'])
   }
 }
 </script>
@@ -35,7 +43,8 @@ export default {
 .BagItem02 {
   display: flex;
   align-items: center;
-  height: 20%;
+  padding-bottom: 2%;
+  border-bottom: thin solid #CCCCCC;
 }
 
 .cont-img {
@@ -55,8 +64,9 @@ img {
 
 .desc {
   display: flex;
+  padding: 3%;
+  padding-left: 0;
   align-items: center;
-  height: 50%;
   text-align: left;
 }
 
@@ -67,14 +77,21 @@ img {
 }
 
 .qtda {
-  width: 50%;
+  width: 30%;
   display: flex;
   align-items: center;
   
 }
 
 .valor {
-  width: 50%;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.del {
+  width: 15%;
   display: flex;
   align-items: center;
   justify-content: center;

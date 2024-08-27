@@ -8,7 +8,7 @@
       />
     </div>
     <div class="cont-btn">
-      <button>ver carrinho</button>
+      <button @click="$router.push('/checkout')">ver carrinho</button>
     </div>
   </div>
 </template>

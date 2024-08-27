@@ -15,7 +15,6 @@ export default {
     Select () {
       this.SetItem01(this.data)
         .then(() => this.$router.push('/itemview'))
-      
     },
     inFile (e) {
       this.getBase64(e.target.files[0])
