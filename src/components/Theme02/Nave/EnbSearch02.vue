@@ -1,13 +1,28 @@
 <template>
   <div class='EnbSearch02'>
-    <input type="text">
-    <button>Buscar</button>
+    <input v-model="str" type="text">
+    <button @click="search">Buscar</button>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
-  name: 'EnbSearch02'
+  name: 'EnbSearch02',
+  data () {
+    return {
+      str: ''
+    }
+  },
+  methods: {
+    ...mapActions(['SearchProd01', 'ToggleSearchLoad']),
+    search () {
+      this.ToggleSearchLoad(true)
+      this.$router.push('/search')
+      this.SearchProd01(this.str)
+        .then(() => this.ToggleSearchLoad(false))
+    }
+  }
 }
 </script>
 

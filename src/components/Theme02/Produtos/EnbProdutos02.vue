@@ -2,9 +2,9 @@
   <div class='EnbProdutos02'>
     <div class="cont-itens">
       <enb-produto02
-      v-for="(i, key) in prods"
+      v-for="(i, key) in Produtos"
       :key="key"
-      :data="ProdutosTotal01[1]"
+      :data="i"
       />
     </div>
     <div class="cont-loader">
@@ -21,7 +21,10 @@ export default {
   name: 'EnbProdutos02',
   components: { EnbProduto02, EnbSyncLoader },
   computed: {
-    ...mapGetters(['ProdutosTotal01'])
+    ...mapGetters(['ProdutosTotal01', 'ResultFilterCateg']),
+    Produtos () {
+      return this.$route.path === '/categorias' ? this.ResultFilterCateg : this.ProdutosTotal01
+    }
   },
   props: ['data'],
   data () {

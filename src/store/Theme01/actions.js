@@ -28,9 +28,12 @@ export default {
   SetModal01 ({ commit }, payload) {
     commit('SET_MODAL01', payload)
   },
-  SearchProd01 ({ commit }, payload) {
+  SearchProd01: ({ commit }, payload) => new Promise((resolve) => {
     commit('SEARCH_PROD01', payload)
-  },
+    setTimeout(() => {
+      resolve()
+    }, 3000)
+  }),
   DeleteProd: ({ commit }, payload) => new Promise((resolve) => {
     commit('DELETE_PROD', payload)
     resolve()

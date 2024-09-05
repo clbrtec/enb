@@ -65,5 +65,9 @@ export default {
   ChangeTheme: ({ commit }, payload) => new Promise((resolve) => {
     commit('CHANGE_THEME', payload)
     resolve()
+  }),
+  ToggleSearchLoad: ({ commit }, payload) => new Promise((resolve) => {
+    commit('TOGGLE_SEARCH_LOAD', payload)
+    resolve()
   })
 }

@@ -67,7 +67,7 @@ export default {
       descricao: 'No mundo atual, o desenvolvimento contínuo de distintas formas de atuação causa impacto indireto na reavaliação das diretrizes de desenvolvimento para o futuro',
       dateOfertaStart: '',
       dateOfertaEnd: '',
-      categoria: 'Massas',
+      categoria: 'Camisetas',
       gerEstoque: false,
       statusEstoque: 'Em estoque',
       estoque: 0,

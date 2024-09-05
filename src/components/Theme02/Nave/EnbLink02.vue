@@ -1,5 +1,9 @@
 <template>
-  <div class='EnbLink02' @click="$router.push(data.path)">
+  <div class='EnbLink02'
+  @click="$router.push(data.path)"
+  @mouseenter="emit(true)"
+  @mouseleave="emit(false)"
+  >
     {{ data.text }}
   </div>
 </template>
@@ -11,6 +15,17 @@ export default {
     data: {
       type: Object,
       default: () => ({ text: 'link', path: '/' })
+    },
+    toggleCateg: {
+      type: Boolean,
+      default: false
+    }
+  },
+  methods: {
+    emit (bool) {
+      if(this.data.text === 'Produtos') {
+        this.$emit('update:showCateg', bool)
+      }
     }
   }
 }

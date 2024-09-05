@@ -34,6 +34,11 @@ export default {
       active: false,
       childrens: [],
       name: 'Massas'
+    },
+    {
+      active: false,
+      childrens: [],
+      name: 'Camisetas'
     }
   ],
   SelectedGiftEdit: {

@@ -4,11 +4,17 @@ import CompletePurchase from '@/components/Theme02/Client/CompletePurchase'
 import EnbPedidos from '@/components/Theme02/Pedidos/EnbPedidos'
 import PedidoView from '@/components/Theme02/Pedidos/PedidoView'
 import EnbItemView02 from '@/components/Theme02/Produtos/EnbItemView02'
+import SearchResult from '@/components/Theme02/Search/SearchResult'
 
 export default [
   {
     path: '/',
     name: 'Produtos02',
+    component: EnbProdutos02
+  },
+  {
+    path: '/categorias',
+    name: 'Categorias',
     component: EnbProdutos02
   },
   {
@@ -40,5 +46,10 @@ export default [
     path: '/itemview',
     name: 'Produto',
     component: EnbItemView02
+  },
+  {
+    path: '/search',
+    name: 'Pesquisa',
+    component: SearchResult
   }
 ]

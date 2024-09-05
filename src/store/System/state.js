@@ -59,5 +59,6 @@ export default {
         active: false
       }
     ]
-  }
+  },
+  SearchLoad: false
 }

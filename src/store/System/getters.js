@@ -4,5 +4,6 @@ export default {
   Users: state => state.Users,
   SelectedUserEdit: state => state.SelectedUserEdit,
   Theme: state => state.Theme,
-  Themes: state => state.Themes
+  Themes: state => state.Themes,
+  SearchLoad: state => state.SearchLoad
 }

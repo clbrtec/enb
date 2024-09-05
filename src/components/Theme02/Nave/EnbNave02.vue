@@ -1,11 +1,16 @@
 <template>
   <div class='EnbNave02'>
+    <enb-categ v-if="showCateg"
+    @mouseenter="showCateg=true"
+    @mouseleave="showCateg=false"
+    />
     <div class="cont-nave">
       <enb-logo02/>
       <enb-link02
       v-for="(link, key) in LinksTheme01"
       :key="key"
       :data="link"
+      v-model:showCateg="showCateg"
       />
       <enb-search02/>
       <link-profile02
@@ -35,15 +40,17 @@ import EnbLink02 from './EnbLink02'
 import LinkProfile02 from './LinkProfile02'
 import BagIcon from '../Icons/BagIcon'
 import EnbBag02 from '../Bag/EnbBag02'
+import EnbCateg from './EnbCateg'
 export default {
   name: 'EnbNave02',
-  components: { EnbLogo02, EnbSearch02, EnbLink02, BagIcon, LinkProfile02, EnbBag02 },
+  components: { EnbLogo02, EnbSearch02, EnbLink02, BagIcon, LinkProfile02, EnbBag02, EnbCateg },
   computed: {
     ...mapGetters(['LinksTheme01', 'CheckoutItens01'])
   },
   data () {
     return {
-      showBag: false
+      showBag: false,
+      showCateg: false
     }
   },
   methods: {
@@ -55,7 +62,7 @@ export default {
 <style scoped>
 .EnbNave02 {
   width: 100%;
-  height: 10%;
+  height: 70px;
   position: absolute;
   background-color: #FFFFFF ;
   border-bottom: thin solid #CCCCCC;

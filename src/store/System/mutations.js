@@ -108,5 +108,8 @@ export default {
     })
     console.log(router.getRoutes())
     state.Theme = selectedTheme
+  },
+  'TOGGLE_SEARCH_LOAD' (state, payload) {
+    state.SearchLoad = payload
   }
 }
