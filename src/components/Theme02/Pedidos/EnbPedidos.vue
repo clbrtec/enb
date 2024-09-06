@@ -1,13 +1,14 @@
 <template>
   <div class='EnbPedidos'>
-    <pedidos-header/>
-    <div class="cont">
+    <pedidos-header v-if="pedidosProfile.length > 0"/>
+    <div class="cont" v-if="pedidosProfile.length > 0">
       <pedidos-list
       v-for="(p, key) in pedidosProfile"
       :key="key"
       :data="p"
       />
     </div>
+    <enb-empty label="Você ainda não fez nenhum pedido!"/>
   </div>
 </template>
 
@@ -15,9 +16,10 @@
 import { mapGetters } from 'vuex'
 import PedidosHeader from './header/PedidosHeader'
 import PedidosList from './Itens/PedidosList'
+import EnbEmpty from '../EnbEmpty'
 export default {
   name: 'EnbPedidos',
-  components: { PedidosHeader, PedidosList },
+  components: { PedidosHeader, PedidosList, EnbEmpty },
   computed: {
     ...mapGetters(['Pedidos', 'Profile']),
     pedidosProfile () {
