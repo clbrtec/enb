@@ -15,10 +15,24 @@ import { mapGetters } from 'vuex'
 import EnbContent from '@/components/EnbContent'
 import { EnbNave01, CheckoutSide01, SearchCont01, EnbModal01, EnbFooter01 } from './Theme01'
 import { EnbNave02, EnbModal02 } from './Theme02'
+import { EnbNave03, EnbModal03, EnbFooter03 } from './Theme03'
 import EnbMsg from '@/components/EnbMsg/EnbMsg'
 export default {
   name: 'MyStore',
-  components: { EnbContent, EnbNave01, CheckoutSide01, EnbModal01, SearchCont01, EnbFooter01, EnbMsg, EnbNave02, EnbModal02 },
+  components: { 
+    EnbContent,
+    EnbNave01,
+    CheckoutSide01,
+    EnbModal01,
+    SearchCont01,
+    EnbFooter01,
+    EnbMsg,
+    EnbNave02,
+    EnbModal02,
+    EnbNave03,
+    EnbModal03,
+    EnbFooter03
+  },
   computed: {
     ...mapGetters(['ShowCheckout', 'ShowSearch01', 'Modal01', 'Theme'])
   },

@@ -1,6 +1,7 @@
 import router from '../../router'
 import Theme01 from '../../router/Theme01'
 import Theme02 from '../../router/Theme02'
+import Theme03 from '../../router/Theme03'
 import MyStore from '../../views/MyStore'
 
 export default {
@@ -92,7 +93,7 @@ export default {
     }
   },
   'CHANGE_THEME' (state, payload) {
-    let routeThemes = { Theme01, Theme02 }
+    let routeThemes = { Theme01, Theme02, Theme03 }
     let selectedTheme = state.Themes.filter(t => t.name === payload)[0]
     state.Themes.map(t => {
       t.active = false

@@ -12,7 +12,7 @@ export default {
       nave: 'EnbNave01',
       footer: 'EnbFooter01',
       route: 'Theme01',
-      active: true
+      active: false
     },
     {
       name: 'Modelo 02',
@@ -23,15 +23,25 @@ export default {
       footer: 'EnbFooter01',
       route: 'Theme02',
       active: false
+    },
+    {
+      name: 'Modelo 03',
+      modal: 'EnbModal03',
+      checkout: 'CheckoutSide01',
+      search: 'SearchCont01',
+      nave: 'EnbNave03',
+      footer: 'EnbFooter03',
+      route: 'Theme03',
+      active: true
     }
   ],
   Theme: {
-    modal: 'EnbModal01',
+    modal: 'EnbModal03',
     checkout: 'CheckoutSide01',
     search: 'SearchCont01',
-    nave: 'EnbNave01',
-    footer: 'EnbFooter01',
-    route: 'Theme01'
+    nave: 'EnbNave03',
+    footer: 'EnbFooter03',
+    route: 'Theme03'
   },
   EnbMsg: [],
   Users: [],

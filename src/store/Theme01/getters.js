@@ -9,5 +9,6 @@ export default {
   ItemSelected01: state => state.ItemSelected01,
   Modal01: state => state.Modal01,
   ResultSearch01: state => state.ResultSearch01,
-  ResultFilterCateg: state => state.ResultFilterCateg
+  ResultFilterCateg: state => state.ResultFilterCateg,
+  PropertyLink: state => state.PropertyLink
 }
