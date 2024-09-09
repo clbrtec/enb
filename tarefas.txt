@@ -111,17 +111,18 @@
  - Loader #
 
 
-02/09/2024
+09/09/2024
 
 * Templates:
  - Modelo 01
   |_ Telas sem itens #
- - Modelo 02 #
+ - Modelo 02
   |_ Sub nave categorias #
   |_ Resultado de pesquisa #
   |_ Efeito imagem produto #
   |_ Telas sem itens #
  - Modelo 03
+  |_ Top (Navegação) #
 
 * Usuário:
  - Add Permissões

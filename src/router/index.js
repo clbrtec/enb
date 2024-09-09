@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import EnbPainel from '../views/EnbPainel.vue'
 import MyStore from '../views/MyStore.vue'
-import Theme03 from './Theme03'
+import Theme01 from './Theme01'
 import Painel from './Painel'
 
 const routes = [
@@ -15,7 +15,7 @@ const routes = [
     path: '/',
     name: 'Minha Loja',
     component: MyStore,
-    children: Theme03
+    children: Theme01
   }
 ]
 
