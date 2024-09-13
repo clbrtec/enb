@@ -14,7 +14,7 @@
           <search-icon/>
         </div> 
         <div class="c-action">
-          <user-icon/>
+          <user-icon @click="SetModal01({ component: 'EnbLogin', active: true })"/>
          </div>
        </div>
     </div>
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import EnbLogo from './EnbLogo'
 import EnbLink from './EnbLink'
 import UserIcon from '../Icons/UserIcon'
@@ -32,6 +32,9 @@ export default {
   components: { EnbLogo, EnbLink, UserIcon, SearchIcon },
   computed: {
     ...mapGetters(['PropertyLink'])
+  },
+  methods: {
+    ...mapActions(['SetModal01'])
   }
 }
 </script>
