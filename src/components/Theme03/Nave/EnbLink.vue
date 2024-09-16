@@ -4,6 +4,7 @@
       <component :is="data.icon"/>
     </div>
     <div class="label">{{ data.label }}</div>
+    <down-icon v-if="data.sublink"/> 
   </div>
 </template>
 
@@ -14,9 +15,10 @@ import OfficeIcon from '../Icons/OfficeIcon'
 import StoreIcon from '../Icons/StoreIcon'
 import CoconutIcon from '../Icons/CoconutIcon'
 import MapIcon from '../Icons/MapIcon'
+import DownIcon from '../Icons/DownIcon'
 export default {
   name: 'EnbLink',
-  components: { BuildIcon, HouseIcon, OfficeIcon, StoreIcon, CoconutIcon, MapIcon },
+  components: { BuildIcon, HouseIcon, OfficeIcon, StoreIcon, CoconutIcon, MapIcon, DownIcon },
   props: ['data'],
   data () {
     return {

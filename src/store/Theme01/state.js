@@ -84,11 +84,13 @@ export default {
   PropertyLink: [
     {
       label: 'Apartamento',
-      icon: 'BuildIcon'
+      icon: 'BuildIcon',
+      sublink: true
     },
     {
       label: 'Casa',
-      icon: 'HouseIcon'
+      icon: 'HouseIcon',
+      sublink: true
     },
     {
       label: 'Sala',

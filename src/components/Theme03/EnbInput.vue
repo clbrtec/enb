@@ -1,5 +1,5 @@
 <template>
-  <div class='EnbInput'>
+  <div class='EnbInput' :style="cont">
     <input :type="type" :placeholder="label" :style="input">
   </div>
 </template>
@@ -11,6 +11,10 @@ export default {
     label: {
       type: String,
       default: 'Label'
+    },
+    cont: {
+      type: Object,
+      default: () => ({})
     },
     input: {
       type: Object,

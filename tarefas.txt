@@ -123,6 +123,8 @@
   |_ Telas sem itens #
  - Modelo 03
   |_ Top (Navegação) #
+  |_ modal login *
+  |_modal pesquisa # 
 
 * Usuário:
  - Add Permissões

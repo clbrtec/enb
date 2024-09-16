@@ -11,7 +11,7 @@
       </div>
       <div class="login-search">
         <div class="c-action">
-          <search-icon/>
+          <search-icon @click="SetModal01({ component: 'EnbSearch', active: true })"/>
         </div> 
         <div class="c-action">
           <user-icon @click="SetModal01({ component: 'EnbLogin', active: true })"/>

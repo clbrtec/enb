@@ -8,9 +8,10 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import EnbLogin from './EnbLogin'
+import EnbSearch from '../Search/EnbSearch'
 export default {
   name: 'EnbModal03',
-  components: { EnbLogin },
+  components: { EnbLogin, EnbSearch },
   computed: {
     ...mapGetters(['Modal01']),
   },
