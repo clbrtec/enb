@@ -22,6 +22,7 @@ export default {
     visibilidade: '',
     visualizacao: 0,
     atributos: [],
+    caracter: [],
     individual: false
   }],
   Categorias: [
@@ -98,35 +99,5 @@ export default {
       path: '/loja',
       icon: 'StoreIcon01'
     }
-    // {
-    //   text: 'Componentes',
-    //   path: '',
-    //   child: [
-    //     {
-    //       text: 'Navegação',
-    //       path: '/painel/comptop'
-    //     },
-    //     {
-    //       text: 'Menu',
-    //       path: ''
-    //     },
-    //     {
-    //       text: 'Item',
-    //       path: ''
-    //     },
-    //     {
-    //       text: 'Vitrine',
-    //       path: ''
-    //     },
-    //     {
-    //       text: 'Rodapé',
-    //       path: ''
-    //     },
-    //     {
-    //       text: 'Carrinho',
-    //       path: ''
-    //     }
-    //   ]
-    // }
   ]
 }

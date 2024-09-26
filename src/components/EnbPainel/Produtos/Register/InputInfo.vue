@@ -41,6 +41,7 @@
       <visib-prod/>
       <estoque-prod/>
       <props-prod v-if="SelectedProdEdit.tipo === 'Variável'"/>
+      <input-caracter/>
     </div>
   </div>
 </template>
@@ -54,9 +55,10 @@ import InputText from './InputText'
 import VisibProd from './VisibProd'
 import EstoqueProd from './EstoqueProd'
 import PropsProd from './PropsProd'
+import InputCaracter from './InputCaracter'
 export default {
   name: 'InputInfo',
-  components: { InputReg, CronoIcon, InputCrono, InputText, VisibProd, EstoqueProd, PropsProd },
+  components: { InputReg, CronoIcon, InputCrono, InputText, VisibProd, EstoqueProd, PropsProd, InputCaracter },
   methods: {
     ...mapActions(['ChangeProdEdit'])
   },

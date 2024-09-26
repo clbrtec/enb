@@ -53,7 +53,8 @@ export default {
       visualizacao: 0,
       atributos: [],
       estoqueVariavel: [],
-      dateCreate: '28/07/2024'
+      dateCreate: '28/07/2024',
+      caracter: []
     },
     {
       id: 15249,
@@ -76,7 +77,8 @@ export default {
       visualizacao: 0,
       atributos: [],
       estoqueVariavel: [],
-      dateCreate: '28/07/2024'
+      dateCreate: '28/07/2024',
+      caracter: []
     }
   ], []],
   ResultSearch01: [],

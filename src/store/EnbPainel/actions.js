@@ -110,5 +110,16 @@ export default {
   UpdateEstoqueQtde: ({ commit }, payload) => new Promise((resolve) => {
     commit('UPDATE_ESTOQUE_QTDE', payload)
     resolve()
+  }),
+  PushCaracterProd: ({ commit }, payload) => new Promise((resolve) => {
+    commit('PUSH_CARACTER_PROD', {
+      id: Math.round(Math.random() * 1000000),
+      name: payload
+    })
+    resolve()
+  }),
+  DelCaracterProd: ({ commit }, payload) => new Promise((resolve) => {
+    commit('DEL_CARACTER_PROD', payload)
+    resolve()
   })
 }

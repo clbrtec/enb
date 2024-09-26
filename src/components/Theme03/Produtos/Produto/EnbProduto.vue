@@ -5,7 +5,7 @@
       {{ data.name }}
     </div>
     <prod-price :data="data"/>
-    <btn-imgs/>
+    <btn-imgs :data="data"/>
     <btn-whats/>
   </div>
 </template>

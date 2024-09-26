@@ -1,12 +1,21 @@
 <template>
   <div class='BtnImgs'>
-    <button @click="$router.push('/produtoview')">Ver Fotos</button>
+    <button @click="Select">Ver Fotos</button>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
-  name: 'BtnImgs'
+  name: 'BtnImgs',
+  props: ['data'],
+  methods: {
+    ...mapActions(['SetItem01']),
+    Select () {
+      this.SetItem01(this.data)
+        .then(() => this.$router.push('/produtoview'))
+    }
+  }
 }
 </script>
 

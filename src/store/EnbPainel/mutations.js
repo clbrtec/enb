@@ -70,6 +70,7 @@ export default {
       visualizacao: 0,
       atributos: [],
       estoqueVariavel: [],
+      caracter: [],
       individual: false
     }]
   },
@@ -150,5 +151,11 @@ export default {
       individual: false,
       itensVendaDel: false
     }
+  },
+  'PUSH_CARACTER_PROD' (state, payload) {
+    state.SelectedProdEdit[0].caracter.push(payload)
+  },
+  'DEL_CARACTER_PROD' (state, payload) {
+    state.SelectedProdEdit[0].caracter = state.SelectedProdEdit[0].caracter.filter(c => c.id != payload)
   }
 }
