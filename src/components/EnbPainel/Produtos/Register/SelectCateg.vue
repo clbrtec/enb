@@ -4,14 +4,14 @@
       <div class="header">Categorias</div>
       <div class="cont">
         <input-categ
-        v-for="(categ, key) in Categorias.filter(c  => c.name !== '')"
+        v-for="(categ, key) in Categs.filter(c  => c.name !== '')"
         :key="key"
         :data="categ"
         />
       </div>
     </div>
     <div>
-      <div class="btn" @click="ShowAddCateg=!ShowAddCateg">
+      <div class="btn" @click="ShowAddCateg=!ShowAddCateg" v-if="Theme.name != 'Modelo 03'">
       +Adicionar nova Categoria
       </div>
       <div v-if="ShowAddCateg">
@@ -57,7 +57,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['Categorias'])
+    ...mapGetters(['Categorias', 'Theme', 'CategoriasImoveis']),
+    Categs () {
+      return this.Theme.name === 'Modelo 03' ? this.CategoriasImoveis : this.Categorias
+    }
   },
   methods: {
     ...mapActions(['PushCateg'])

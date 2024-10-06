@@ -110,5 +110,6 @@ export default {
       label: 'Terreno',
       icon: 'MapIcon'
     }
-  ]
+  ],
+  CategSelected: ''
 }

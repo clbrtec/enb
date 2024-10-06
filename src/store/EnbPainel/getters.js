@@ -7,5 +7,6 @@ export default {
   SelectedProds: state => state.SelectedProdEdit,
   StatusProd: state => state.StatusProd,
   SelectedGiftEdit: state => state.SelectedGiftEdit,
-  Gifts: state => state.Gifts
+  Gifts: state => state.Gifts,
+  CategoriasImoveis: state => state.CategoriasImoveis
 }

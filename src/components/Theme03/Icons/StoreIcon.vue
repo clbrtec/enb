@@ -1,6 +1,6 @@
 <template>
   <div class='StoreIcon'>
-    <svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#000000" fill="none">
+    <svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" :stroke="color" fill="none">
       <path d="M52,27.18V52.76a2.92,2.92,0,0,1-3,2.84H15a2.92,2.92,0,0,1-3-2.84V27.17"/>
       <polyline points="26.26 55.52 26.26 38.45 37.84 38.45 37.84 55.52"/>
       <path d="M8.44,19.18s-1.1,7.76,6.45,8.94a7.17,7.17,0,0,0,6.1-2A7.43,7.43,0,0,0,32,26a7.4,7.4,0,0,0,5,2.49,11.82,11.82,0,0,0,5.9-2.15,6.66,6.66,0,0,0,4.67,2.15,8,8,0,0,0,7.93-9.3L50.78,9.05a1,1,0,0,0-.94-.65H14a1,1,0,0,0-.94.66Z"/>
@@ -14,7 +14,8 @@
 
 <script>
 export default {
-  name: 'StoreIcon'
+  name: 'StoreIcon',
+  props: ['color']
 }
 </script>
 

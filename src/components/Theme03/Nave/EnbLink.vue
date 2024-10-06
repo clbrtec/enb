@@ -1,28 +1,46 @@
 <template>
-  <div class='EnbLink'>
+  <div class='EnbLink' @click="push">
     <div class="icon">
-      <component :is="data.icon"/>
+      <component
+      :is="data.icon"
+      :color="CategSelected === data.label ? '#ffb573' : '#000000'"
+      />
     </div>
-    <div class="label">{{ data.label }}</div>
-    <down-icon v-if="data.sublink"/> 
+    <div :class="{ selected: CategSelected === data.label }" class="label">{{ data.label }}</div>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 import BuildIcon from '../Icons/BuildIcon'
 import HouseIcon from '../Icons/HouseIcon'
 import OfficeIcon from '../Icons/OfficeIcon'
 import StoreIcon from '../Icons/StoreIcon'
 import CoconutIcon from '../Icons/CoconutIcon'
 import MapIcon from '../Icons/MapIcon'
-import DownIcon from '../Icons/DownIcon'
 export default {
   name: 'EnbLink',
-  components: { BuildIcon, HouseIcon, OfficeIcon, StoreIcon, CoconutIcon, MapIcon, DownIcon },
+  components: { BuildIcon, HouseIcon, OfficeIcon, StoreIcon, CoconutIcon, MapIcon },
   props: ['data'],
+  computed: {
+    ...mapGetters(['CategSelected'])
+  },
   data () {
     return {
       currentView: 'MapIcon'
+    }
+  },
+  methods: {
+    ...mapActions(['FilterCateg']),
+    router () {
+      return new Promise((resolve) => {
+        this.$router.push('/categorias')
+        resolve()
+      })
+    },
+    push () {
+      this.router()
+        .then(() => this.FilterCateg(this.data.label))
     }
   }
 }
@@ -44,5 +62,9 @@ export default {
 
 .label {
   cursor: pointer;
+}
+
+.selected {
+  color: orange
 }
 </style>

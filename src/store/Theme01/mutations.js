@@ -55,6 +55,7 @@ export default {
     state.ResultSearch01 = res
   },
   'FILTER_CATEG' (state, payload) {
+    state.CategSelected = payload
     let res = state.Produtos01[0].concat(state.Produtos01[1]).filter(p => p.categoria === payload)
     state.ResultFilterCateg = res
   },

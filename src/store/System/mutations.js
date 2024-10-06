@@ -95,6 +95,7 @@ export default {
   'CHANGE_THEME' (state, payload) {
     let routeThemes = { Theme01, Theme02, Theme03 }
     let selectedTheme = state.Themes.filter(t => t.name === payload)[0]
+    console.log(routeThemes[selectedTheme.route])
     state.Themes.map(t => {
       t.active = false
       if (t.name === payload) {
@@ -107,7 +108,7 @@ export default {
       component: MyStore,
       children: routeThemes[selectedTheme.route]
     })
-    console.log(router.getRoutes())
+    //console.log(router.getRoutes())
     state.Theme = selectedTheme
   },
   'TOGGLE_SEARCH_LOAD' (state, payload) {

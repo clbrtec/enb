@@ -36,12 +36,14 @@ export default {
     }
   ],
   Theme: {
+    name: 'Modelo 01',
     modal: 'EnbModal01',
     checkout: 'CheckoutSide01',
     search: 'SearchCont01',
     nave: 'EnbNave01',
     footer: 'EnbFooter01',
-    route: 'Theme01'
+    route: 'Theme01',
+    active: true
   },
   EnbMsg: [],
   Users: [],

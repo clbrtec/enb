@@ -42,6 +42,38 @@ export default {
       name: 'Camisetas'
     }
   ],
+  CategoriasImoveis: [
+    {
+      active: false,
+      childrens: [],
+      name: 'Apartamento'
+    },
+    {
+      active: false,
+      childrens: [],
+      name: 'Casa'
+    },
+    {
+      active: false,
+      childrens: [],
+      name: 'Sala'
+    },
+    {
+      active: false,
+      childrens: [],
+      name: 'Loja'
+    },
+    {
+      active: false,
+      childrens: [],
+      name: 'Sítio'
+    },
+    {
+      active: false,
+      childrens: [],
+      name: 'Terreno'
+    }
+  ],
   SelectedGiftEdit: {
     id: '',
     codigo: '',

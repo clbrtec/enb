@@ -39,7 +39,7 @@
     />
     <div>
       <visib-prod/>
-      <estoque-prod/>
+      <estoque-prod v-if="Theme.name != 'Modelo 03'"/>
       <props-prod v-if="SelectedProdEdit.tipo === 'Variável'"/>
       <input-caracter/>
     </div>
@@ -71,7 +71,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['SelectedProdEdit'])
+    ...mapGetters(['SelectedProdEdit', 'Theme'])
   }
 }
 </script>

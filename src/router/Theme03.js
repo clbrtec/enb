@@ -9,7 +9,12 @@ export default [
   },
   {
     path: '/',
-    name: 'Produtos',
+    name: 'Produtos03',
+    component: EnbProdutos
+  },
+  {
+    path: '/categorias',
+    name: 'Categorias',
     component: EnbProdutos
   },
   {

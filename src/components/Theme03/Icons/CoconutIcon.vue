@@ -1,6 +1,6 @@
 <template>
   <div class='CoconutIcon'>
-    <svg fill="#000000" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+    <svg :fill="color" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
       <g>
 <g>
 <path d="M470.034,412.34c-11.569-21.153-33.341-34.287-58.19-34.287c-24.865,0-46.652,13.135-58.224,34.287
@@ -39,11 +39,13 @@
 
 <script>
 export default {
-  name: 'CoconutIcon'
+  name: 'CoconutIcon',
+  props: ['color']
 }
 </script>
 
 <style scoped>
 .CoconutIcon {
+  cursor: pointer;
 }
 </style>

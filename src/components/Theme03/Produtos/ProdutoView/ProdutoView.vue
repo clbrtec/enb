@@ -41,11 +41,13 @@
         {{ ItemSelected01.name }}
       </div>
       <div class="price">
-        R$ {{ ItemSelected01.preco }}
+        <div class="disablePrice">R$ {{ ItemSelected01.oferta }}</div>
+        <div>R$ {{ ItemSelected01.preco }}</div>
       </div>
       <div class="desc">
         {{ ItemSelected01.descricao }}
       </div>
+      <prod-caracter/>
       <div class="btn">
         <btn-whats/>
       </div>
@@ -59,9 +61,10 @@ import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import { VueImageZoomer } from 'vue-image-zoomer'
 import 'vue-image-zoomer/dist/style.css'
 import BtnWhats from './BtnWhats'
+import ProdCaracter from './ProdCaracter'
 export default {
   name: 'ProdutoView',
-  components: { VueImageZoomer, Carousel, Slide, Navigation, BtnWhats },
+  components: { VueImageZoomer, Carousel, Slide, Navigation, BtnWhats, ProdCaracter },
   computed: {
     ...mapGetters(['ItemSelected01'])
   },
@@ -112,9 +115,16 @@ export default {
 }
 
 .price {
+  display: flex;
   font-size: 20px;
   text-align: left;
   padding-top: 2%;
+}
+
+.disablePrice {
+  text-decoration: line-through;
+  color: #CCCCCC;
+  padding-right: 2%;
 }
 
 .desc {
