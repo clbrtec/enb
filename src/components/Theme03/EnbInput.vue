@@ -1,12 +1,13 @@
 <template>
   <div class='EnbInput' :style="cont">
-    <input :type="type" :placeholder="label" :style="input">
+    <input :value="value" @input="e => $emit('update:modelValue', e.target.value)" :type="type" :placeholder="label" :style="input">
   </div>
 </template>
 
 <script>
 export default {
   name: 'EnbInput',
+  emits: ['update:modelValue'],
   props: {
     label: {
       type: String,
@@ -23,6 +24,10 @@ export default {
     type: {
       type: String,
       default: 'text'
+    },
+    value: {
+      type: String,
+      default: ''
     }
   }
 }

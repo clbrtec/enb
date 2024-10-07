@@ -15,19 +15,28 @@
         </span>
       </div>
       <div class="btn">
-        <enb-button label="entrar"/>
+        <enb-button label="entrar" @click="login"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import EnbTop from './EnbTop'
 import EnbInput from '../EnbInput'
 import EnbButton from '../EnbButton'
 export default {
   name: 'EnbLogin',
-  components: { EnbTop, EnbInput, EnbButton }
+  components: { EnbTop, EnbInput, EnbButton },
+  methods: {
+    ...mapActions(['GetLogin', 'SetModal01']),
+    login () {
+      this.GetLogin({ logged: true, admin: true })
+        .then(() => this.SetModal01({ active: false }))
+        .then(() => this.$router.push('/profile'))
+    }
+  }
 }
 </script>
 
