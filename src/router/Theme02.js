@@ -5,6 +5,7 @@ import EnbPedidos from '@/components/Theme02/Pedidos/EnbPedidos'
 import PedidoView from '@/components/Theme02/Pedidos/PedidoView'
 import EnbItemView02 from '@/components/Theme02/Produtos/EnbItemView02'
 import SearchResult from '@/components/Theme02/Search/SearchResult'
+import EnbProfile from '@/components/Profile/EnbProfile'
 
 export default [
   {
@@ -51,5 +52,10 @@ export default [
     path: '/search',
     name: 'Pesquisa',
     component: SearchResult
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: EnbProfile
   }
 ]

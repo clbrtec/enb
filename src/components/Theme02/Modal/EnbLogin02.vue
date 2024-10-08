@@ -20,7 +20,7 @@
           </span>
         </div>
         <div class="btn">
-          <enb-button02 label="entrar"/>
+          <enb-button02 @click="login" label="entrar"/>
         </div>
       </div>
     </div>
@@ -39,7 +39,8 @@ export default {
     ...mapActions(['GetLogin', 'SetModal01']),
     login () {
       this.GetLogin({ logged: true, admin: true })
-      this.SetModal01({ active: false })
+        .then(() => this.SetModal01({ active: false }))
+        .then(() => this.$router.push('/profile'))
     }
   }
 }

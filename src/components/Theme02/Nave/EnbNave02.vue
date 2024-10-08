@@ -14,7 +14,7 @@
       />
       <enb-search02/>
       <link-profile02
-      @click="SetModal01({ component: 'EnbLogin02', active: true, barText: 'login' })"
+      @click="login"
       />
       <div class="cont-bag"
       @mouseenter="showBag=true"
@@ -45,7 +45,7 @@ export default {
   name: 'EnbNave02',
   components: { EnbLogo02, EnbSearch02, EnbLink02, BagIcon, LinkProfile02, EnbBag02, EnbCateg },
   computed: {
-    ...mapGetters(['LinksTheme01', 'CheckoutItens01'])
+    ...mapGetters(['LinksTheme01', 'CheckoutItens01', 'Profile'])
   },
   data () {
     return {
@@ -54,7 +54,14 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['SetModal01'])
+    ...mapActions(['SetModal01']),
+    login() {
+      if(this.Profile.logged) {
+        this.$router.push('/profile')
+      } else {
+        this.SetModal01({ component: 'EnbLogin02', active: true, barText: 'login' })
+      }
+    }
   }
 }
 </script>

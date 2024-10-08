@@ -20,6 +20,7 @@
         </div>
         <div class="cont-icons">
           <user-icon01
+          @click="toProfile"
           @mouseover="ShowProfileLink=true"
           @mouseleave="ShowProfileLink=false"
           />
@@ -52,10 +53,15 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['LinksTheme01'])
+    ...mapGetters(['LinksTheme01', 'Profile'])
   },
   methods: {
-    ...mapActions(['ToggleCheckout01', 'ToggleSearch01', 'SetModal01'])
+    ...mapActions(['ToggleCheckout01', 'ToggleSearch01', 'SetModal01']),
+    toProfile() {
+      if(this.Profile.logged) {
+        this.$router.push('/profile')
+      }
+    }
   }
 }
 </script>

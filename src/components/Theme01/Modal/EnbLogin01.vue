@@ -20,7 +20,8 @@ export default {
     ...mapActions(['GetLogin', 'SetModal01']),
     login () {
       this.GetLogin({ logged: true, admin: true })
-      this.SetModal01({ active: false })
+        .then(() => this.SetModal01({ active: false }))
+        .then(() => this.$router.push('/profile'))
     }
   }
 }

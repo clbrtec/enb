@@ -28,6 +28,7 @@ export default {
 <style scoped>
 .EnbProdutos {
   width: 100%;
+  padding-bottom: 100px;
 }
 
 .cont-itens {

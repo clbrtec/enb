@@ -14,7 +14,8 @@
           <search-icon @click="SetModal01({ component: 'EnbSearch', active: true })"/>
         </div> 
         <div class="c-action">
-          <user-icon @click="SetModal01({ component: 'EnbLogin', active: true })"/>
+          <user-icon v-if="!Profile.logged" @click="SetModal01({ component: 'EnbLogin', active: true })"/>
+          <user-icon v-if="Profile.logged" @click="$router.push('/profile')"/>
          </div>
        </div>
     </div>
@@ -31,7 +32,7 @@ export default {
   name: 'EnbNave03',
   components: { EnbLogo, EnbLink, UserIcon, SearchIcon },
   computed: {
-    ...mapGetters(['PropertyLink'])
+    ...mapGetters(['PropertyLink', 'Profile'])
   },
   methods: {
     ...mapActions(['SetModal01'])

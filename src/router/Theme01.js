@@ -5,6 +5,8 @@ import CompletePurchase from '@/components/Theme01/Client/CompletePurchase'
 import EnbPedidos01 from '@/components/Theme01/Pedidos/EnbPedidos01'
 import PedidoView from '@/components/Theme01/Pedidos/PedidoView'
 import EnbAccount01 from '@/components/Theme01/Account/EnbAccount01'
+import EnbProfile from '@/components/Profile/EnbProfile'
+
 export default [
   {
     path: '/',
@@ -50,5 +52,10 @@ export default [
     path: '/account',
     name: 'Minha conta',
     component: EnbAccount01
+  },
+  {
+    path: '/profile',
+    name: 'Pofile',
+    component: EnbProfile
   }
 ]

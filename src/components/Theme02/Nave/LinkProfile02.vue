@@ -1,14 +1,18 @@
 <template>
   <div class='LinkProfile02'>
     <div>
-      login
+      {{ Profile.logged ? 'Minha Conta' : 'login' }}
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-  name: 'LinkProfile02'
+  name: 'LinkProfile02',
+  computed: {
+    ...mapGetters(['Profile'])
+  }
 }
 </script>
 

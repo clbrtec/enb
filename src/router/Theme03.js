@@ -1,7 +1,7 @@
 import EnbProdutos from '@/components/Theme03/Produtos/EnbProdutos'
 import ProdutoView from '@/components/Theme03/Produtos/ProdutoView/ProdutoView'
 import SearchResult from '@/components/Theme03/Search/SearchResult'
-import EnbProfile from '@/components/Theme03/Profile/EnbProfile'
+import EnbProfile from '@/components/Profile/EnbProfile'
 
 export default [
   {
