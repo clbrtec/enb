@@ -4,17 +4,20 @@
       <div class="header">Categorias</div>
       <div class="cont">
         <input-categ
-        v-for="(categ, key) in Categs.filter(c  => c.name !== '')"
+        v-for="(categ, key) in Categorias.filter(c  => c.name !== '')"
         :key="key"
         :data="categ"
         />
       </div>
     </div>
     <div>
-      <div class="btn" @click="ShowAddCateg=!ShowAddCateg" v-if="Theme.name != 'Modelo 03'">
+      <div class="btn" @click="ShowAddCateg=!ShowAddCateg">
       +Adicionar nova Categoria
       </div>
       <div v-if="ShowAddCateg">
+        <input-icon-categ
+        @update:model-value="newValue => icon = newValue"
+        />
         <input-reg
         :value="name"
         @update:model-value="newValue => name = newValue"
@@ -46,21 +49,20 @@ import { mapGetters, mapActions } from 'vuex'
 import InputCateg from './InputCateg'
 import InputReg from './InputReg'
 import InputSelect from './InputSelect'
+import InputIconCateg from './InputIconCateg'
 export default {
   name: 'SelectCateg',
-  components: { InputCateg, InputReg, InputSelect },
+  components: { InputCateg, InputReg, InputSelect, InputIconCateg },
   data () {
     return {
       ShowAddCateg: false,
       parent: '',
-      name: ''
+      name: '',
+      icon: ''
     }
   },
   computed: {
-    ...mapGetters(['Categorias', 'Theme', 'CategoriasImoveis']),
-    Categs () {
-      return this.Theme.name === 'Modelo 03' ? this.CategoriasImoveis : this.Categorias
-    }
+    ...mapGetters(['Categorias'])
   },
   methods: {
     ...mapActions(['PushCateg'])
