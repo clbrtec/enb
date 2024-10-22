@@ -2,7 +2,7 @@
   <div class='SelectFont'>
     <input-select
     text="Fonte Padrão"
-    :value="'teste'"
+    :value="FontDefault"
     :data="Fonts"
     @update:modelValue="newValue => UpdateFontDefault(newValue)"
     :label="{ textAlign: 'left', marginTop: '5px', marginLeft: '5px' }"
@@ -18,7 +18,7 @@ export default {
   name: 'SelectFont',
   components: { InputSelect },
   computed: {
-    ...mapGetters(['Fonts'])
+    ...mapGetters(['Fonts', 'FontDefault'])
   },
   methods: {
     ...mapActions(['UpdateFontDefault'])

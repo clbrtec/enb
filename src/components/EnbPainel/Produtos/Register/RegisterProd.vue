@@ -13,7 +13,7 @@
         />
       </div>
       <div class="rigth">
-        <button v-if="!edit" @click="push">Adicionar novo</button>
+        <button v-if="!edit" @click="push">Salvar</button>
         <button v-if="edit" @click="update">Atualizar</button>
       </div>
     </div>

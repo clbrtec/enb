@@ -1,6 +1,8 @@
 <template>
   <enb-msg/>
-  <div class='MyStore' @scroll="run">
+  <div class='MyStore' @scroll="run"
+  :style="{ fontFamily: FontDefault }"
+  >
     <component v-if="Modal01.active" :is="Theme.modal"/>
     <component v-if="ShowCheckout" :is="Theme.checkout"/>
     <component v-if="ShowSearch01" :is="Theme.search"/>
@@ -34,7 +36,7 @@ export default {
     EnbFooter03
   },
   computed: {
-    ...mapGetters(['ShowCheckout', 'ShowSearch01', 'Modal01', 'Theme'])
+    ...mapGetters(['ShowCheckout', 'ShowSearch01', 'Modal01', 'Theme', 'FontDefault'])
   },
   methods: {
     run (e) {

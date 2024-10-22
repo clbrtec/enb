@@ -149,8 +149,22 @@ Geral
 - Modelos(templates)
 *Mudar icone de login(minha conta) #
 *Categorias modelo 3(edição livre) #
+ - Galeria de ícones
+* modelo 01 (botão carrinho no bottom flutuante)
+* modelo 03
+  Modulos:
+  - Produtos(Imóveis)
+  - Usuários
+  - Preferências
+  - Loja(Site)
 
 - Preferências
+ - modelos #
+ - Logo #
+ - font #
+ - componentes(cards)
+ - Botões
+
 
 - Controle de Usuários
 
