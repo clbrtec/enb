@@ -1,7 +1,7 @@
 <template>
   <div class='EnbSidebar'>
     <div class="logo">
-      <img :src="logo">
+      <img :src="Logo">
     </div>
     <link-sidebar
     v-for="(links, k) in LinkSidebar"
@@ -12,19 +12,13 @@
 </template>
 
 <script>
-import logo from '../../assets/logo'
 import LinkSidebar from '@/components/EnbPainel/LinkSidebar'
 import { mapGetters } from 'vuex'
 export default {
   name: 'EnbSidebar',
   components: { LinkSidebar },
   computed: {
-    ...mapGetters(['LinkSidebar'])
-  },
-  data () {
-    return {
-      logo: logo
-    }
+    ...mapGetters(['LinkSidebar', 'Logo'])
   }
 }
 </script>

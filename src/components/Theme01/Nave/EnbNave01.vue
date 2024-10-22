@@ -19,11 +19,18 @@
           <cart-icon01 @click="ToggleCheckout01(true)"/>
         </div>
         <div class="cont-icons">
-          <user-icon01
+          <label class="myAccount"
           @click="toProfile"
           @mouseover="ShowProfileLink=true"
           @mouseleave="ShowProfileLink=false"
-          />
+          >
+            {{ !Profile.logged ? 'login' : 'Minha Conta' }}
+          </label>
+          <!-- <user-icon01
+          @click="toProfile"
+          @mouseover="ShowProfileLink=true"
+          @mouseleave="ShowProfileLink=false"
+          /> -->
           <enb-profileLink01 v-if="ShowProfileLink"
           @mouseenter="ShowProfileLink=true"
           @mouseleave="ShowProfileLink=false"
@@ -39,13 +46,13 @@ import { mapGetters, mapActions } from 'vuex'
 import EnbLogo01 from './EnbLogo01.vue'
 import EnbLink01 from './EnbLink01.vue'
 import CartIcon01 from '../Icons/CartIcon01.vue'
-import UserIcon01 from '../Icons/UserIcon01.vue'
+//import UserIcon01 from '../Icons/UserIcon01.vue'
 import SearchIcon01 from '../Icons/SearchIcon01'
 import EnbProfileLink01 from './EnbProfileLink01.vue'
 import SubNave from './SubNave'
 export default {
   name: 'EnbNave01',
-  components: { EnbLogo01, EnbLink01, CartIcon01, UserIcon01, SearchIcon01, EnbProfileLink01, SubNave },
+  components: { EnbLogo01, EnbLink01, CartIcon01, SearchIcon01, EnbProfileLink01, SubNave },
   data () {
     return {
       ShowProfileLink: false,
@@ -91,4 +98,9 @@ export default {
   width: 15%;
 }
 
+.myAccount {
+  display: block;
+  font-size: 14px;
+  line-height: 100%;
+}
 </style>

@@ -9,6 +9,7 @@
       :label="{ textAlign: 'left', marginTop: '5px', marginLeft: '5px' }"
       :input="{ width: '100%', padding: '2%', fontSize: '16px', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
+      <select-logo/>
     </div>
     <div class="right"></div>
   </div>
@@ -17,9 +18,10 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import InputSelect from '../Produtos/Register/InputSelect'
+import SelectLogo from './SelectLogo'
 export default {
   name: 'EnbPreference',
-  components: { InputSelect },
+  components: { InputSelect, SelectLogo },
   computed: {
     ...mapGetters(['Themes'])
   },

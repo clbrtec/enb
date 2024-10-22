@@ -1,17 +1,15 @@
 <template>
   <div class='EnbLogo01'>
-    <img :src="img">
+    <img :src="Logo">
   </div>
 </template>
 
 <script>
-import logo from '../../../assets/logo'
+import { mapGetters } from 'vuex'
 export default {
   name: 'EnbLogo01',
-  data () {
-    return {
-      img: logo
-    }
+  computed: {
+    ...mapGetters(['Logo'])
   }
 }
 </script>

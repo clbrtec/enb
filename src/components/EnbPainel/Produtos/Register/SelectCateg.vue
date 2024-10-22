@@ -34,7 +34,7 @@
         />
         <div>
           <button
-          @click="PushCateg({ children: { active: false, childrens: [], name: name }, parent: parent })"
+          @click="PushCateg({ children: { active: false, childrens: [], name: name, icon: icon }, parent: parent })"
           >
             Adicionar
           </button>

@@ -83,33 +83,5 @@ export default {
   ], []],
   ResultSearch01: [],
   ResultFilterCateg: [],
-  PropertyLink: [
-    {
-      label: 'Apartamento',
-      icon: 'BuildIcon',
-      sublink: true
-    },
-    {
-      label: 'Casa',
-      icon: 'HouseIcon',
-      sublink: true
-    },
-    {
-      label: 'Sala',
-      icon: 'OfficeIcon'
-    },
-    {
-      label: 'Loja',
-      icon: 'StoreIcon'
-    },
-    {
-      label: 'Sítio',
-      icon: 'CoconutIcon'
-    },
-    {
-      label: 'Terreno',
-      icon: 'MapIcon'
-    }
-  ],
   CategSelected: ''
 }

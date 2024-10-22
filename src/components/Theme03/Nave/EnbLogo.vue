@@ -1,27 +1,26 @@
 <template>
   <div class='EnbLogo'>
-    <img :src="logo">
+    <img :src="Logo">
   </div>
 </template>
 
 <script>
-import logo from '../../../assets/logo'
+import { mapGetters } from 'vuex'
 export default {
   name: 'EnbLogo',
-  data () {
-    return {
-      logo: logo
-    }
+  computed: {
+    ...mapGetters(['Logo'])
   }
 }
 </script>
 
 <style scoped>
 .EnbLogo {
-  width: 20%;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 img {

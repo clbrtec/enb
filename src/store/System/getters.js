@@ -5,5 +5,6 @@ export default {
   SelectedUserEdit: state => state.SelectedUserEdit,
   Theme: state => state.Theme,
   Themes: state => state.Themes,
-  SearchLoad: state => state.SearchLoad
+  SearchLoad: state => state.SearchLoad,
+  Logo: state => state.Logo
 }

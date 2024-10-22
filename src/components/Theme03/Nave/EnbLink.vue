@@ -1,34 +1,19 @@
 <template>
   <div class='EnbLink' @click="push">
     <div class="icon">
-      <component
-      :is="data.icon"
-      :color="CategSelected === data.label ? '#ffb573' : '#000000'"
-      />
+      <img :src="data.icon">
     </div>
-    <div :class="{ selected: CategSelected === data.label }" class="label">{{ data.label }}</div>
+    <div :class="{ selected: CategSelected === data.label }" class="label">{{ data.name }}</div>
   </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import BuildIcon from '../Icons/BuildIcon'
-import HouseIcon from '../Icons/HouseIcon'
-import OfficeIcon from '../Icons/OfficeIcon'
-import StoreIcon from '../Icons/StoreIcon'
-import CoconutIcon from '../Icons/CoconutIcon'
-import MapIcon from '../Icons/MapIcon'
 export default {
   name: 'EnbLink',
-  components: { BuildIcon, HouseIcon, OfficeIcon, StoreIcon, CoconutIcon, MapIcon },
   props: ['data'],
   computed: {
     ...mapGetters(['CategSelected'])
-  },
-  data () {
-    return {
-      currentView: 'MapIcon'
-    }
   },
   methods: {
     ...mapActions(['FilterCateg']),
@@ -40,7 +25,7 @@ export default {
     },
     push () {
       this.router()
-        .then(() => this.FilterCateg(this.data.label))
+        .then(() => this.FilterCateg(this.data.name))
     }
   }
 }
@@ -54,6 +39,7 @@ export default {
   padding-left: 2%;
   padding-right: 2%;
   font-size: 18px;
+  margin-top: 1%;
 }
 
 .icon {
@@ -66,5 +52,11 @@ export default {
 
 .selected {
   color: orange
+}
+
+img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 </style>

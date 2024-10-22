@@ -10,6 +10,5 @@ export default {
   Modal01: state => state.Modal01,
   ResultSearch01: state => state.ResultSearch01,
   ResultFilterCateg: state => state.ResultFilterCateg,
-  PropertyLink: state => state.PropertyLink,
   CategSelected: state => state.CategSelected
 }

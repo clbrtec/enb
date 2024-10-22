@@ -147,8 +147,8 @@
 Geral
 
 - Modelos(templates)
-*Mudar icone de login(minha conta)
-*Categorias modelo 3(edição livre)
+*Mudar icone de login(minha conta) #
+*Categorias modelo 3(edição livre) #
 
 - Preferências
 

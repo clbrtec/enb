@@ -69,5 +69,9 @@ export default {
   ToggleSearchLoad: ({ commit }, payload) => new Promise((resolve) => {
     commit('TOGGLE_SEARCH_LOAD', payload)
     resolve()
+  }),
+  UpdateLogo: ({ commit }, payload) => new Promise((resolve) => {
+    commit('UPDATE_LOGO', payload)
+    resolve()
   })
 }

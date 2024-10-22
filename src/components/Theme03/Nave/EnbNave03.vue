@@ -2,12 +2,16 @@
   <div class='EnbNave03'>
     <div class="cont-nave">
       <div class="logo-link">
-        <enb-logo/>
-        <enb-link
-        v-for="(l, key) in PropertyLink"
-        :key="key"
-        :data="l"
-        />
+        <div class="cont-logo">
+          <enb-logo/>
+        </div>
+        <div class="cont-link">
+          <enb-link
+          v-for="(l, key) in Categorias.filter(c  => c.name !== '')"
+          :key="key"
+          :data="l"
+          />
+        </div>
       </div>
       <div class="login-search">
         <div class="c-action">
@@ -32,7 +36,7 @@ export default {
   name: 'EnbNave03',
   components: { EnbLogo, EnbLink, UserIcon, SearchIcon },
   computed: {
-    ...mapGetters(['PropertyLink', 'Profile'])
+    ...mapGetters(['Profile', 'Categorias'])
   },
   methods: {
     ...mapActions(['SetModal01'])
@@ -60,6 +64,17 @@ export default {
   width: 90%;
   height: 100%;
   display: flex;
+}
+
+.cont-logo {
+  width: 20%;
+}
+
+.cont-link {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
 }
 
 .login-search {

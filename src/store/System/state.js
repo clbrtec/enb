@@ -1,4 +1,6 @@
+import logo from '../../assets/logo'
 export default {
+  Logo: logo,
   Profile: {
     logged: false,
     admin: false

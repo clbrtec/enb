@@ -113,5 +113,8 @@ export default {
   },
   'TOGGLE_SEARCH_LOAD' (state, payload) {
     state.SearchLoad = payload
+  },
+  'UPDATE_LOGO' (state, payload) {
+    state.Logo = payload
   }
 }

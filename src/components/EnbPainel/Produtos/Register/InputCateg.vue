@@ -2,6 +2,7 @@
   <div class='InputCateg'>
     <input @change="Update" :checked="data.active" type="checkbox">
     <label>{{ data.name }}</label>
+    <img :src="data.icon">
   </div>
 </template>
 
@@ -28,9 +29,15 @@ export default {
 .InputCateg {
   display: flex;
   padding: 2%;
+  align-items: center;
 }
 
 label {
   padding-left: 2%;
+}
+
+img {
+  width: 20px;
+  height: 20px;
 }
 </style>

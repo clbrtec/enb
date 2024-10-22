@@ -1,15 +1,21 @@
 <template>
-  <div class='InputIconCateg'>
-    <button @click="$refs.in.click()">Selecionar ícone</button>
-    <input ref="in" v-show="false" type="file" @change="inFile"/>
+  <div class='SelectLogo'>
+    <div class="label">
+      Logomarca:
+    </div>
+    <div class="button">
+      <input ref="in" v-show="false" type="file" @change="inFile"/>
+      <button @click="$refs.in.click()">Selecione a logomarca</button>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
-  name: 'InputIconCateg',
-  emits: ['update:modelValue'],
+  name: 'SelectLogo',
   methods: {
+    ...mapActions(['UpdateLogo']),
     inFile (e) {
       for (let key in e.target.files) {
         if (key !== 'length' && key !== 'item') {
@@ -21,7 +27,7 @@ export default {
       let reader = new FileReader()
       reader.readAsDataURL(file)
       reader.onload = () => {
-        this.$emit('update:modelValue', reader.result)
+        this.UpdateLogo(reader.result)
         // console.log(reader.result)
       }
       reader.onerror = (error) => {
@@ -33,16 +39,23 @@ export default {
 </script>
 
 <style scoped>
-.InputIconCateg {
-  margin-top: 15px;
+.SelectLogo {
+  margin-top: 7px;
+}
+
+.label {
+  font-size: 12px;
+  text-align: left;
+  margin-left: 5px;
 }
 
 button {
-  width: 99%;
-  padding: 2%;
   border: 0;
+  width: 100%;
+  padding: 2%;
   border-radius: 5px;
-  background-color: #CCCCCC;
   cursor: pointer;
+  background-color: #CCCCCC;
+  margin-top: 5px;
 }
 </style>
