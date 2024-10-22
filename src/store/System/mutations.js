@@ -116,5 +116,9 @@ export default {
   },
   'UPDATE_LOGO' (state, payload) {
     state.Logo = payload
+  },
+  'UPDATE_FONT_DEFAULT' (state, payload) {
+    state.FontDefault = payload
+    console.log(state.FontDefault)
   }
 }

@@ -73,5 +73,9 @@ export default {
   UpdateLogo: ({ commit }, payload) => new Promise((resolve) => {
     commit('UPDATE_LOGO', payload)
     resolve()
+  }),
+  UpdateFontDefault: ({ commit }, payload) => new Promise((resolve) => {
+    commit('UPDATE_FONT_DEFAULT', payload)
+    resolve()
   })
 }

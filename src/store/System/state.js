@@ -74,5 +74,19 @@ export default {
       }
     ]
   },
-  SearchLoad: false
+  SearchLoad: false,
+  Fonts: [
+    {
+      name: 'Gordita'
+    },
+    {
+      name: 'Arima'
+    },
+    {
+      name: 'Poppins'
+    }
+  ],
+  FontDefault: {
+    name: 'Gordita'
+  }
 }

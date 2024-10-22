@@ -1,6 +1,17 @@
 <template>
-  <router-view/>
+  <router-view
+  :style="{ fontFamily: FontDefault.name }"
+  />
 </template>
+
+<script>
+import { mapGetters } from 'vuex'
+export default {
+  computed: {
+    ...mapGetters(['FontDefault'])
+  }
+}
+</script>
 
 <style>
 html {
@@ -34,7 +45,7 @@ body {
 #app {
   width: 100%;
   height: 100%;
-  font-family: Arima, Helvetica, Arial, sans-serif;
+  font-family: Gordita, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

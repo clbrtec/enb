@@ -10,6 +10,7 @@
       :input="{ width: '100%', padding: '2%', fontSize: '16px', border: 'thin solid #CCCCCC', borderRadius: '5px' }"
       />
       <select-logo/>
+      <select-font/>
     </div>
     <div class="right"></div>
   </div>
@@ -19,9 +20,10 @@
 import { mapGetters, mapActions } from 'vuex'
 import InputSelect from '../Produtos/Register/InputSelect'
 import SelectLogo from './SelectLogo'
+import SelectFont from './SelectFont'
 export default {
   name: 'EnbPreference',
-  components: { InputSelect, SelectLogo },
+  components: { InputSelect, SelectLogo, SelectFont },
   computed: {
     ...mapGetters(['Themes'])
   },

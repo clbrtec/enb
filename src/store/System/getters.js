@@ -6,5 +6,7 @@ export default {
   Theme: state => state.Theme,
   Themes: state => state.Themes,
   SearchLoad: state => state.SearchLoad,
-  Logo: state => state.Logo
+  Logo: state => state.Logo,
+  Fonts: state => state.Fonts,
+  FontDefault: state => state.FontDefault
 }
