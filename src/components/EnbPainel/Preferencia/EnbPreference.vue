@@ -11,6 +11,7 @@
       />
       <select-logo/>
       <select-font/>
+      <pref-comp/>
     </div>
     <div class="right"></div>
   </div>
@@ -21,9 +22,10 @@ import { mapGetters, mapActions } from 'vuex'
 import InputSelect from '../Produtos/Register/InputSelect'
 import SelectLogo from './SelectLogo'
 import SelectFont from './SelectFont'
+import PrefComp from './PrefComp'
 export default {
   name: 'EnbPreference',
-  components: { InputSelect, SelectLogo, SelectFont },
+  components: { InputSelect, SelectLogo, SelectFont, PrefComp },
   computed: {
     ...mapGetters(['Themes'])
   },
