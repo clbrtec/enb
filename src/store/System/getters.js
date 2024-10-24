@@ -8,5 +8,6 @@ export default {
   SearchLoad: state => state.SearchLoad,
   Logo: state => state.Logo,
   Fonts: state => state.Fonts,
-  FontDefault: state => state.FontDefault
+  FontDefault: state => state.FontDefault,
+  Prefes: state => state.Prefes
 }

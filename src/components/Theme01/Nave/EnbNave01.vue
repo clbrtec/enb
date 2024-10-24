@@ -1,5 +1,11 @@
 <template>
-  <div class='EnbNave01'>
+  <div class='EnbNave01'
+  :style="{ 
+    backgroundColor: Prefes.nave.corBackground,
+    fontFamily: Prefes.nave.font,
+    color: Prefes.nave.corFont
+  }"
+  >
     <div class="cont-top">
       <enb-logo01/>
       <sub-nave
@@ -60,7 +66,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['LinksTheme01', 'Profile'])
+    ...mapGetters(['LinksTheme01', 'Profile', 'Prefes'])
   },
   methods: {
     ...mapActions(['ToggleCheckout01', 'ToggleSearch01', 'SetModal01']),

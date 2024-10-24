@@ -1,13 +1,13 @@
 <template>
   <div class='SelectCor'>
     <div class="label-color">
-      label color
+      {{ label }}
     </div>
     <div class="btn">
       <color-picker
       format="hex"
-      v-model:pureColor="pureColor"
-      @pure-color-change="(c) => console.log(c)"
+      :pure-color="hexCor"
+      @pure-color-change="(c) => $emit('update:modelValue', c)"
       pickerType="chrome"
       />
     </div>
@@ -20,9 +20,11 @@ import "vue3-colorpicker/style.css"
 export default {
   name: 'SelectCor',
   components: { ColorPicker },
+  props: ['label', 'hexCor'],
+  emits: ['update:modelValue'],
   data () {
     return {
-      pureColor: '#CCCCCC'
+      pureColor: '#000000'
     }
   }
 }
@@ -34,6 +36,7 @@ export default {
   justify-content: end;
   align-items: center;
   border-bottom: thin solid #CCCCCC;
+  padding-top: 1%;
   padding-bottom: 1%;
 }
 

@@ -120,5 +120,8 @@ export default {
   'UPDATE_FONT_DEFAULT' (state, payload) {
     state.FontDefault = payload
     console.log(state.FontDefault)
+  },
+  'UPDATE_PREF_COMP' (state, payload) {
+    state.Prefes[payload.comp][payload.prop] = payload.value
   }
 }

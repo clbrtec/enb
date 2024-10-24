@@ -77,5 +77,9 @@ export default {
   UpdateFontDefault: ({ commit }, payload) => new Promise((resolve) => {
     commit('UPDATE_FONT_DEFAULT', payload)
     resolve()
+  }),
+  UpdatePrefComp: ({ commit }, payload) => new Promise((resolve) => {
+    commit('UPDATE_PREF_COMP', payload)
+    resolve()
   })
 }

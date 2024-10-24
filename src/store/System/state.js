@@ -88,5 +88,12 @@ export default {
   ],
   FontDefault: {
     name: 'Gordita'
+  },
+  Prefes: {
+    nave: {
+      corBackground: '#EEEEEE',
+      corFont: '#000000',
+      font: 'Gordita'
+    }
   }
 }

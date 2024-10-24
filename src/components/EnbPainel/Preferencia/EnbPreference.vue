@@ -11,7 +11,13 @@
       />
       <select-logo/>
       <select-font/>
-      <pref-comp/>
+      <pref-comp
+      comp="nave"
+      label="Topo(Navegação)"
+      @update:corBackground="newValue => UpdatePrefComp({ comp: 'nave', prop: 'corBackground', value: newValue })"
+      @update:corFont="newValue => UpdatePrefComp({ comp: 'nave', prop: 'corFont', value: newValue })"
+      @update:font="newValue => UpdatePrefComp({ comp: 'nave', prop: 'font', value: newValue })"
+      />
     </div>
     <div class="right"></div>
   </div>
@@ -30,7 +36,7 @@ export default {
     ...mapGetters(['Themes'])
   },
   methods: {
-    ...mapActions(['ChangeTheme'])
+    ...mapActions(['ChangeTheme', 'UpdatePrefComp'])
   }
 }
 </script>
